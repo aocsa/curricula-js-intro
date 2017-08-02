@@ -62,55 +62,196 @@ function codeToHtml(string) {
     var result = md.render(string);
     return result;
 }
-var htmlString = '';
-var format = require("string-template")
+var markDownString = '';
+var format = require("string-template");
 
-function  MD2HTML (filepath){
+async function myReadfile (filename) {
+  try {
+    const file = await fs.readFile(filename, 'utf8');
+  }
+  catch (err) { console.error( err ) }
+  return file;
+}
+const path = require('path')
+
+const mkdirSync = function (dirPath) {
+  try {
+    fs.mkdirSync(dirPath)
+  } catch (err) {
+    if (err.code !== 'EEXIST') throw err
+  }
+}
+
+const common_html_path = "";
+var fs = require('fs');
+
+function CreateIndex (testFolder, filepath) {
+    var fs = require('fs');
+    if (filepath == undefined || filepath.length == 0) {
+        console.log ("filepath undefined >" + testFolder);
+        return;
+    }
+    var filename = filepath.replace(/.+\//, '');
+    filename = "index";
+
+    console.log("you entered: [" + filepath + "]");
+
+    markDownString = fs.readFileSync(filepath, 'utf8')  ;
+    var firstLine = markDownString.split("\n")[0];
+    var label_name = firstLine.replace("#", '');
+
+    var htmlCode = codeToHtml(markDownString.replace(firstLine, ''));
+        
+    var templateString =   fs.readFileSync('md-2-units-template.html', 'utf8' )  ;
+
+    console.log ("htmlCode: " + htmlCode.length);
+    var polymerComponentCode = format(templateString, {
+        //template_id: filename,
+        template_html: htmlCode
+    });
+
+    var fs = require('fs');
+    var htmlFile =  testFolder + "/" + filename + ".html";
+    fs.writeFile(htmlFile, polymerComponentCode, function(err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("The file " + htmlFile + " was saved!");
+    });
+    return { 
+            name: filename,
+            label: label_name
+        };
+}
+function  MD2HTML (testFolder, filepath){
+    var fs = require('fs');
+    if (filepath == undefined || filepath.length == 0) {
+        console.log ("filepath undefined >" + testFolder);
+        return;
+    }
     var filename = filepath.replace(/.+\//, '');
     filename = "unit-" + filename.replace('.md', '');
 
     console.log("you entered: [" + filepath + "]");
-    var fs = require('fs')
-    fs.readFile(filepath, 'utf8', function(err, data) {
+
+    markDownString = fs.readFileSync(filepath, 'utf8')  ;
+    var firstLine = markDownString.split("\n")[0];
+    var label_name = firstLine.replace("#", '');
+
+    var htmlCode = codeToHtml(markDownString.replace(firstLine, ''));
+        
+    var templateString =   fs.readFileSync('md-2-html-template.html', 'utf8' )  ;
+
+    console.log ("htmlCode: " + htmlCode.length);
+    var polymerComponentCode = format(templateString, {
+        template_id: filename,
+        template_html: htmlCode
+    });
+
+    var fs = require('fs');
+    var htmlFile =  testFolder + "/" + filename + ".html";
+    fs.writeFile(htmlFile, polymerComponentCode, function(err) {
         if (err) {
             return console.log(err);
         }
-        htmlString = data;
+        console.log("The file " + htmlFile + " was saved!");
+    });
+    return { 
+            name: filename,
+            label: label_name
+        };
+}
 
-        var htmlCode = codeToHtml(htmlString);
+var glob = require("glob");
+ 
+
+function batchMD2HTML (codelabtitle, testFolder) {
+
+    // options is optional
+    glob(testFolder,  function (err, files) {
+         if (err) {
+            return console.log(err);
+        }
+        //../01-intro/02-variables-and-data-types/*.md         
+        var htmlFolders = testFolder.replace ("*.md", "");
+        console.log (htmlFolders);
+
+        var lstMDs = files;
+        var codelabs_steps = [];
+        for (var filepath of lstMDs) { 
+            console.log("filepath:**" + filepath + "**");
+            
+            var obj = MD2HTML(htmlFolders, filepath);
+            codelabs_steps.push( {
+                html_file_name: obj.name + '.html',
+                codelab_step:  obj.name,
+                label:  obj.label
+            });
+        }
+        let links_html = '';
+        let steps_html = '';
+        for(let obj of codelabs_steps) {
+            let html_file = obj.html_file_name;
+            let template_id = obj.codelab_step;
+            let label = obj.label;
+
+            links_html +=  '<link rel="import" href="' +  html_file + '">'; 
+
+            var step = '<google-codelab-step label="' +  label + '" duration="10">' +            
+                        '<' + template_id + '> </' + template_id + '>'  +       
+                          '</google-codelab-step>';
+
+            steps_html += step;        
+
+        } 
         
-        fs.readFile('md-2-html-template.html', 'utf8', function(err, templateString) {
+        var templateString = fs.readFileSync("md-2-index-template.html", 'utf8' ) ;
+        var htmlIndexContent = format(templateString, {
+                codelab_title: codelabtitle,
+                link_htmlfiles: links_html,
+                codelab_steps: steps_html
+            });
+
+        var htmlFile = htmlFolders + "index.html";
+        console.log ("htmlfile: " + htmlFile);
+        fs.writeFile(htmlFile, htmlIndexContent, function(err) {
             if (err) {
                 return console.log(err);
             }
-            console.log ("htmlCode: " + htmlCode.length);
-            var polymerComponentCode = format(templateString, {
-                template_id: filename,
-                template_html: htmlCode
-            });
-
-            var fs = require('fs');
-            var htmlFile = "html_from_md/" + filename + ".html";
-            fs.writeFile(htmlFile, polymerComponentCode, function(err) {
-                if (err) {
-                    return console.log(err);
-                }
-                console.log("The file " + htmlFile + " was saved!");
-            });
-
+            console.log("The file " + htmlFile + " was saved!");
         });
-    });
-}
-function batchMD2HTML (mdStrings) {
-    var lstMDs = mdStrings.split(' ');
-    for (var name of lstMDs) {
-        var filepath = "intro/" + name;
-        console.log("filepath: " + filepath);
-        MD2HTML(filepath);
-    }
+     }); 
 }
 
-batchMD2HTML ("01-values-data-types-and-operators.md 02-variables.md 03-self-learning-MDN.md 04-comments.md 05-guided-exercises.md 06-prueba-tu-conocimiento.md README.md" );
+
+function processBook () {
+    var bookDir = "../01-intro/*";
+
+     glob(bookDir,  function (err, files) {
+         if (err) {
+            return console.log(err);
+        }
+         for (var filepath of files) { 
+            console.log ("filepath> " + filepath );
+
+            if (filepath.indexOf("assets") >= 0) {
+                continue;
+            }
+            if (filepath.indexOf("README.md") >= 0) {
+                var htmlFolders = filepath.replace ("README.md", "");
+
+                CreateIndex (htmlFolders, filepath); 
+            } else if ( fs.lstatSync(filepath).isDirectory() ) {
+
+                batchMD2HTML ("Laboratoria", filepath + "/*.md");
+            }
+         }
+     });
+ 
+
+}
+processBook();
+
 stdin.addListener("data", function(d) {
     // note:  d is an object, and when converted to a string it will
     // end with a linefeed.  so we (rather crudely) account for that  
@@ -122,7 +263,7 @@ stdin.addListener("data", function(d) {
 
 
 app.get('/', function(req, res) {
-    var ret = codeToHtml(htmlString);
+    var ret = codeToHtml(markDownString);
     res.render('index', {
         title: 'Hello from render',
         list: ret
