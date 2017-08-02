@@ -21,8 +21,8 @@
     <div id="wrapper">
         <h2>Objetivos de Aprendizaje</h2>
 <ul>
-<li>Conocer la documentación MDN y la importancia del auto-aprendizaje</li>
-<li>Aprender a manipular <code>strings</code> y <code>numbers</code> en JavaScript</li>
+<li>Conocer la documentación MDN y la importancia del auto-aprendizaje.</li>
+<li>Aprender a manipular <code>strings</code> y <code>numbers</code> en JavaScript.</li>
 </ul>
 <hr />
 <h2>Aprendiendo sobre <code>string.length</code></h2>
@@ -30,19 +30,25 @@
 <p>Internet es un excelente recurso para aprender por tu cuenta. Es como una gran biblioteca de conocimiento siempre a tu disposición. Veamos un ejemplo:</p>
 <p>En JavaScript existe una forma fácil de obtener la longitud de un <code>string</code> que te devuelve la cantidad de caracteres que componen el <code>string</code>. Por ejemplo, la longitud de <em>‘hola’</em> es 4 (porque son 4 caracteres) y la de <em>“supercalifragilisticexpialidocious”</em> es 34 (porque son 34 caracteres).</p>
 <p>¿Cómo podemos aprender sobre esto? Empieza abriendo Google y realizando una búsqueda con algo como: <em>“obtener la longitud de un string en JavaScript”</em>. Esto nos dará varios resultados que nos pueden ayudar.</p>
-<p>Seguramente uno de los resultados es de <strong>La Red de Desarrolladores de Mozilla (MDN)</strong>. Ésta fuente es una de las fuentes más confiables para investigar sobre JavaScript. De hecho, el creador de JavaScript, <a href="https://en.wikipedia.org/wiki/Brendan_Eich">Brendan Eich</a>, es uno de los fundadores del Mozilla Foundation y el Mozilla Corporation. Como dice directamente la web de <a href="https://developer.mozilla.org/es/docs/MDN/About">MDN</a>:</p>
+<!-- links_blank
+Seguramente uno de los resultados es de **La Red de Desarrolladores de Mozilla (MDN)**. Ésta fuente es una de las fuentes más confiables para investigar sobre JavaScript. De hecho, el creador de JavaScript, [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich), es uno de los fundadores del Mozilla Foundation y el Mozilla Corporation. Como dice directamente la web de [MDN](https://developer.mozilla.org/es/docs/MDN/About):
+-->
+<p>Seguramente uno de los resultados es de <strong>La Red de Desarrolladores de Mozilla (MDN)</strong>. Ésta fuente es una de las fuentes más confiables para investigar sobre JavaScript. De hecho, el creador de JavaScript, <a href="https://en.wikipedia.org/wiki/Brendan_Eich" target="_blank">Brendan Eich</a>, es uno de los fundadores del Mozilla Foundation y el Mozilla Corporation. Como dice directamente la web de <a href="https://developer.mozilla.org/es/docs/MDN/About" target="_blank">MDN</a>:</p>
 <blockquote>
 <p>MDN es una plataforma de aprendizaje para las tecnologías Web y el software con el que funciona la Web, incluyendo:</p>
 </blockquote>
 <blockquote>
 <ol>
-<li>Estándares Web como CSS, HTML, y JavaScript</li>
-<li>Desarrollo de aplicaciones para Web Abierta</li>
-<li>Desarrollo de complementos para Firefox</li>
-<li>Desarrollo de Firefox OS</li>
+<li>Estándares Web como CSS, HTML, y JavaScript.</li>
+<li>Desarrollo de aplicaciones para Web Abierta.</li>
+<li>Desarrollo de complementos para Firefox.</li>
+<li>Desarrollo de Firefox OS.</li>
 </ol>
 </blockquote>
-<p>Lee con detenimiento la sección de <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/length">string.lenght</a> que te ofrece MDN. Quizás no entiendas absolutamente todo (especialmente todo lo referente a UTF-16), pero eso está bien. Debes poder manejar ese sentimiento y avanzar con un poco de incentidumbre. Revisa el ejemplo con calma; parece bastante claro cómo es el tema de obtener la longitud de un <code>string</code>:</p>
+<!-- links_blank
+Lee con detenimiento la sección de [string.lenght](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/length) que te ofrece MDN. Quizás no entiendas absolutamente todo (especialmente todo lo referente a UTF-16), pero eso está bien. Debes poder manejar ese sentimiento y avanzar con un poco de incentidumbre. Revisa el ejemplo con calma; parece bastante claro cómo es el tema de obtener la longitud de un `string`:
+-->
+<p>Lee con detenimiento la sección de <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/length" target="_blank">string.lenght</a>  que te ofrece MDN. Quizás no entiendas absolutamente todo (especialmente todo lo referente a UTF-16), pero eso está bien. Debes poder manejar ese sentimiento y avanzar con un poco de incentidumbre. Revisa el ejemplo con calma; parece bastante claro cómo es el tema de obtener la longitud de un string:</p>
 <pre class="hljs" class="language-js"><code>var x = &quot;Mozilla&quot;;
 var empty = &quot;&quot;;
 
@@ -52,6 +58,7 @@ console.log(&quot;Mozilla tiene &quot; + x.length + &quot; caracteres.&quot;);
 console.log(&quot;La cadena vacia tiene una longitud de &quot; + empty.length);
 /* &quot;La cadena vacia tiene una longitud de 0&quot; */
 </code></pre>
+<p>Nota: console.log() Es un comando que muestra un mensaje en la consola para facilitar la depuración del código Javascript. La ventaja de usarlo en comparación con, por ejemplo, la función alert(), es que console.log() no detiene la ejecución del código hasta que el usuario acepta el mensaje de alerta como sí sucede con alert().</p>
 <p>Después de leer la documentación debería quedar claro que para conocer la longitud de strings, lo que debemos es colocarle un <em>.length</em> al final, así:</p>
 <pre class="hljs" class="language-js"><code>var shortWord = 'hola'
 var longWord = &quot;supercalifragilisticexpialidocious&quot;
@@ -76,13 +83,22 @@ console.log('hola'.length);
 </code></pre>
 <h2>Practicando el auto-aprendizaje</h2>
 <p>Ahora que ha quedado demostrado el <em>“súper poder del auto-aprendizaje”</em>, lee en MDN otras cosas interesantes que podemos hacer con <code>strings</code> y <code>numbers</code>, como:</p>
+<!-- links_blank_old
+1. [Obtener un caracter específico de un string](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/charAt)
+2. [Obtener el índice de un caracter de un string](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/indexOf)
+3. [Convertir a mayúsculas un string](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/toUpperCase)
+4. [Convertir a minúsculas un string](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/toLowerCase)
+5. [Cortando un string](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/slice)
+6. [Convertir un string en un número](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt) **nota**: este artículo está en inglés. Intenta leerlo con ayuda del [traductor de Google](https://translate.google.com/)
+-->
 <ol>
-<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/charAt">Obtener un caracter específico de un string</a></li>
-<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/indexOf">Obtener el índice de un caracter de un string</a></li>
-<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/toUpperCase">Convertir a mayúsculas un string</a></li>
-<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/toLowerCase">Convertir a minúsculas un string</a></li>
-<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/slice">Cortando un string</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt">Convertir un string en un número</a> <strong>nota</strong>: este artículo está en inglés. Intenta leerlo con ayuda del <a href="https://translate.google.com/">traductor de Google</a></li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/charAt" target="_blank">Obtener un caracter específico de un string</a></li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/indexOf" target="_blank">Obtener el índice de un caracter de un string</a></li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/toUpperCase" target="_blank">Convertir a mayúsculas un string</a></li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/toLowerCase" target="_blank">Convertir a minúsculas un string</a></li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/slice" target="_blank">Cortando un string</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt" target="_blank">Convertir un string en un número</a><br />
+<strong>nota</strong>: este artículo está en inglés. Intenta leerlo con ayuda del <a href="https://translate.google.com/" target="_blank">traductor de Google</a></li>
 </ol>
 <p>Al final de estas lecturas, debes saber muy bien cómo funcionan:</p>
 <ul>
@@ -95,9 +111,14 @@ console.log('hola'.length);
 </ul>
 <h2>Otros recursos de auto-aprendizaje</h2>
 <p>Si aún tienes dudas de estos conceptos, podrías explorar otras formas de auto-aprendizaje:</p>
+<!-- links_blank
+1. Busca otros recursos en la web. Uno muy bueno es [stackoverflow](https://es.stackoverflow.com/) (aunque en español suele haber menos contenido de calidad, así que quizás tengas que apoyarte con el traductor de Google)
+2. Realiza una consulta en uno de los grupos de Facebook [(ver bienvenida)](https://github.com/Laboratoria/curricula-js/blob/intro-js/01-intro/01-introduction/00-welcome-and-orientation.md)
+3. Consulta con una amiga que sepa de programación :)
+-->
 <ol>
-<li>Busca otros recursos en la web. Uno muy bueno es <a href="https://es.stackoverflow.com/">stackoverflow</a> (aunque en español suele haber menos contenido de calidad, así que quizás tengas que apoyarte con el traductor de Google)</li>
-<li>Realiza una consulta en uno de los grupos de Facebook <a href="https://github.com/Laboratoria/curricula-js/blob/intro-js/01-intro/01-introduction/00-welcome-and-orientation.md">(ver bienvenida)</a></li>
+<li>Busca otros recursos en la web. Uno muy bueno es <a href="https://es.stackoverflow.com/" target="_blank">stackoverflow</a>. En español suele haber menos contenido de calidad, así que quizás tengas que apoyarte con el traductor de Google.</li>
+<li>Realiza una consulta en uno de los grupos de Facebook <a href="http://js-intro.laboratoria.la/">(ver bienvenida)</a></li>
 <li>Consulta con una amiga que sepa de programación :)</li>
 </ol>
 <p><strong>NOTA: Es importante NO avanzar si no has logrado comprender bien los conceptos anteriores. Lo que continúa de este curso se construye sobre estos conceptos, así que tómate el tiempo para aprender bien antes de avanzar.</strong></p>
