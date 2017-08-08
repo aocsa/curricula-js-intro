@@ -81,6 +81,27 @@ var A = 7
             is: "unit-03-matrix-3",
             ready: function () {
                 hljs.initHighlightingOnLoad();
+            },
+            _goToHome: function () {
+                // extract 'index' search param
+                var index;
+                var parts = location.search.substring(1).split('&');
+                for (var i = 0; i < parts.length; i++) {
+                var param = parts[i].split('=');
+                if (param[0] === 'index') {
+                    index = param[1];
+                    break;
+                }
+                }
+                // decode and extract index name from the search param
+                // default index is 'index'
+                index = index ? decodeURIComponent(index) : '';
+                index = index.replace(/[^a-z0-9\-]+/ig, '');
+                if (index === 'index') {
+                index = '';
+                }
+                // navigate away to the index page
+                window.location.href = 'curricula-js-intro/' + index;
             }
         });
     </script>

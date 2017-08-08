@@ -19,8 +19,7 @@
     </style>
         
     <div id="wrapper">
-        <h1>Desafíos</h1>
-<p>Ahora es el momento de probar algunos desafíos que te pondrán a prueba en lo que has aprendido sobre loops hasta ahora. Los retos se hacen más difíciles a medida que avanza - al tiempo que los ha completado, estará listo para comenzar con algunos algoritmos más complejos.</p>
+        <p>Ahora es el momento de probar algunos desafíos que te pondrán a prueba en lo que has aprendido sobre loops hasta ahora. Los retos se hacen más difíciles a medida que avanza - al tiempo que los ha completado, estará listo para comenzar con algunos algoritmos más complejos.</p>
 <p>## Cuenta de 0 a N</p>
 <p>Vamos a pasar en un valor, N. Usted debe escribir un programa donde los outputs  de todos los valores vayan de 0 a más incluyendo a N.</p>
 <pre class="hljs" class="language-js"><code>
@@ -72,6 +71,27 @@ var N = 19 // prompt(&quot;input: &quot;)
             is: "unit-03-challenges",
             ready: function () {
                 hljs.initHighlightingOnLoad();
+            },
+            _goToHome: function () {
+                // extract 'index' search param
+                var index;
+                var parts = location.search.substring(1).split('&');
+                for (var i = 0; i < parts.length; i++) {
+                var param = parts[i].split('=');
+                if (param[0] === 'index') {
+                    index = param[1];
+                    break;
+                }
+                }
+                // decode and extract index name from the search param
+                // default index is 'index'
+                index = index ? decodeURIComponent(index) : '';
+                index = index.replace(/[^a-z0-9\-]+/ig, '');
+                if (index === 'index') {
+                index = '';
+                }
+                // navigate away to the index page
+                window.location.href = 'curricula-js-intro/' + index;
             }
         });
     </script>

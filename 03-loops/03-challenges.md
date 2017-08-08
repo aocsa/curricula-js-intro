@@ -1,4 +1,3 @@
-
 # Desafíos
 
 Ahora es el momento de probar algunos desafíos que te pondrán a prueba en lo que has aprendido sobre loops hasta ahora. Los retos se hacen más difíciles a medida que avanza - al tiempo que los ha completado, estará listo para comenzar con algunos algoritmos más complejos.
