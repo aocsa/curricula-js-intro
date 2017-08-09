@@ -2,7 +2,7 @@
 <link rel="import" href="../style/shared-style.html">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
 
-<dom-module id="unit-02-description-overview">
+<dom-module id="unit-01-code-samples">
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <template strip-whitespace="">
     
@@ -19,78 +19,515 @@
     </style>
         
     <div id="wrapper">
-        <p>Antes de comenzar a usar bucles en código, eche un vistazo al gráfico de Flode a la izquierda.</p>
-<p>Es un bucle muy simple pero es un buen lugar para comenzar.</p>
-<p><img src="EB31491F9C954EB3816EC85488201B9F.png" alt="Screenshot 2017-07-13 20.35.12.png" /></p>
-<h2>El bucle while</h2>
-<p>El código que ves a la izquierda es el equivalente exacto del gráfico de Flode, pero escrito en JavaScript.</p>
-<p>Tener un empuje en la ejecución del código:</p>
-<pre class="hljs" class="language-js"><code>var counter = 0             // Esta es una variable 'counter'.
+        <ul>
+<li>Formato: <code>workshop</code></li>
+<li>Duración: <code>90min</code></li>
+</ul>
+<h2>Objetivos</h2>
+<ul>
+<li>Practicar codeando junto a tu equipo de profes, resolviendo problemas de estructuras condicionales, repetitivas y funciones</li>
+<li>Practicar, practicar y practicar</li>
+</ul>
+<h4>Dado 3 números(N1,N2,N3) calcular el Máximo y Mínimo Valor. Sin usar ciclos.</h4>
+<pre class="hljs" class="language-js"><code>// 	Entrada	 : N1 = 10, N2 = 30, N3 = 5 
+// 	Salida	 : Máximo = 30, Mínimo = 5 
 
-while (contador &lt;= 9) {     // Si la condición es verdadera, se vuelve hacia atrás
-  console.log (contador)
-  counter = counter + 1   // Aquí agregamos 1 al contador. Esto es conocido
-                            // como &quot;incrementar&quot; el contador.
+var n1 = 10;
+var n2 = 30;
+var n3 = 5;
+var maximo = 0;
+var minimo = 0;
+if(n1 &gt; n2)
+{
+    if(n1 &gt; n3)
+    {
+        maximo = n1;
+        if(n2 &gt; n3){
+            minimo = n3;
+        }
+        else{
+            minimo = n2;
+        }
+    }
+    else
+    {
+        maximo = n3;
+        minimo = n2;
+    }
+}
+else
+{
+    if(n2 &gt; n3)
+    {
+        maximo = n2;
+        if(num1 &gt; n3){
+            minimo = n3;
+        }
+        else{
+            minimo = n1;
+        }
+    }
+    else
+    {
+        maximo = n3;
+        minimo = n1;
+    }
+    
+}
+console.log(&quot;Máximo = &quot; + maximo + &quot;, Mínimo = &quot; + minimo);
+</code></pre>
+<h4>Elementos en posicion par e impar</h4>
+<pre class="hljs" class="language-js"><code>// Entrada: A = [15,  29, 78, 29, 40, 20, 18, 100, 78, 68] 
+// Salida: Elementos de posición par : 15 78 40 18 78 
+//         Elementos de posición impar : 29 29 20 100 68 
+
+var a = [15,  29, 78, 29, 40, 20, 18, 100, 78, 68];
+var pares;
+var impares;
+for(var i = 0; i &lt; arregloD.length; i++){
+    if(i % 2 == 0){
+      pares+=a[i];
+    }
+    else{
+      impares+=a[i];
+    }
+  }
+  console.log(&quot;Elementos de posición par: &quot; + arrPares) 
+  console.log(&quot;Elementos de posición Impar: &quot; + arrImpares);
+</code></pre>
+<h4>Invertir el order en un array</h4>
+<pre class="hljs" class="language-js"><code>// EJERCICIO 3
+//   Dado un arreglo A, cómo invertiría su orden?. 
+//   Entrada : A = [1 2 3 4 5 6 7 8 9 0] 
+//   Salida  : 0 9 8 7  6 5 4 3 2 1 
+
+
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+var arrInvertido=[];
+for( var i=arr.length-1;i&gt;=0;i--){
+  arrInvertido+=arr[i];
+}
+console.log(arrInvertido);
+</code></pre>
+<h4>Imprimir un Triangulo de Números (versión 1)</h4>
+<pre class="hljs" class="language-js"><code>// FIGURA 2
+// &quot;1   &quot;
+// &quot;121  &quot;
+// &quot;12321 &quot;
+// &quot;1234321&quot;
+function espacios(n) {
+  var s = &quot;&quot;;
+  for (var i = 0; i &lt; n; i++) 
+    s += &quot; &quot;;
+  return s;
+}
+function quiz2(n) {
+  for (var i = 0; i &lt; n; i++) {
+    var s = &quot;&quot;;
+    for (var j = 1; j &lt;= i + 1; j++) {
+      s += j;
+    }
+    var e = espacios (n - (i+1));
+    for (var j = i; j &gt;= 1; j--) {
+      s += j;
+    }
+    console.log(s+e);
+  }
+}
+quiz2(4);
+</code></pre>
+<h4>Imprimir un Triangulo de Números (versión 2)</h4>
+<pre class="hljs" class="language-js"><code>// si n = 4, entonces
+// FIGURA 1
+// &quot;   1&quot;
+// &quot;  121&quot;
+// &quot; 12321&quot;
+// &quot;1234321&quot;
+
+//Esta función me permite pintar espacios
+function espacios(n) {
+  var s = &quot;&quot;;
+  for (var i = 0; i &lt; n; i++) s += &quot; &quot;;
+  return s;
+}
+function quiz1(n) {
+  for (var i = 0; i &lt; n; i++) {
+    var s = &quot;&quot;;
+    for (var j = 1; j &lt;= i + 1; j++) {
+      s += j;
+    }
+    var e = espacios (n - (i+1));
+    for (var j = i; j &gt;= 1; j--) {
+      s += j;
+    }
+    console.log(e + s);
+  }
+}
+quiz1(4) 
+</code></pre>
+<h4>Dibujar dos Semitriangulos</h4>
+<pre class="hljs" class="language-js"><code>// FIGURA 3
+// &quot;1&quot;
+// &quot;12&quot;
+// &quot;123&quot;
+// &quot;1234&quot;
+// &quot;12345&quot;
+// &quot;     54321&quot;
+// &quot;     4321&quot;
+// &quot;     321&quot;
+// &quot;     21&quot;
+// &quot;     1&quot;
+function quiz3(n) {
+  for (var i = 0; i &lt; n; i++) {
+    var s = &quot;&quot;;
+    for (var j = 1; j &lt;= i + 1; j++) {
+      s += j;
+    }
+    console.log(s);
+  }
+  var e = espacios(n);
+  for (var i = 0; i &lt; n; i++) {
+      var s = &quot;&quot;;
+      for (var j = n - i; j &gt;= 1; j--) {
+        s += j;
+      }
+      console.log(e + s);
+  }  
+}
+quiz3(4);
+</code></pre>
+<h4>Dibujar un Rombo</h4>
+<p>Una  función  Dibuja,  que  teniendo  como  parámetro  un  entero  positivo  (N)  nos imprima en la consola un rombo, tal como se aprecia en el ejemplo adjunto.</p>
+<pre class="hljs" class="language-js"><code>// Ejemplo:
+// Si el número fuese 5 se imprime:
+      //     1
+      //    123
+      //   12345
+      //  1234567
+      // 123456789
+      //  1234567
+      //   12345
+      //    123
+      //     1
+function espacios (n)
+{
+  var s = &quot;&quot;;
+  for (var i = 0; i &lt; n; i++)
+   s += &quot; &quot;;
+  return s;
+}
+function Dibujar(n) {
+
+    for (var k = 0; k &lt; 2 * n - 1; k++) {
+      var i = k &lt; n ? k :  2*n - 2 - k;
+      var content = &quot;&quot;;
+      for (j = 1; j &lt;= 2*i+1; j++){
+        content +=  j;
+      var sp = espacios (n - (i+1));
+      }
+      console.log(sp + content);
+    }
 }
 
+Dibujar(5);
 </code></pre>
-<p><a href="">Ejecutar código</a></p>
-<h2>While explicado</h2>
-<p>Echa un vistazo al código con más detalle. Debe ser bastante fácil de entender, ya que es muy similar al gráfico de Flode.</p>
-<h2>El bloque de código while</h2>
-<p>Eche un vistazo a la sentencia <code>while</code> y su bloque de código.</p>
-<p>Cada sentencia while se ve así:</p>
-<pre class="hljs" class="language-js"><code>while ( alguna_condicion) { 
-    algun_código 
-    algun_codigo_más 
-    incluso_algun_codigo_más
-}  
-el código continúa ejecutándose aquí 
-una vez que 'alguna_condicion' ya no es true
+<h4>Dibujar un circulo</h4>
+<pre class="hljs" class="language-js"><code>//              ****
+//        ****************
+//      ********************
+//    ************************
+//  ****************************
+//  ****************************
+//  ****************************
+//********************************
+//********************************
+//  ****************************
+//  ****************************
+//  ****************************
+//    ************************
+//      ********************
+//        ****************
+//              ****
+function quiz4 (r) {
+    var x = 0;
+    var circulo = [];
+    var espacios = [];
+    while (x &lt;= r) {
+        var y = Math.sqrt ( r * r - x*x);
+        x++;
+        var j = 0;
+        var str = &quot;&quot;;
+        while ( j &lt;= y) {
+            str += &quot;**&quot;;
+            j++;
+        }
+        var e = &quot;&quot;;
+        for (var i = 0; i &lt; r - y; i++) {
+            e += &quot;  &quot;;
+        }
+        circulo.push(str);
+        espacios.push (e);
+    }
+    for (var i = espacios.length -1; i &gt;=0 ; i--) {
+        console.log (espacios[i] + circulo[i] + circulo[i] );
+    }
+    for (var i = 0; i &lt; circulo.length; i++) {
+        console.log (espacios[i] + circulo[i] + circulo[i] );
+    }
+}
+quiz4(7);
 </code></pre>
-<p>Lo que esto dice es lo siguiente: <em>“Mientras la condición es verdadera, ejecuta todas las sentencias de código que ocurren *</em> dentro ** de éste bloque de código.”*</p>
-<p>Por lo tanto, el bucle va y viene hasta que la condición es falsa. Exactamente igual que con el gráfico de Flode.</p>
-<p>En el ejemplo de código, cada vez que se ejecutan las sentencias en el bloque de código, la variable <code>counter</code> se incrementa en uno. Eventualmente, alcanza el valor <code>10</code>, momento en el cual la condición se vuelve falsa y cualquier declaración después de ejecutar el bloque de código.</p>
-<p><strong>Experimenta</strong></p>
-<p>Siéntase libre de cambiar algunos de los valores en el código y ejecutarlo de nuevo utilizando el botón de abajo. También puedes añadir más de uno a <code>counter</code> en cada bucle * iteracion * y ver qué pasa.</p>
+<h4>Capicua. Crear una función que me diga si un número es capicúa o no.</h4>
+<p>Nota:un número capicúa es aquel que se lee igual de izquierda a derecha, como de derecha a izquierda</p>
+<pre class="hljs" class="language-js"><code>//Ejemplos:  112211, 565, 1234554321
+//La entrada es tipo numérico.
+
+function capicua(num)
+{
+    num = num.toString();
+    var numTexto = num;
+    num = num.split(&quot;&quot;).reverse().join(&quot;&quot;);
+    if(numTexto == num)
+    {
+        return numTexto + &quot; es capicua&quot;;
+    }
+    else
+    {
+        return numTexto + &quot; no es capicua&quot;;    
+    }
+}
+</code></pre>
+<p>#### Crear una función que me permita calcular la potencia de un número N elevado a la M (ejemplo NM). Nota No usar funciones de Math.</p>
+<pre class="hljs" class="language-js"><code>// 
+// Entrada N=2; M=3;
+// Salida 8
+
+function potencia(a, n)
+{
+    var p = 1;
+    for (var i = 0; i &lt; n; i++)
+        p *= a;
+    return p;
+}
+console.log(potencia(2, 3));
+</code></pre>
+<p>#### Crear una función que dado un arreglo de String A me permita contar cuantas veces se repite un caracter C en dicho arreglo.</p>
 <pre class="hljs" class="language-js"><code>
-var counter = 0             // Esta es una variable 'counter'.
+// Entrada: A=[“murcielago”, “pato”,”caballo”, “zebra”]; C=”a”;
+//Salida: 5;
 
-while (counter &lt;= 9) {      // Si la condición es verdadera, se vuelve hacia atrás
-  console.log (counter)
-  counter = counter + 1   // Aquí agregamos 1 al contador. Esto es conocido
-                              // como 'incrementando' el contador.
+function cantidadCaracter(arreglo, caracter)
+{
+    var cont = 0;
+    for(var i in arreglo)
+    {
+        for(var j in arreglo[i])
+        {
+            if(arreglo[i][j] == caracter)
+            {
+                cont++;
+            }             
+        }
+    }   
+    return cont;
 }
 </code></pre>
-<p><a href="">Ejecutar código</a></p>
-<p>Recuerde, si lo desea, puede restablecer el código del menú ‘Configuración’ en la parte superior. Para ello, seleccione la opción “Restablecer capítulo”.</p>
-<h2>Tenga cuidado con los bucles infinitos</h2>
-<p>Un error común que la gente a veces hace con los bucles <code>while</code>  es olvidar incrementar el contador.</p>
-<p>Si, al completar los desafíos de esta sección, ve que no ocurre nada, es probable que haya creado un bucle infinito (se ha olvidado de incrementar su contador).</p>
-<p>Eche un vistazo al código de la izquierda. ¿Puedes ver lo que está mal con él?</p>
-<p>Si ejecuta el código, se ejecutará para siempre y el programa se bloqueará.</p>
-<p>La razón de esto es que usted nunca está incrementando la variable <code>counter</code>, la condición siempre es verdadera (menos de 10), por lo que va y viene alrededor del bucle para siempre.</p>
-<p><strong>Ejecutar y luego arreglar</strong></p>
-<p>Pulse el botón ‘Ejecute el codigo’ a continuación y verá que nunca obtiene nada.</p>
-<p>Su reto es fijar el código incrementando el contador correctamente dentro del bucle. A continuación, debe ver el output correcto.</p>
-<pre class="hljs" class="language-js"><code>
-// Obtener entrada desde la línea de comandos
-var loops = 10 // prompt(&quot;input: &quot;)
-
-var ctr = 0
-while (ctr &lt; loops) {
-  console.log (ctr)
+<p>#### Escriba una función que cuente cuántas palabras hay una cadena de texto</p>
+<pre class="hljs" class="language-js"><code>/*
+Entrada : A=”El mundo es tan cruel”;
+Salida : 5
+*/
+function cantidadPalabras(cadena)
+{
+    cadena = cadena.split(&quot; &quot;);
+    return cadena.length;
 }
 </code></pre>
-<p><a href="">Ejecutar código</a></p>
-<p><strong>Importante:</strong> Si no ocurre nada al pulsar el botón de ejecución una vez que haya arreglado el código, es posible que deba volver una página y luego reenviarlo para actualizarlo.</p>
+<h4>Escriba una función que dado un arreglo A de string me dé como resultado el tamaño más largo de todas las palabras.</h4>
+<pre class="hljs" class="language-js"><code>/*
+Entrada : A=[“gato”,”Perro”,”Cocodrilo”,”leon”];
+Resultado: 9
+*/
+
+function largo(arreglo)
+{
+    var mayor = 0;
+    for(var i in arreglo)
+    {
+        if(arreglo[i].length &gt; mayor)
+            mayor = arreglo[i].length;
+    }
+    return mayor;
+}
+</code></pre>
+<h4>Escriba una función que dado un arreglo A de string me calcule cuántas vocales hay en todo el arreglo.</h4>
+<pre class="hljs" class="language-js"><code>/*
+Entrada : A=[“ojo”,”mouse”,”lapiz”];
+Salida: 7
+*/
+
+function cantVocales(arreglo)
+{
+    var vocales = [&quot;a&quot;, &quot;e&quot;, &quot;i&quot;, &quot;o&quot;, &quot;u&quot;, &quot;á&quot;, &quot;é&quot;, &quot;í&quot;, &quot;ó&quot;, &quot;ú&quot;]
+    var cont = 0;
+    for(var i in arreglo)
+    {
+        for(var j in arreglo[i])
+        {
+            for(var k in vocales)
+            {
+                if(arreglo[i][j].toLowerCase() == vocales[k])
+                {
+                    cont++;
+                }
+            }
+        }
+    }
+    return cont;
+}
+</code></pre>
+<h4>Escriba una función que calcule la sumatoria de todos los números impares comprendidos entre los números N y M</h4>
+<pre class="hljs" class="language-js"><code>/*
+Entrada: N=1; M=7
+Salida: 16
+*/
+function sumaImpares(num1, num2)
+{
+    var suma = 0;
+    for(var i = num1; i &lt;= num2; i++)
+    {
+        if(i % 2 == 1)
+        {
+            suma += i;
+        }
+    }
+    return suma;
+}
+</code></pre>
+<h4>Escriba una función que dado un arreglo de string devuelva la palabra mas larga Entrada</h4>
+<pre class="hljs" class="language-js"><code>/*
+A=[“jirafa”,”leon”,”gato”,”murcielago”,”rata”]
+Salida “murcielago”
+*/
+function palabraLarga(arreglo)
+{
+    var mayor = 0;
+    var palabra = &quot;&quot;;
+    for(var i in arreglo)
+    {
+        if(arreglo[i].length &gt; mayor)
+        {
+            mayor = arreglo[i].length;
+            palabra = arreglo[i];
+        }
+    }
+    return palabra;
+}
+</code></pre>
+<h4>Escriba una función que dado un numero N. Generar la siguiente figura:</h4>
+<pre class="hljs" class="language-js"><code>/*
+Entrada: N = 4
+Salida: ____/''''\___/'''\__/'''\_/'\
+*/
+
+function figura(num)
+{
+    var figura = &quot;&quot;;
+    for(var i = 0; i &lt; num; i++)
+    {
+        for(var j = 0; j &lt; num - i; j++)
+        {
+            figura += &quot;_&quot;
+        }
+        figura += &quot;/&quot;
+        for(var j = 0; j &lt; num - i; j++)
+        {
+            figura += &quot;'&quot;
+        }
+        figura += &quot;\\&quot;;
+    }
+    return figura;
+}
+</code></pre>
+<h4>Fractales. Triangulo de serpinski</h4>
+<p>js<img src="media/15022941074468.png" alt="" /></p>
+<pre class="hljs"><code>function espacios(n) {
+  var s = &quot;&quot;;
+  for (var i = 0; i &lt; n; i++) s += &quot; &quot;;
+  return s;
+}
+
+function parte1(n) {
+  for (var i = 0; i &lt; n; i++) {
+    var s = &quot;&quot;;
+    for (var j = 1; j &lt;= i + 1; j++) {
+       s += '*';
+    }
+    var e = espacios (n+(n - (i+1)));
+    var e1= espacios (n);
+    for (var j = i; j &gt;= 1; j--) {
+       s += '*';
+    }
+    console.log(e + e1 + e1 + s);
+  }
+}
+function parte2(n) {
+  for (var i = 0; i &lt; n; i++) {
+    var s = &quot;&quot;;
+    for (var j = 1; j &lt;= i + 1; j++) {
+       s += '*';
+    }
+    var e = espacios ((n - (i+1)));
+    var e1= espacios(n);
+    for (var j = i; j &gt;= 1; j--) {
+       s += '*';
+    }
+    console.log(e1+ e1 +e + s + e + e +s);
+  }
+}
+function parte3(n) {
+  for (var i = 0; i &lt; n; i++) {
+    var s = &quot;&quot;;
+    for (var j = 1; j &lt;= i + 1; j++) {
+       s += '*';
+    }
+    var e = espacios (n+(n - (i+1)));
+    var e1= espacios (n);
+    for (var j = i; j &gt;= 1; j--) {
+       s += '*';
+    }
+    console.log(e + s + e + e + s);
+  }
+}
+function parte4(n) {
+  for (var i = 0; i &lt; n; i++) {
+    var s = &quot;&quot;;
+    for (var j = 1; j &lt;= i + 1; j++) {
+       s += '*';
+    }
+    var e = espacios ((n - (i+1)));
+    var e1= espacios(n);
+    for (var j = i; j &gt;= 1; j--) {
+       s += '*';
+    }
+    console.log(e + s + e + e + s + e + e + s + e + e + s);
+  }
+}
+
+parte1(5)
+parte2(5)
+parte3(5)
+parte4(5)
+</code></pre>
+<h4>Fractales. Conjunto de Cantor</h4>
+<p><img src="media/15022941752977.jpg" alt="" /></p>
 
     </div>
 
   </template>
     <script>
         Polymer({
-            is: "unit-02-description-overview",
+            is: "unit-01-code-samples",
             ready: function () {
                 hljs.initHighlightingOnLoad();
             }

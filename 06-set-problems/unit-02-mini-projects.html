@@ -2,7 +2,7 @@
 <link rel="import" href="../style/shared-style.html">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
 
-<dom-module id="unit-02-description-overview">
+<dom-module id="unit-02-mini-projects">
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <template strip-whitespace="">
     
@@ -19,78 +19,21 @@
     </style>
         
     <div id="wrapper">
-        <p>Antes de comenzar a usar bucles en código, eche un vistazo al gráfico de Flode a la izquierda.</p>
-<p>Es un bucle muy simple pero es un buen lugar para comenzar.</p>
-<p><img src="EB31491F9C954EB3816EC85488201B9F.png" alt="Screenshot 2017-07-13 20.35.12.png" /></p>
-<h2>El bucle while</h2>
-<p>El código que ves a la izquierda es el equivalente exacto del gráfico de Flode, pero escrito en JavaScript.</p>
-<p>Tener un empuje en la ejecución del código:</p>
-<pre class="hljs" class="language-js"><code>var counter = 0             // Esta es una variable 'counter'.
-
-while (contador &lt;= 9) {     // Si la condición es verdadera, se vuelve hacia atrás
-  console.log (contador)
-  counter = counter + 1   // Aquí agregamos 1 al contador. Esto es conocido
-                            // como &quot;incrementar&quot; el contador.
-}
-
-</code></pre>
-<p><a href="">Ejecutar código</a></p>
-<h2>While explicado</h2>
-<p>Echa un vistazo al código con más detalle. Debe ser bastante fácil de entender, ya que es muy similar al gráfico de Flode.</p>
-<h2>El bloque de código while</h2>
-<p>Eche un vistazo a la sentencia <code>while</code> y su bloque de código.</p>
-<p>Cada sentencia while se ve así:</p>
-<pre class="hljs" class="language-js"><code>while ( alguna_condicion) { 
-    algun_código 
-    algun_codigo_más 
-    incluso_algun_codigo_más
-}  
-el código continúa ejecutándose aquí 
-una vez que 'alguna_condicion' ya no es true
-</code></pre>
-<p>Lo que esto dice es lo siguiente: <em>“Mientras la condición es verdadera, ejecuta todas las sentencias de código que ocurren *</em> dentro ** de éste bloque de código.”*</p>
-<p>Por lo tanto, el bucle va y viene hasta que la condición es falsa. Exactamente igual que con el gráfico de Flode.</p>
-<p>En el ejemplo de código, cada vez que se ejecutan las sentencias en el bloque de código, la variable <code>counter</code> se incrementa en uno. Eventualmente, alcanza el valor <code>10</code>, momento en el cual la condición se vuelve falsa y cualquier declaración después de ejecutar el bloque de código.</p>
-<p><strong>Experimenta</strong></p>
-<p>Siéntase libre de cambiar algunos de los valores en el código y ejecutarlo de nuevo utilizando el botón de abajo. También puedes añadir más de uno a <code>counter</code> en cada bucle * iteracion * y ver qué pasa.</p>
-<pre class="hljs" class="language-js"><code>
-var counter = 0             // Esta es una variable 'counter'.
-
-while (counter &lt;= 9) {      // Si la condición es verdadera, se vuelve hacia atrás
-  console.log (counter)
-  counter = counter + 1   // Aquí agregamos 1 al contador. Esto es conocido
-                              // como 'incrementando' el contador.
-}
-</code></pre>
-<p><a href="">Ejecutar código</a></p>
-<p>Recuerde, si lo desea, puede restablecer el código del menú ‘Configuración’ en la parte superior. Para ello, seleccione la opción “Restablecer capítulo”.</p>
-<h2>Tenga cuidado con los bucles infinitos</h2>
-<p>Un error común que la gente a veces hace con los bucles <code>while</code>  es olvidar incrementar el contador.</p>
-<p>Si, al completar los desafíos de esta sección, ve que no ocurre nada, es probable que haya creado un bucle infinito (se ha olvidado de incrementar su contador).</p>
-<p>Eche un vistazo al código de la izquierda. ¿Puedes ver lo que está mal con él?</p>
-<p>Si ejecuta el código, se ejecutará para siempre y el programa se bloqueará.</p>
-<p>La razón de esto es que usted nunca está incrementando la variable <code>counter</code>, la condición siempre es verdadera (menos de 10), por lo que va y viene alrededor del bucle para siempre.</p>
-<p><strong>Ejecutar y luego arreglar</strong></p>
-<p>Pulse el botón ‘Ejecute el codigo’ a continuación y verá que nunca obtiene nada.</p>
-<p>Su reto es fijar el código incrementando el contador correctamente dentro del bucle. A continuación, debe ver el output correcto.</p>
-<pre class="hljs" class="language-js"><code>
-// Obtener entrada desde la línea de comandos
-var loops = 10 // prompt(&quot;input: &quot;)
-
-var ctr = 0
-while (ctr &lt; loops) {
-  console.log (ctr)
-}
-</code></pre>
-<p><a href="">Ejecutar código</a></p>
-<p><strong>Importante:</strong> Si no ocurre nada al pulsar el botón de ejecución una vez que haya arreglado el código, es posible que deba volver una página y luego reenviarlo para actualizarlo.</p>
+        <p>El ahorcado (también llamado colgado) es un juego de adivinanzas de lápiz y papel para dos o más jugadores. Un jugador piensa en una palabra, frase u oración y el otro trata de adivinarla según lo que sugiere por letras o números.</p>
+<h3>Proyecto: Reserva de pasajes en un bus</h3>
+<h3>Proyecto:  Problema del caballo</h3>
+<p><img src="media/15022938871944.jpg" alt="" /></p>
+<h3>Proyecto:  Problema N Reinas</h3>
+<p><img src="media/15022939714248.jpg" alt="" /></p>
+<p>#### Problema del Laberinto</p>
+<p><img src="media/Screen%20Shot%202017-08-09%20at%2010.53.47%20AM.png" alt="Screen Shot 2017-08-09 at 10.53.47 A" /></p>
 
     </div>
 
   </template>
     <script>
         Polymer({
-            is: "unit-02-description-overview",
+            is: "unit-02-mini-projects",
             ready: function () {
                 hljs.initHighlightingOnLoad();
             }
