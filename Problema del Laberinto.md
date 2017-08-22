@@ -18,7 +18,7 @@ Finalmente, podrás obtener un bonus si consigues crear un procedimiento  de bú
 
 **TIP 2:** Cuando Teseo tiene una pared a la izquierda, hay tres situaciones a considerar, dependiendo de las paredes circundantes. La siguiente tabla muestra cada situación inicial, y donde debes dejar que tu jugador finalice después de un paso.
   
-  ![Screen Shot 2017-08-22 at 12.16.34 P](media/15034081309333/Screen%20Shot%202017-08-22%20at%2012.16.34%20PM.png) 
+![GitHub set up-w140](media/15034081309333/Screen%20Shot%202017-08-22%20at%2012.16.34%20PM.png) 
 
 ### Tips para la solución
 A continuación, encontrarás tips que podrían ayudararte con la solución, mucha suerte!
