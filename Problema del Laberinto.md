@@ -2,6 +2,10 @@
 
 ## Enunciado
 
+Al igual que hemos hecho antes, es hora de aplicar los conceptos aprendidos para resolver problemas.
+
+A continuación tendrás varios problemas que debemos resolver. Intenta resolverlos primero por tu cuenta. Más abajo encontrarás las soluciones de Michelle. Después de haberlo intentado, compara tus soluciones con las de Sheyla.
+
 Crear una web que implemente el juego del laberinto utilizando DOM y eventos. El juego del laberinto es un puzzle donde   un jugador interactua con un mapa del cual tiene que salir. 
 
 > El problema del laberinto tiene raíces tan profundas como el mito griego sobre Teseo que fue enviado a un laberinto para matar al minotauro. Teseo usó una bola de hilo para ayudarle a encontrar su camino de regreso una vez que había terminado de la bestia.
