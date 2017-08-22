@@ -10,24 +10,20 @@ Crea una página web que implemente el juego del Laberinto utilizando DOM y even
 
 EL jugador para interactuar con Teseo tendrá que hacer uso de eventos del teclado (teclear) y botones (clikcs) para poder moverlo y ayudarlo en su búsqueda de la salida. Este divertido laberinto también implica que implementes el algoritmo general para la búsqueda automática de un camino de salida para cualquier tipo de laberinto, además de toda la creatividad que puedas.
 
-Ver el video a continuación para ver más detalles.
 
-[Video del Problema del Laberinto](media/15034081309333/run%20maze.mov)
+## Tips para la solución
+A continuación, encontrarás tips que podrían ayudararte con la solución, mucha suerte!
 
-## Solución del Laberinto
-A continuación, se  explicará paso a paso cómo resolver el problema.
-
-### [Paso 1. | El Problema]
+### [Tip 1. | El Problema]
 
 Escribe un programa que represente un jugador en un laberinto y que  implemente el algoritmo de búsqueda de un camino de salida.
 
 ![](media/15034081309333/15034128157197.png)
 
-
 Para que sea más fácil para nosotros, asumiremos que nuestro laberinto está dividido en "cuadrados". Cada cuadrado del laberinto está abierto o ocupado por una sección de pared. El jugador sólo puede pasar a través de los cuadrados abiertos del laberinto. Si el jugador se topa con una pared debe intentar una dirección diferente. 
 
 
-### [Paso 2. | Identificando Objetos]
+### [Tip 2. | Identificando Objetos]
 
 Es importante identificar los objetos presentes en el problema. Estos objetos están definidos por clases. Las clases presentes en la son los siguiente:
 1. Maze: Clase que representa el Laberinto.
@@ -41,8 +37,7 @@ A continuación presentamos un diagrama que representa las clases así como las 
  ![Screen Shot 2017-08-22 at 9.05.56 A](media/15034081309333/Screen%20Shot%202017-08-22%20at%209.05.56%20AM.png)
 
 
-
-### [Step 3. | Creando el Laberinto]
+### [Tip 3. | Creando el Laberinto]
 
 Para crear el Laberinto se puede usar un array de cadenas para poder representarlo. La notación que vamos usar para cada elemento dentro del mapa será la siguiente:
 `*` Una pared
@@ -71,7 +66,7 @@ Ese mapa se puede traducir en lo siguiente con la función de renderización  o 
 ![Screen Shot 2017-08-22 at 10.17.30 A](media/15034081309333/Screen%20Shot%202017-08-22%20at%2010.17.30%20AM.png)
 
 
-### [Step 4. | Añadiendo  Métodos]
+### [Tip 4. | Añadiendo  Métodos]
 
 Existen 5 métodos importantes  asociados al objeto `MazeInterface`:
 1. `renderMaze()` : Renderizar o dibujar el mapa 
@@ -95,7 +90,7 @@ Existen 3 métodos importantes  asociados al objeto `Maze`:
 2. `isValidDirection()` : verificar si la dirección actual del jugador es válido.
 3. `canMove()` : verificar si el jugador se puede mover  una posición hacia adelante 
 
-### [Step 5. | Que comience el juego...]
+### [Tip 5. | Que comience el juego...]
 
 ![](media/15034081309333/15034153834695.jpg)
 
@@ -108,9 +103,14 @@ Escriba un método keepHandOnSideWall () que permite que el jugador se mueva un 
 Ahora si puede escribir   el algoritmo para recorrer el laberinto paso a paso (usando keepHandOnSideWall ()) hasta encontrar  la salida. 
 
 **Más información**
-> Cuando el  jugadortiene una pared a la izquierda, hay tres situaciones a considerar, dependiendo de las paredes circundantes. La siguiente tabla muestra cada situación inicial, y donde debes dejar que tu jugador finalice después de un paso.
+> Cuando Teseo tiene una pared a la izquierda, hay tres situaciones a considerar, dependiendo de las paredes circundantes. La siguiente tabla muestra cada situación inicial, y donde debes dejar que tu jugador finalice después de un paso.
 >  
   ![Screen Shot 2017-08-22 at 12.16.34 P](media/15034081309333/Screen%20Shot%202017-08-22%20at%2012.16.34%20PM.png) 
 
 
+## Solución del Laberinto
+
+Ver el video a continuación para ver más detalles.
+
+[Video del Problema del Laberinto](media/15034081309333/run%20maze.mov)
 
