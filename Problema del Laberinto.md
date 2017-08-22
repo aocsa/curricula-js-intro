@@ -12,15 +12,12 @@ EL jugador para interactuar con Teseo tendrá que hacer uso de eventos del tecla
 
 #### [Bonus. | Algoritmos de búsqueda]
 
-Finalmente, existe un método importante asociado al objeto `Player`, `exitMaze()` que debe implementar un procedimiento  de búsqueda automática para encontrar un camino de salida para un laberinto cualquiera.   
+Finalmente, podrás obtener un bonus si consigues crear un procedimiento  de búsqueda automática para encontrar un camino de salida para un laberinto cualquiera. 
 
-Escriba un método keepHandOnSideWall () que permite que el jugador se mueva un paso adelante manteniendo la mano en la pared del lado izquierdo. Usted debe asegurarse de que eljugador siempre mantenga la mano en la pared.  
+**TIP 1:** Escribe un método keepHandOnSideWall () que permite que Teseo se mueva un paso adelante manteniendo la mano en la pared del lado izquierdo. Debes asegurarte que Teseo siempre mantenga la mano en la pared.  Ahora si puede escribir el algoritmo para recorrer el Laberinto paso a paso (usando keepHandOnSideWall ()) hasta encontrar  la salida. 
 
-Ahora si puede escribir   el algoritmo para recorrer el laberinto paso a paso (usando keepHandOnSideWall ()) hasta encontrar  la salida. 
-
-**Más información**
-> Cuando Teseo tiene una pared a la izquierda, hay tres situaciones a considerar, dependiendo de las paredes circundantes. La siguiente tabla muestra cada situación inicial, y donde debes dejar que tu jugador finalice después de un paso.
->  
+**TIP 2:** Cuando Teseo tiene una pared a la izquierda, hay tres situaciones a considerar, dependiendo de las paredes circundantes. La siguiente tabla muestra cada situación inicial, y donde debes dejar que tu jugador finalice después de un paso.
+  
   ![Screen Shot 2017-08-22 at 12.16.34 P](media/15034081309333/Screen%20Shot%202017-08-22%20at%2012.16.34%20PM.png) 
 
 ### Tips para la solución
@@ -46,7 +43,7 @@ Además es importante identificar Propiedades (datos) y Métodos (comportamiento
  ![Screen Shot 2017-08-22 at 9.05.56 A](media/15034081309333/Screen%20Shot%202017-08-22%20at%209.05.56%20AM.png)
 
 
-##### [Tip 3. | Creando el Laberinto]
+#### [Tip 3. | Creando el Laberinto]
 
 Para crear el Laberinto se puede usar un array de cadenas para poder representarlo. La notación que puedes usar para cada elemento dentro del mapa son las siguientes:
 `*` Una pared
