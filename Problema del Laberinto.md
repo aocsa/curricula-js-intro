@@ -27,7 +27,7 @@ A continuación, encontrarás tips que podrían ayudararte con la solución, muc
 
 Crea un programa que represente un Teseo en un Laberinto y que implemente el algoritmo de búsqueda de un camino de salida.
 
-![](media/15034081309333/15034128157197.png)
+![set up-w140](media/15034081309333/15034128157197.png)
 
 Para que sea más fácil para nosotros, asumiremos que nuestro laberinto está dividido en "cuadrados". Cada cuadrado del laberinto está abierto u ocupado por una sección de pared. Teseo sólo puede pasar a través de los cuadrados abiertos del laberinto. Si Teseo se topa con una pared debe intentar una dirección diferente. 
 
