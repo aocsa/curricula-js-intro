@@ -1,12 +1,8 @@
-# Problema del Laberinto
-
-## Enunciado
-
 Al igual que hemos hecho antes, es hora de aplicar los conceptos aprendidos para resolver problemas.
 
 A continuación tendrás varios problemas que debemos resolver. Intenta resolverlos primero por tu cuenta. Más abajo encontrarás las soluciones de ##. Después de haberlo intentado, compara tus soluciones con las de ##.
 
-##3. El Laberinto
+# 3. El Laberinto
 
 Crear una web que implemente el juego del laberinto utilizando DOM y eventos. El juego del laberinto es un puzzle donde   un jugador interactua con un mapa del cual tiene que salir. 
 
