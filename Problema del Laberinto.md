@@ -20,7 +20,7 @@ Finalmente, podrás obtener un bonus si consigues crear un procedimiento  de bú
 
 **TIP 2:** Cuando Teseo tiene una pared a la izquierda, hay tres situaciones a considerar, dependiendo de las paredes circundantes. La siguiente tabla muestra cada situación inicial, y donde debes dejar que tu jugador finalice después de un paso.
   
-![GitHub set up-w140](media/15034081309333/Screen%20Shot%202017-08-22%20at%2012.16.34%20PM.png) 
+![GitHub set up-w70](media/15034081309333/Screen%20Shot%202017-08-22%20at%2012.16.34%20PM.png) 
 
 ### Tips para la solución
 A continuación, encontrarás tips que podrían ayudararte con la solución, mucha suerte!
@@ -29,7 +29,7 @@ A continuación, encontrarás tips que podrían ayudararte con la solución, muc
 
 Crea un programa que represente un Teseo en un Laberinto y que implemente el algoritmo de búsqueda de un camino de salida.
 
-![GitHub set up-w140](media/15034081309333/15034128157197.png)
+![GitHub set up-w70](media/15034081309333/15034128157197.png)
 
 Para que sea más fácil para nosotros, asumiremos que nuestro laberinto está dividido en "cuadrados". Cada cuadrado del laberinto está abierto u ocupado por una sección de pared. Teseo sólo puede pasar a través de los cuadrados abiertos del laberinto. Si Teseo se topa con una pared debe intentar una dirección diferente. 
 
