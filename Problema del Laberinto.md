@@ -2,21 +2,19 @@ Al igual que hemos hecho antes, es hora de aplicar los conceptos aprendidos para
 
 A continuación tendrás varios problemas que debemos resolver. Intenta resolverlos primero por tu cuenta. Más abajo encontrarás las soluciones de ##. Después de haberlo intentado, compara tus soluciones con las de ##.
 
-## 3. El Laberinto
+### 3. El Laberinto
 
-Crear una web que implemente el juego del laberinto utilizando DOM y eventos. El juego del laberinto es un puzzle donde   un jugador interactua con un mapa del cual tiene que salir. 
+Crea una página web que implemente el juego del Laberinto utilizando DOM y eventos. El juego del laberinto es un divertido Puzzle donde podrás darle a cualquier jugador la capacidad de interactuar con el mapa hasta encontrar la salida. 
 
-> El problema del laberinto tiene raíces tan profundas como el mito griego sobre Teseo que fue enviado a un laberinto para matar al minotauro. Teseo usó una bola de hilo para ayudarle a encontrar su camino de regreso una vez que había terminado de la bestia.
+> El laberinto tiene raíces tan profundas como el mito griego sobre Teseo, que fue enviado a un laberinto para matar al minotauro. Teseo usó una bola de hilo para ayudarse a encontrar su camino de regreso, una vez que había terminado con la bestia.
 
-Para interactuar con el jugador se hará uso de eventos de teclado y botones para poder mover el jugador. 
-
-El problema del laberinto también implica implementar el algoritmo general para la búsqueda automática de un camino de salida para cualquier tipo de laberinto. 
+EL jugador para interactuar con Teseo tendrá que hacer uso de eventos del teclado (teclear) y botones (clikcs) para poder moverlo y ayudarlo en su búsqueda de la salida. Este divertido laberinto también implica que implementes el algoritmo general para la búsqueda automática de un camino de salida para cualquier tipo de laberinto, además de toda la creatividad que puedas.
 
 Ver el video a continuación para ver más detalles.
 
 [Video del Problema del Laberinto](media/15034081309333/run%20maze.mov)
 
-## Solución
+## Solución del Laberinto
 A continuación, se  explicará paso a paso cómo resolver el problema.
 
 ### [Paso 1. | El Problema]
