@@ -14,32 +14,29 @@ EL jugador para interactuar con Teseo tendrá que hacer uso de eventos del tecla
 ## Tips para la solución
 A continuación, encontrarás tips que podrían ayudararte con la solución, mucha suerte!
 
-### [Tip 1. | El Problema]
+### [Tip 1. | El Programa]
 
-Escribe un programa que represente un jugador en un laberinto y que  implemente el algoritmo de búsqueda de un camino de salida.
+Escribe un programa que represente un Teseo en un Laberinto y que implemente el algoritmo de búsqueda de un camino de salida.
 
 ![](media/15034081309333/15034128157197.png)
 
-Para que sea más fácil para nosotros, asumiremos que nuestro laberinto está dividido en "cuadrados". Cada cuadrado del laberinto está abierto o ocupado por una sección de pared. El jugador sólo puede pasar a través de los cuadrados abiertos del laberinto. Si el jugador se topa con una pared debe intentar una dirección diferente. 
-
+Para que sea más fácil para nosotros, asumiremos que nuestro laberinto está dividido en "cuadrados". Cada cuadrado del laberinto está abierto u ocupado por una sección de pared. Teseo sólo puede pasar a través de los cuadrados abiertos del laberinto. Si Teseo se topa con una pared debe intentar una dirección diferente. 
 
 ### [Tip 2. | Identificando Objetos]
 
-Es importante identificar los objetos presentes en el problema. Estos objetos están definidos por clases. Las clases presentes en la son los siguiente:
+Es importante identificar los objetos presentes. Estos objetos están definidos por clases. Las clases presentes son las siguientes:
 1. Maze: Clase que representa el Laberinto.
-2. Player: Clase que representa el Jugador
+2. Player: Clase que representa a Teseo
 3. MazeInterface: Clase que representa la interfaz de Juego.
 
-Además es importante identificar Propiedades (datos) y Métodos (comportamiento) presentes. 
-
-A continuación presentamos un diagrama que representa las clases así como las propiedades y métodos asociados. 
+Además es importante identificar Propiedades (datos) y Métodos (comportamiento) presentes. A continuación presentamos un diagrama que representa las clases así como las propiedades y métodos asociados:
 
  ![Screen Shot 2017-08-22 at 9.05.56 A](media/15034081309333/Screen%20Shot%202017-08-22%20at%209.05.56%20AM.png)
 
 
-### [Tip 3. | Creando el Laberinto]
+#### [Tip 3. | Creando el Laberinto]
 
-Para crear el Laberinto se puede usar un array de cadenas para poder representarlo. La notación que vamos usar para cada elemento dentro del mapa será la siguiente:
+Para crear el Laberinto se puede usar un array de cadenas para poder representarlo. La notación que puedes usar para cada elemento dentro del mapa son las siguientes:
 `*` Una pared
 `_` Un espacio vacío
 `o` Posición inicial del jugador
@@ -90,9 +87,7 @@ Existen 3 métodos importantes  asociados al objeto `Maze`:
 2. `isValidDirection()` : verificar si la dirección actual del jugador es válido.
 3. `canMove()` : verificar si el jugador se puede mover  una posición hacia adelante 
 
-### [Tip 5. | Que comience el juego...]
 
-![](media/15034081309333/15034153834695.jpg)
 
 ### [Bonus. | Algoritmos de búsqueda]
 
