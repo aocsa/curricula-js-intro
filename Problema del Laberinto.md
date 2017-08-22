@@ -8,6 +8,8 @@ Crea una página web que implemente el juego del Laberinto utilizando DOM y even
 
 > El laberinto tiene raíces tan profundas como el mito griego sobre Teseo, que fue enviado a un laberinto para matar al minotauro. Teseo usó una bola de hilo para ayudarse a encontrar su camino de regreso, una vez que había terminado con la bestia.
 
+![Screen Shot 2017-08-22 at 10.17.30 A](http://photos1.blogger.com/blogger/6613/878/1600/laberinto04.jpg)
+
 EL jugador para interactuar con Teseo tendrá que hacer uso de eventos del teclado (teclear) y botones (clikcs) para poder moverlo y ayudarlo en su búsqueda de la salida. Este divertido laberinto también implica que implementes el algoritmo general para la búsqueda automática de un camino de salida para cualquier tipo de laberinto, además de toda la creatividad que puedas.
 
 #### [Bonus. | Algoritmos de búsqueda]
