@@ -20,7 +20,6 @@ El jugador 1 piensa en una palabra y el otro trata de adivinarla según lo que s
 El siguiente ejemplo del juego ilustra un jugador tratando de adivinar la palabra `AHORCADO` utilizando una estrategia basada únicamente en la frecuencia de letra.
 
 ![GitHub set up-w350](media/Screen%20Shot%202017-08-23%20at%207.01.53%20AM.png)
-![GitHub set up-w350](media/Screen%20Shot%202017-08-23%20at%207.03.04%20AM.png)
 
 ¡El jugador gana!, pues descubrió la palabra secreta, AHORCADO.
 
@@ -103,7 +102,7 @@ El caballo es una pieza del juego del ajedrez distinta a las otras piezas en su 
 
 #### [Tip 2. | Dibujar el tablero]
 
-Dibuje un tablero de ajedrez de ocho por ocho en una hoja de papel, e intente realizar un Paseo del caballo en forma manual. Ponga un -1- en la posición inicial, un -2- en la segunda posición, un -3- en la tercera y así en lo sucesivo. Antes de empezar el paseo, estime qué tan lejos podrá avanzar, recuerde que un paseo completo consta de 64 movimientos. ¿Qué tan lejos llegó? ¿Estuvo esto cerca de su estimación?
+Dibuje un tablero de ajedrez de 8x8 en una hoja de papel, e intente realizar un Paseo del caballo en forma manual. Ponga un -1- en la posición inicial, un -2- en la segunda posición, un -3- en la tercera y así en lo sucesivo. Antes de empezar el paseo, estime qué tan lejos podrá avanzar, recuerde que un paseo completo consta de 64 movimientos. ¿Qué tan lejos llegó? ¿Estuvo esto cerca de su estimación?
 
 Ahora desarrollaremos una aplicación para mover el caballo alrededor de un tablero de ajedrez. El tablero estará representado por un arreglo bidimensional de 8x8, llamado tablero. Cada posición se inicializa con 0. 
 
@@ -123,7 +122,7 @@ Deje que las variables `filaActual` y `columnaActual` indiquen la fila y columna
     columnaActual += horizontal[numeroMovimiento];
 ```
 
-Escriba una aplicación para mover el caballo alrededor del tablero de ajedrez. Utilice un contador que varíe de 1 a 64. Registre la última cuenta en cada posición a la que se mueva el caballo. Evalúe cada movimiento potencial para ver si el caballo ya visitó esa posición. Pruebe cada movimiento potencial para asegurarse que el caballo no se salga del tablero de ajedrez. Ejecute la aplicación. ¿Cuántos movimientos hizo el caballo?
+Escribe una aplicación para mover el caballo alrededor del tablero de ajedrez. Utilice un contador que varíe de 1 al 64. Registra la última cuenta en cada posición a la que se mueva el caballo. Evalúa cada movimiento potencial para ver si el caballo ya visitó esa posición. Prueba cada movimiento potencial para asegurarse que el caballo no se salga del tablero de ajedrez. Ejecuta la aplicación. ¿Cuántos movimientos hizo el caballo?
 
 #### [Tip 4. | Aplique una heurística]
 
