@@ -245,13 +245,9 @@ Si el personaje llega a un portal, este aparecerá en el otro portal avanzando e
 
 Cada Nivel tiene un password. Usar estas claves para continuar jugando en el nivel donde saliste del juego.  Buena Suerte!
 
+## Solución de Road Blocks
+
 Ver el video a continuación para ver más detalles del juego.
 https://www.youtube.com/watch?v=cBkhv46T298&lc=z23fwnbpysi5htl3racdp43ai0fjbcabybbkaivi3wdw03c010c
-
-
-### Tips para la solución
-A continuación, encontrarás tips que podrían ayudarte con la solución, mucha suerte!
-
-#### [Tip 1. | El Programa]
 
 
