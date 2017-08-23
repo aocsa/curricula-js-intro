@@ -5,9 +5,9 @@ A continuación tendrás varios problemas que debemos resolver. Intenta resolver
 ## 1. El Ahorcado
 
 Crea una página web que implemente el juego del Ahorcado. El ahorcado es un divertido juego de adivinanzas para dos jugadores (Computador vs Jugador). La idea de la horca puede ser un poco mórbida, pero también aumenta la emoción del juego. ¡Todo el mundo quiere salvar a la pobre persona de un sombrío destino!
-> Jugador 1 -> El computador
-> Jugador 2 -> El adivinador
-Un jugador 1 piensa en una palabra y el otro trata de adivinarla según lo que sugiere. Si el jugador adivinador sugiere una letra   que aparece en la palabra, el otro jugador (el computador) la escribe en todas sus posiciones correctas. Si la letra  sugerida no ocurre en la palabra, el otro jugador saca un elemento de la figura de hombre ahorcado como una marca de conteo. El juego termina cuando:
+> Jugador 1 -> El computador    /     Jugador 2 -> El adivinador
+
+El jugador 1 piensa en una palabra y el otro trata de adivinarla según lo que sugiere. Si el jugador 2 sugiere una letra que aparece en la palabra, el jugador 1 la escribe en todas sus posiciones correctas. Si la letra sugerida no aparece en la palabra, el jugador 1 dibuja un elemento de la figura del hombre ahorcado como una marca de conteo, descotando 1 a 1 de tus 14 intentos. El juego termina cuando:
 
 1. El jugador adivinador completa la palabra, o adivina la palabra completa correctamente
 2. El otro jugador (el computador) completa de dibujar al ahorcado.
@@ -22,7 +22,7 @@ El siguiente ejemplo del juego ilustra un jugador tratando de adivinar la palabr
 ![GitHub set up-w350](media/Screen%20Shot%202017-08-23%20at%207.01.53%20AM.png)
 ![GitHub set up-w350](media/Screen%20Shot%202017-08-23%20at%207.03.04%20AM.png)
 
-El jugador gana, la respuesta, pues descubrió la palabra secreta, AHORCADO.
+¡El jugador gana!, pues descubrió la palabra secreta, AHORCADO.
 
 ### Tips para la solución
 
@@ -51,17 +51,10 @@ var figure = [
 ];
 ```
 
-
 #### [Tip 2. | Flujo del programa ]
 
-Este juego es un poco más complicado de lo que parece, de modo que tómate un momento para pensar cómo   implementarlo. 
-
-Primero necesitarás crear un diagrama de flujo  para ayudar a visualizar lo que este programa hará.  
-
-Un diagrama de flujo es un diagrama que muestra una serie de pasos como recuadros conectados
-por flechas. Cada recuadro representa un paso, y las flechas muestran qué pasos llevan a qué otros
-pasos. Coloca tu dedo sobre el recuadro "Inicio" del diagrama de flujo y recorre el programa
-siguiendo las flechas a los otros recuadros hasta que llegues al recuadro “Fin”.
+Este juego es un poquito más complicado de lo que parece, de modo que tómate un momento para pensar cómo implementarlo. Primero necesitarás crear un diagrama de flujo  para ayudar a visualizar lo que este programa hará.  
+Un diagrama de flujo es un diagrama que muestra una serie de pasos como recuadros conectados por flechas. Cada recuadro representa un paso, y las flechas muestran qué pasos llevan a qué otros pasos. Coloca tu dedo sobre el recuadro "Inicio" del diagrama de flujo y recorre el programa siguiendo las flechas a los otros recuadros hasta que llegues al recuadro “Fin”.
 
 ![Screen Shot 2017-08-23 at 8.11.08 A](media/Screen%20Shot%202017-08-23%20at%208.11.08%20AM.png)
 La Figura anterior es un diagrama de flujo completo para el Ahorcado. Sólo puedes moverte de un recuadro a otro en la dirección de la flecha. Nunca puedes volver hacia atrás a menos que haya una segunda flecha apuntando en dirección opuesta, como en el recuadro “El jugador ya ha probado esa letra”.
@@ -75,7 +68,6 @@ Por supuesto, no es estrictamente necesario que hagas un diagrama de flujo. Podr
 Una pequeña aerolínea acaba de comprar una computadora para su nuevo sistema de reservaciones automatizado. Se le ha pedido a usted que desarrolle el nuevo sistema. Usted escribirá una aplicación para asignar asientos en cada vuelo del único avión de la aerolínea (capacidad: 10 asientos).
 
 Su aplicación debe mostrar las siguientes alternativas: Por favor escriba 1 para Primera Clase y Por favor escriba 2 para Economico. Si el usuario escribe 1, su aplicación debe asignarle un asiento en la sección de primera clase (asientos 1 a 5). Si el usuario escribe 2, su aplicación debe asignarle un asiento en la sección económica (asientos 6 a 10). Su aplicación deberá entonces imprimir un pase de abordar, indicando el número de asiento de la persona y si se encuentra en la sección de primera clase o clase económica.
-
 
 ### Tips para la solución
 
