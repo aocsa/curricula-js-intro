@@ -5,8 +5,9 @@ A continuación tendrás varios problemas que debemos resolver. Intenta resolver
 ## 1. El Ahorcado
 
 Crea una página web que implemente el juego del Ahorcado. El ahorcado es un divertido juego de adivinanzas para dos jugadores (Computador vs Jugador). La idea de la horca puede ser un poco mórbida, pero también aumenta la emoción del juego. ¡Todo el mundo quiere salvar a la pobre persona de un sombrío destino!
-
-Un jugador (el computador) piensa en una palabra y el otro trata de adivinarla según lo que sugiere. Si el jugador adivinador sugiere una letra   que aparece en la palabra, el otro jugador (el computador) la escribe en todas sus posiciones correctas. Si la letra  sugerida no ocurre en la palabra, el otro jugador saca un elemento de la figura de hombre ahorcado como una marca de conteo. El juego termina cuando:
+> Jugador 1 -> El computador
+> Jugador 2 -> El adivinador
+Un jugador 1 piensa en una palabra y el otro trata de adivinarla según lo que sugiere. Si el jugador adivinador sugiere una letra   que aparece en la palabra, el otro jugador (el computador) la escribe en todas sus posiciones correctas. Si la letra  sugerida no ocurre en la palabra, el otro jugador saca un elemento de la figura de hombre ahorcado como una marca de conteo. El juego termina cuando:
 
 1. El jugador adivinador completa la palabra, o adivina la palabra completa correctamente
 2. El otro jugador (el computador) completa de dibujar al ahorcado.
