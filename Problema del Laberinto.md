@@ -20,6 +20,7 @@ El jugador 1 piensa en una palabra y el otro trata de adivinarla según lo que s
 El siguiente ejemplo del juego ilustra un jugador tratando de adivinar la palabra `AHORCADO` utilizando una estrategia basada únicamente en la frecuencia de letra.
 
 ![GitHub set up-w350](media/Screen%20Shot%202017-08-23%20at%207.01.53%20AM.png)
+![GitHub set up-w350](media/Screen%20Shot%202017-08-23%20at%207.03.04%20AM.png)
 
 ¡El jugador gana!, pues descubrió la palabra secreta, AHORCADO.
 
@@ -65,37 +66,34 @@ Por supuesto, no es estrictamente necesario que hagas un diagrama de flujo. Podr
 
 ## 2. Sistema de reservaciones de una aerolínea
 
-Una pequeña aerolínea acaba de comprar una computadora para su nuevo sistema de reservaciones automatizado. Se le ha pedido a usted que desarrolle el nuevo sistema. Usted escribirá una aplicación para asignar asientos en cada vuelo del único avión de la aerolínea (capacidad: 10 asientos).
+Una pequeña aerolínea acaba de comprar una computadora para su nuevo sistema de reservaciones automatizada. Se te ha pedido que desarrolles el nuevo sistema. Escribirás una aplicación para asignar asientos en cada vuelo del único avión de la aerolínea (capacidad: 10 asientos).
 
-Su aplicación debe mostrar las siguientes alternativas: Por favor escriba 1 para Primera Clase y Por favor escriba 2 para Economico. Si el usuario escribe 1, su aplicación debe asignarle un asiento en la sección de primera clase (asientos 1 a 5). Si el usuario escribe 2, su aplicación debe asignarle un asiento en la sección económica (asientos 6 a 10). Su aplicación deberá entonces imprimir un pase de abordar, indicando el número de asiento de la persona y si se encuentra en la sección de primera clase o clase económica.
+Tu aplicación debe mostrar las siguientes alternativas: Por favor escriba 1 para Primera Clase y Por favor escriba 2 para Económico. Si el usuario escribe 1, tu aplicación debe asignarle un asiento en la sección de primera clase (asientos 1 a 5). Si el usuario escribe 2, tu aplicación debe asignarle un asiento en la sección económica (asientos 6 a 10). Tu aplicación deberá entonces imprimir un pase de abordar, indicando el número de asiento de la persona y si se encuentra en la sección de primera clase o clase económica.
 
 ### Tips para la solución
 
-A continuación, encontrarás tips que podrían ayudarte con la solución, mucha suerte!
+A continuación, encontrarás tips que podrían ayudarte con la solución, ¡mucha suerte!
 
 #### [Tip. | Representación usando Arrays]
 
-Use un arreglo unidimensional del tipo boolean para representar la tabla de asientos del avión. Inicialice todos los elementos del arreglo con false para indicar que todos los asientos están vacíos. A medida que se asigne cada asiento, establezca el elemento correspondiente del arreglo en true para indicar que ese asiento ya no está disponible.
+Usa un arreglo unidimensional del tipo booleano para representar la tabla de asientos del avión. Inicializa todos los elementos del arreglo con -false- para indicar que todos los asientos están vacíos. A medida que se asigne cada asiento, establezca el elemento correspondiente del arreglo en true para indicar que ese asiento ya no está disponible.
 
-Su aplicación nunca deberá asignar un asiento que ya haya sido asignado. Cuando esté llena la sección económica, su programa deberá preguntar a la persona si acepta ser colocada en la sección de primera clase (y viceversa). Si la persona acepta, haga la asignación de asiento apropiada. Si no, imprima el mensaje “El proximo vuelo sale en 3 horas”.
-
+Tu aplicación nunca deberá asignar un asiento que ya haya sido asignado. Cuando esté llena la sección económica, tu programa deberá preguntar a la persona si acepta ser colocada en la sección de primera clase (y viceversa). Si la persona acepta, haga la asignación de asiento apropiada. Si no, debe imprimir el mensaje “El proximo vuelo sale en 3 horas”.
 
 ## 3. Paseo del caballo 
 
-Un enigma interesante para los entusiastas del ajedrez es el problema del Paseo del caballo, propuesto originalmente por el matemático Euler. ¿Puede la pieza de ajedrez, conocida como caballo, moverse alrededor de un tablero de ajedrez vacío y tocar cada una de las 64 posiciones una y sólo una vez?
+Un enigma interesante para los entusiastas del ajedrez es el problema del Paseo del caballo, propuesto originalmente por el matemático Euler. ¿Puede la pieza de ajedrez, conocida como caballo, moverse alrededor de un tablero de ajedrez vacío y tocar cada una de las 64 posiciones una y sólo una vez? Deberás crear una página web que simule el paseo del caballo en un tablero de ajedrez.
  
 ### Ejemplo 
 
-Solución de    saltos de caballo por las 64 casillas de un tablero de ajedrez.
+Solución de saltos de caballo por las 64 casillas de un tablero de ajedrez.
 
 ![GitHub set up-w300](media/15034902988303.gif)
-
 
  
 ### Tips para la solución
 
-A continuación, encontrarás tips que podrían ayudarte con la solución, mucha suerte!
-
+A continuación, encontrarás tips que podrían ayudarte con la solución, ¡mucha suerte!
 
 #### [Tip 1. | El caballo de ajedrez]
 
@@ -105,9 +103,9 @@ El caballo es una pieza del juego del ajedrez distinta a las otras piezas en su 
 
 #### [Tip 2. | Dibujar el tablero]
 
-Dibuje un tablero de ajedrez de ocho por ocho en una hoja de papel, e intente realizar un Paseo del caba- llo en forma manual. Ponga un 1 en la posición inicial, un 2 en la segunda posición, un 3 en la tercera y así en lo sucesivo. Antes de empezar el paseo, estime qué tan lejos podrá avanzar, recuerde que un paseo completo consta de 64 movimientos. ¿Qué tan lejos llegó? ¿Estuvo esto cerca de su estimación?
+Dibuje un tablero de ajedrez de ocho por ocho en una hoja de papel, e intente realizar un Paseo del caballo en forma manual. Ponga un -1- en la posición inicial, un -2- en la segunda posición, un -3- en la tercera y así en lo sucesivo. Antes de empezar el paseo, estime qué tan lejos podrá avanzar, recuerde que un paseo completo consta de 64 movimientos. ¿Qué tan lejos llegó? ¿Estuvo esto cerca de su estimación?
 
-Ahora desarrollaremos una aplicación para mover el caballo alrededor de un tablero de ajedrez. El tablero estará representado por un arreglo bidimensional de ocho por ocho, llamado tablero. Cada posición se inicializa con cero. 
+Ahora desarrollaremos una aplicación para mover el caballo alrededor de un tablero de ajedrez. El tablero estará representado por un arreglo bidimensional de 8x8, llamado tablero. Cada posición se inicializa con 0. 
 
 #### [Tip 2. | Movimientos de Caballo]
 
@@ -118,7 +116,7 @@ Describiremos cada uno de los ocho posibles movimientos en términos de sus com
 
 ![GitHub set up-w350](media/Screen%20Shot%202017-08-23%20at%207.47.19%20AM.png)
 
-Deje que las variables `filaActual` y `columnaActual` indiquen la fila y columna, respectivamente, de la posición actual del caballo. Para hacer un movimiento de tipo numeroMovimiento, en donde numero- Movimiento puede estar entre 0 y 7, su programa debe utilizar las instrucciones.
+Deje que las variables `filaActual` y `columnaActual` indiquen la fila y columna, respectivamente, de la posición actual del caballo. Para hacer un movimiento de tipo numeroMovimiento, en donde numeroMovimiento puede estar entre 0 y 7, su programa debe utilizar las instrucciones.
 
 ```js
     filaActual += vertical[numeroMovimiento];
