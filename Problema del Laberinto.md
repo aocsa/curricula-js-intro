@@ -20,7 +20,6 @@ El jugador 1 piensa en una palabra y el otro trata de adivinarla según lo que s
 El siguiente ejemplo del juego ilustra un jugador tratando de adivinar la palabra `AHORCADO` utilizando una estrategia basada únicamente en la frecuencia de letra.
 
 ![GitHub set up-w350](media/Screen%20Shot%202017-08-23%20at%207.01.53%20AM.png)
-![GitHub set up-w350](media/Screen%20Shot%202017-08-23%20at%207.03.04%20AM.png)
 
 ¡El jugador gana!, pues descubrió la palabra secreta, AHORCADO.
 
