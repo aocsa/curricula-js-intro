@@ -46,7 +46,7 @@ function codeToHtml(string) {
         // Highlighter function. Should return escaped HTML,
         // or '' if the source string is not changed and should be escaped externaly.
         // If result starts with <pre... internal wrapper is skipped.
-        highlight: function (str, lang) {  
+        highlight: function (str, lang) {
             if (lang && hljs.getLanguage(lang)) {
                 try {
                      return '<pre class="hljs" class="language-js"><code>' + md.utils.escapeHtml(str)  + '</code></pre>';
@@ -58,7 +58,7 @@ function codeToHtml(string) {
         }
     });
 
-   
+
     var result = md.render(string);
     return result;
 }
@@ -101,7 +101,7 @@ function CreateIndex (testFolder, filepath) {
     var label_name = firstLine.replace("#", '');
 
     var htmlCode = codeToHtml(markDownString.replace(firstLine, ''));
-        
+
     var templateString =   fs.readFileSync('md-2-units-template.html', 'utf8' )  ;
 
     console.log ("htmlCode: " + htmlCode.length);
@@ -118,7 +118,7 @@ function CreateIndex (testFolder, filepath) {
         }
         console.log("The file " + htmlFile + " was saved!");
     });
-    return { 
+    return {
             name: filename,
             label: label_name
         };
@@ -139,7 +139,7 @@ function  MD2HTML (testFolder, filepath){
     var label_name = firstLine.replace("#", '');
 
     var htmlCode = codeToHtml(markDownString.replace(firstLine, ''));
-        
+
     var templateString =   fs.readFileSync('md-2-html-template.html', 'utf8' )  ;
 
     console.log ("htmlCode: " + htmlCode.length);
@@ -156,14 +156,14 @@ function  MD2HTML (testFolder, filepath){
         }
         console.log("The file " + htmlFile + " was saved!");
     });
-    return { 
+    return {
             name: filename,
             label: label_name
         };
 }
 
 var glob = require("glob");
- 
+
 
 function batchMD2HTML (codelabtitle, testFolder) {
 
@@ -172,15 +172,15 @@ function batchMD2HTML (codelabtitle, testFolder) {
          if (err) {
             return console.log(err);
         }
-        //../01-intro/02-variables-and-data-types/*.md         
+        //../01-intro/02-variables-and-data-types/*.md
         var htmlFolders = testFolder.replace ("*.md", "");
         console.log (htmlFolders);
 
         var lstMDs = files;
         var codelabs_steps = [];
-        for (var filepath of lstMDs) { 
+        for (var filepath of lstMDs) {
             console.log("filepath:**" + filepath + "**");
-            
+
             var obj = MD2HTML(htmlFolders, filepath);
             codelabs_steps.push( {
                 html_file_name: obj.name + '.html',
@@ -195,16 +195,16 @@ function batchMD2HTML (codelabtitle, testFolder) {
             let template_id = obj.codelab_step;
             let label = obj.label;
 
-            links_html +=  '<link rel="import" href="' +  html_file + '">'; 
+            links_html +=  '<link rel="import" href="' +  html_file + '">';
 
-            var step = '<google-codelab-step label="' +  label + '" duration="10">' +            
-                        '<' + template_id + '> </' + template_id + '>'  +       
+            var step = '<google-codelab-step label="' +  label + '" duration="10">' +
+                        '<' + template_id + '> </' + template_id + '>'  +
                           '</google-codelab-step>';
 
-            steps_html += step;        
+            steps_html += step;
 
-        } 
-        
+        }
+
         var templateString = fs.readFileSync("md-2-index-template.html", 'utf8' ) ;
         var htmlIndexContent = format(templateString, {
                 codelab_title: codelabtitle,
@@ -220,42 +220,39 @@ function batchMD2HTML (codelabtitle, testFolder) {
             }
             console.log("The file " + htmlFile + " was saved!");
         });
-     }); 
+     });
 }
 
 
 function processBook () {
-    var bookDir = "../01-intro/*";
+    var bookDir = "../08-deep-dive/*";
 
      glob(bookDir,  function (err, files) {
          if (err) {
             return console.log(err);
-        }
-         for (var filepath of files) { 
+         }
+         for (var filepath of files) {
             console.log ("filepath> " + filepath );
-
             if (filepath.indexOf("assets") >= 0) {
                 continue;
             }
             if (filepath.indexOf("README.md") >= 0) {
                 var htmlFolders = filepath.replace ("README.md", "");
-
-                CreateIndex (htmlFolders, filepath); 
+                CreateIndex (htmlFolders, filepath);
             } else if ( fs.lstatSync(filepath).isDirectory() ) {
-
                 batchMD2HTML ("Laboratoria", filepath + "/*.md");
             }
          }
      });
- 
+
 
 }
 processBook();
 
 stdin.addListener("data", function(d) {
     // note:  d is an object, and when converted to a string it will
-    // end with a linefeed.  so we (rather crudely) account for that  
-    // with toString() and then trim() 
+    // end with a linefeed.  so we (rather crudely) account for that
+    // with toString() and then trim()
     var filepath = d.toString().trim();
     MD2HTML(filepath);
 
