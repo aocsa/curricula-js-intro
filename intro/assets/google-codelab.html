@@ -450,7 +450,7 @@
         index = index ? decodeURIComponent(index) : '';
         index = index.replace(/[^a-z0-9\-]+/ig, '');
         if (index === 'index') {
-          index = '';
+          index = 'index.html';
         }
         // navigate away to the index page
           window.location.href = 'https://aocsa.github.io/curricula-js-intro/intro/' + index;
