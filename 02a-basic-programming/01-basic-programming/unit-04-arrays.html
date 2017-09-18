@@ -1,0 +1,154 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../style/shared-style.html">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+<dom-module id="unit-04-arrays">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <template strip-whitespace="">
+    
+    
+    <style include="shared-style">        
+    /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:0.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}*{box-sizing:border-box}input,select,textarea,button{font:13px/1.4 Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Segoe UI Emoji","Segoe UI Symbol"}body{font:13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";color:#333;background-color:#fff}a{color:#4078c0;text-decoration:none}a:hover,a:active{text-decoration:underline}hr,.rule{height:0;margin:15px 0;overflow:hidden;background:transparent;border:0;border-bottom:1px solid #ddd}hr:before,.rule:before{display:table;content:""}hr:after,.rule:after{display:table;clear:both;content:""}h1,h2,h3,h4,h5,h6{margin-top:15px;margin-bottom:15px;line-height:1.1}h1{font-size:30px}h2{font-size:21px}h3{font-size:16px}h4{font-size:14px}h5{font-size:12px}h6{font-size:11px}small{font-size:90%}blockquote{margin:0}ul,ol{padding:0;margin-top:0;margin-bottom:0}ol ol,ul ol{list-style-type:lower-roman}ul ul ol,ul ol ol,ol ul ol,ol ol ol{list-style-type:lower-alpha}dd{margin-left:0}tt,code{font-family:Consolas, "Liberation Mono", Menlo, Courier, monospace;font-size:12px}pre{margin-top:0;margin-bottom:0;font:12px Consolas,"Liberation Mono",Menlo,Courier,monospace}html,body{color:black}#wrapper{-webkit-font-smoothing:antialiased;line-height:1.6;padding:3px;background:#fff;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;color:#333}p{margin:1em 0}a{color:#4183c4;text-decoration:none}#wrapper{background-color:#fff;font-size:16px;line-height:1.6}#wrapper>*:first-child{margin-top:0 !important}#wrapper>*:last-child{margin-bottom:0 !important}@media screen{#wrapper{}}h1,h2,h3,h4,h5,h6{position:relative;font-weight:700;line-height:1.4;color:#333}h1{padding-bottom:.3em;font-size:2.25em;line-height:1.2;border-bottom:1px solid #eee}h2{padding-bottom:0.3em;font-size:1.75em;line-height:1.225;border-bottom:1px solid #eee}h3{font-size:1.5em;line-height:1.43}h4{font-size:1.25em}h5{font-size:1em}h6{color:#777;font-size:1em}p,blockquote,ul,ol,dl,table,pre{margin-top:0;margin-bottom:16px}hr{height:4px;padding:0;margin:16px 0;background-color:#e7e7e7;border:0 none}ul,ol{padding-left:2em}ul.no-list,ol.no-list{padding:0;list-style-type:none}ul ul,ul ol{margin-top:0;margin-bottom:0}ol ol,ol ul{margin-top:0;margin-bottom:0}li>p{margin-top:16px}dl{padding:0}dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}dl dd{padding:0 16px;margin-bottom:16px}blockquote{padding:0 15px;margin-left:0;color:#777;border-left:4px solid #ddd}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{display:block;width:100%;overflow:auto}table th{font-weight:700;padding:6px 13px;border:1px solid #ddd}table td{padding:6px 13px;border:1px solid #ddd}table tr{background-color:#fff;border-top:1px solid #ccc}table tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%;-moz-box-sizing:border-box;box-sizing:border-box}span.frame{display:block;overflow:hidden}span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}span.frame span img{display:block;float:left}span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}span.align-center{display:block;overflow:hidden;clear:both}span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}span.align-center span img{margin:0 auto;text-align:center}span.align-right{display:block;overflow:hidden;clear:both}span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}span.align-right span img{margin:0;text-align:right}span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}span.float-left span{margin:13px 0 0}span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}code,tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,0.04);border-radius:3px}code:before,code:after{letter-spacing:-.2em;content:"\00a0"}tt:before,tt:after{letter-spacing:-.2em;content:"\00a0"}code br,tt br{display:none}del code{text-decoration:inherit;vertical-align:text-top}pre>code{padding:0;margin:0;font-size:100%;white-space:pre;background:transparent;border:0}.highlight{margin-bottom:16px}.highlight pre{padding:16px;margin-bottom:0;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}pre{padding:16px;margin-bottom:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px;word-wrap:normal}pre code,pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}pre code:before,pre code:after{content:normal}pre tt:before,pre tt:after{content:normal}.poetry pre{font-family:Georgia, Garamond, serif !important;font-style:italic;font-size:110% !important;line-height:1.6em;display:block;margin-left:1em}.poetry pre code{font-family:Georgia, Garamond, serif !important;word-break:break-all;word-break:break-word;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto;white-space:pre-wrap}sup,sub,a.footnote{font-size:1.4ex;height:0;line-height:1;vertical-align:super;position:relative}sub{vertical-align:sub;top:-1px}@media print{body{background:#fff}img,table,figure{page-break-inside:avoid}#wrapper{background:#fff;border:none !important;font-size:12px}pre code{overflow:visible}}@media screen{body.inverted{color:#eee !important;border-color:#555;box-shadow:none}.inverted #wrapper,.inverted hr,.inverted p,.inverted td,.inverted li,.inverted h1,.inverted h2,.inverted h3,.inverted h4,.inverted h5,.inverted h6,.inverted th,.inverted .math,.inverted caption,.inverted dd,.inverted dt,.inverted blockquote{color:#eee !important;border-color:#555;box-shadow:none}.inverted td,.inverted th{background:#333}.inverted pre,.inverted code,.inverted tt{background:#eeeeee !important;color:#111}.inverted h2{border-color:#555555}.inverted hr{border-color:#777;border-width:1px !important}::selection{background:rgba(157,193,200,0.5)}h1::selection{background-color:rgba(45,156,208,0.3)}h2::selection{background-color:rgba(90,182,224,0.3)}h3::selection,h4::selection,h5::selection,h6::selection,li::selection,ol::selection{background-color:rgba(133,201,232,0.3)}code::selection{background-color:rgba(0,0,0,0.7);color:#eeeeee}code span::selection{background-color:rgba(0,0,0,0.7) !important;color:#eeeeee !important}a::selection{background-color:rgba(255,230,102,0.2)}.inverted a::selection{background-color:rgba(255,230,102,0.6)}td::selection,th::selection,caption::selection{background-color:rgba(180,237,95,0.5)}.inverted{background:#0b2531;background:#252a2a}.inverted #wrapper{background:#252a2a}.inverted a{color:#acd1d5}}.highlight{background:#fff}.highlight .c{color:#998;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .k,.highlight .o{font-weight:700}.highlight .cm{color:#998;font-style:italic}.highlight .cp{color:#999;font-weight:700}.highlight .c1{color:#998;font-style:italic}.highlight .cs{color:#999;font-weight:700;font-style:italic}.highlight .gd{color:#000;background-color:#fdd}.highlight .gd .x{color:#000;background-color:#faa}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#999}.highlight .gi{color:#000;background-color:#dfd}.highlight .gi .x{color:#000;background-color:#afa}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:700}.highlight .gu{color:purple;font-weight:700}.highlight .gt{color:#a00}.highlight .kc,.highlight .kd,.highlight .kn,.highlight .kp,.highlight .kr{font-weight:700}.highlight .kt{color:#458;font-weight:700}.highlight .m{color:#099}.highlight .s{color:#d14}.highlight .n{color:#333}.highlight .na{color:teal}.highlight .nb{color:#0086b3}.highlight .nc{color:#458;font-weight:700}.highlight .no{color:teal}.highlight .ni{color:purple}.highlight .ne,.highlight .nf{color:#900;font-weight:700}.highlight .nn{color:#555}.highlight .nt{color:navy}.highlight .nv{color:teal}.highlight .ow{font-weight:700}.highlight .w{color:#bbb}.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx{color:#d14}.highlight .sr{color:#009926}.highlight .s1{color:#d14}.highlight .ss{color:#990073}.highlight .bp{color:#999}.highlight .vc,.highlight .vg,.highlight .vi{color:teal}.highlight .il{color:#099}.highlight .gc{color:#999;background-color:#EAF2F5}.type-csharp .highlight .k,.type-csharp .highlight .kt{color:blue}.type-csharp .highlight .nf{color:#000;font-weight:400}.type-csharp .highlight .nc{color:#2b91af}.type-csharp .highlight .nn{color:#000}.type-csharp .highlight .s,.type-csharp .highlight .sc{color:#a31515}.type-csharp .highlight .k,.type-csharp .highlight .kt{color:#00F}.type-csharp .highlight .nf{color:#000;font-weight:normal}.type-csharp .highlight .nc{color:#2B91AF}.type-csharp .highlight .nn{color:#000}.type-csharp .highlight .s,.type-csharp .highlight .sc{color:#A31515}body.dark #wrapper{background:transparent !important;box-shadow:none !important}
+    .hljs{display:block;overflow-x:auto;padding:0.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#333;font-weight:bold}.hljs-number,.hljs-literal,.hljs-variable,.hljs-template-variable,.hljs-tag .hljs-attr{color:#008080}.hljs-string,.hljs-doctag{color:#d14}.hljs-title,.hljs-section,.hljs-selector-id{color:#900;font-weight:bold}.hljs-subst{font-weight:normal}.hljs-type,.hljs-class .hljs-title{color:#458;font-weight:bold}.hljs-tag,.hljs-name,.hljs-attribute{color:#000080;font-weight:normal}.hljs-regexp,.hljs-link{color:#009926}.hljs-symbol,.hljs-bullet{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}#mkreplaced-toc{list-style-position:inside;padding:0;margin:0 0 0 1rem;list-style-type:none}#mkreplaced-toc li::before{content:''}#mkreplaced-toc li{font-size:1rem;line-height:1.25;font-weight:normal}#mkreplaced-toc li ul{font-size:1.3rem;font-weight:300;padding:.5rem 0;margin:0 0 0 1rem}#mkreplaced-toc li.missing{list-style-type:none !important}#mkreplaced-toc.max-1 ul,#mkreplaced-toc.max1 ul{display:none}#mkreplaced-toc.max-2 ul ul,#mkreplaced-toc.max2 ul ul{display:none}#mkreplaced-toc.max-3 ul ul ul,#mkreplaced-toc.max3 ul ul ul{display:none}#mkreplaced-toc.max-4 ul ul ul ul,#mkreplaced-toc.max4 ul ul ul ul{display:none}#mkreplaced-toc.max-5 ul ul ul ul ul,#mkreplaced-toc.max5 ul ul ul ul ul{display:none}.rtl{direction:rtl;text-align:right}@media print{body{background:white;line-height:1.4}html,body,#wrapper{max-width:100%;width:100%;-webkit-text-size-adjust:none;-webkit-perspective:none !important;box-sizing:border-box;width:auto;border:0;margin:0;padding:0;float:none;-moz-box-shadow:none !important;-webkit-box-shadow:none !important;box-shadow:none !important}mark{background:transparent !important}h1,h2,h3,h4,h5,h6{page-break-after:avoid}p,h2,h3{orphans:3;widows:3}section{page-break-before:avoid}pre>code{white-space:pre;word-break:break-word}#generated-toc,#firstdiff,#toc-title,#mkdocumentprogress,#mkincludechart,#mkprogressbar1,#mkprogressbar2,.mkscrollmeter,#alllinks,.popup{display:none !important}.suppressprintlinks a{color:inherit !important;text-decoration:none !important;border-bottom:none !important;cursor:default !important}.hrefafterlinktext #wrapper a:link:after,.hrefafterlinktext #wrapper a:visited:after{content:" (" attr(href) ") ";font-size:90%;opacity:0.9}.nocodebreak pre{page-break-inside:avoid}img,table,figure{page-break-inside:avoid}.breakfootnotes .footnotes{page-break-before:always}.breakfootnotes .footnotes hr{display:none}#mktoctitle{display:block}#print-title{display:block;border-bottom:solid 1px #666}#wrapper pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}#wrapper #generated-toc-clone,#wrapper #mkreplaced-toc{display:block}.task-list .task-list-item{list-style-type:none !important}.task-list .gh-complete.task-list-item .task-list-item-checkbox:before{content:'\2713';background:#838387}.task-list .task-list-item-checkbox{-webkit-appearance:none;position:relative}.task-list .task-list-item-checkbox:before{content:' ';border:solid 1px #aaa;width:1em;height:1em;display:block;border-radius:2px;left:-20px;top:-.75em;color:white;font-weight:bold;line-height:1;text-align:center;position:absolute}}
+    #wrapper #generated-toc-clone,#wrapper #mkreplaced-toc,#wrapper #generated-toc-clone ul,#wrapper #mkreplaced-toc ul{list-style-position:inside}#wrapper #generated-toc-clone li.missing,#wrapper #mkreplaced-toc li.missing{list-style-type: none!important}#wrapper #generated-toc-clone,#wrapper #mkreplaced-toc{list-style-type: upper-roman}#wrapper #generated-toc-clone>li>ul,#wrapper #mkreplaced-toc>li>ul {list-style-type: decimal}#wrapper #generated-toc-clone>li>ul>li>ul,#wrapper #mkreplaced-toc>li>ul>li>ul{list-style-type: decimal-leading-zero}#wrapper #generated-toc-clone>li>ul>li>ul>li>ul,#wrapper #mkreplaced-toc>li>ul>li>ul>li>ul{list-style-type: lower-greek}#wrapper #generated-toc-clone>li>ul>li>ul>li>ul>li>ul,#wrapper #mkreplaced-toc>li>ul>li>ul>li>ul>li>ul{list-style-type: disc}#wrapper #generated-toc-clone>li>ul>li>ul>li>ul>li>ul>li>ul,#wrapper #mkreplaced-toc>li>ul>li>ul>li>ul>li>ul>li>ul{list-style-type: square}#wrapper #generated-toc-clone,#wrapper #mkreplaced-toc{list-style-position:outside!important;margin-left:2rem;}
+    </style>
+
+    <style id="mkprintstyles">@media print{#wrapper #generated-toc-clone,#generated-toc{display:none!important}
+    html,body,#wrapper{font-size:10pt!important}
+    }
+    </style>
+        
+    <div id="wrapper">
+        <ul>
+<li>Tipo: <code>lectura</code></li>
+<li>Formato: <code>self-paced</code></li>
+<li>Duración: <code>60min</code></li>
+</ul>
+<h2>Objetivos de Aprendizaje</h2>
+<ul>
+<li>Aprender qué son <code>arrays</code> y para qué sirven</li>
+<li>Aprender a crear, acceder y modificar la información de un <code>arrays</code></li>
+</ul>
+<hr />
+<p>El texto a continuación se basa en gran medida, con ciertos ajustes, en el capítulo 4 de <a href="http://eloquentjavascript.net/">Eloquent JavaScript</a>,de Marijn<br />
+Haverbeke, 2014. Traducción en <a href="http://hectorip.github.io/Eloquent-JavaScript-ES-online/chapters/01_values.html">Español</a><br />
+disponible gracias a <a href="http://hectorip.github.io">hectorip</a>, y del capítulo 3 de <a href="http://pepa.holla.cz/wp-content/uploads/2015/11/JavaScript-for-Kids.pdf">JavaScript for kids</a>, Nick Morgan, 2015;</p>
+<hr />
+<h2>Agrupando y manipulando data</h2>
+<p>Como hemos visto, gran parte de la programación consiste en agrupar y manipular data. Esto nos permite transformar datos en información y utilizar esa información para resolver problemas. Hasta ahora hemos podido agrupar y manipular data haciendo uso de tipos de datos simples como: <code>numbers</code>, <code>booleans</code> y <code>strings</code>. Sobre ellos hemos creado una serie de programas sencillos. También hemos aprendido a modificar el control de flujo de estos programas, por medio de <code>estructuras repetitivas</code>, <code>estructuras condicionales</code> y <code>funciones</code>, lo cual nos ha permitido crear productos un poco más complejos. Sin embargo, nuestros programas han estado seriamente limitados debido a operan únicamente con <strong>tipos de datos simples</strong>. Para resolver problemas más complejos necesitamos poder agrupar y manipular data de una manera más interesante. Afortunadamente, un entorno JavaScript nos permite lograr esto brindándonos <code>arrays</code> y <code>objects</code>.</p>
+<h2>¿Por qué necesitamos <code>arrays</code>?</h2>
+<p>Digamos, por poner un ejemplo, que queremos representar una colección de números: <code>2, 3, 5, 7 y 11</code>.</p>
+<p>Una opción para representar esto sería:</p>
+<pre class="hljs" class="language-js"><code>var firstNumber = 2;
+var secondNumber = 3;
+var thirdNumber = 5;
+var fourthNumber = 7;
+</code></pre>
+<p>Esta lista es bien extraña y engorrosa. Implica tener una variable para cada elemento de nuestra lista. Cuando en realidad sólo deberíamos tener una sola variable que “contenga” a cada una. ¡Imagina que luego quieres tener una lista de 1,000 elementos!</p>
+<p>Otra opción -más creativa- sería utilizar un <code>string</code>. Después de todo, los strings pueden ser de cualquier longitud, así que podemos poner mucha información en ellos. Podríamos usar un <code>string</code> con los números intercalados por un espacio, así:</p>
+<pre class="hljs" class="language-js"><code>var listOfNumbers = &quot;2 3 5 7 11&quot;;
+</code></pre>
+<p>Sin embargo, esto también resulta engorroso. Tendríamos que buscar la manera de extraer cada elemento del <code>string</code> (contando los espacios entre ellos) y además, tendríamos que convertirlos de vuelta a <code>number</code> para acceder y manipular cada número de manera individual.</p>
+<p>Afortunadamente, Javascript proporciona un tipo de dato específico para almacenar secuencias de valores. Se llama <code>array</code> (arreglo en español) y se escribe como una lista de valores entre corchetes, separados por comas.</p>
+<pre class="hljs" class="language-js"><code>var listOfNumbers = [2, 3, 5, 7, 11];
+</code></pre>
+<p>Los <code>arrays</code> son tremendamente útiles para agrupar y manipular data. Es como cuando vamos al mercado y tenemos nuestra “lista de compras”. Podríamos tener una hoja de papel para cada artículo que queremos comprar. Por ejemplo, podríamos tener una hoja de papel que dice “huevos”, otra hoja que dice “pan”, y otra hoja que dice “naranjas”. Sin embargo, la mayoría de la gente escribía la lista completa de cosas a comprar en <strong>una sola hoja de papel</strong>.</p>
+<h2>Accediendo información de un <code>array</code></h2>
+<p>Para obtener un elemento dentro de un <code>array</code>, se utiliza la notación con corchetes, con el <em>index</em> (índice en español) del elemento que se desea. Veamos un ejemplo:</p>
+<pre class="hljs" class="language-js"><code>var listOfNumbers = [2, 3, 5, 7, 11];
+
+console.log(listOfNumbers[1]);
+// → 3
+console.log(listOfNumbers[1 - 1]);
+// → 2
+</code></pre>
+<p>El <em>index</em> es el número que corresponde a (o que coincide con) el punto del <code>array</code> donde se almacena el valor. Al igual que con los <code>strings</code>, el primer elemento de una <code>array</code> está en el <code>index 0</code>, el segundo está en el <code>index 1</code>, el tercero en el <code>index 2</code>, y así sucesivamente. Es por eso que pedir index <code>1 - 1</code> (es decir, 0) del array anterior devuelve el número <code>2</code>.</p>
+<pre class="hljs" class="language-js"><code>                     INDEX
+                     0  1  2  3  4
+                     |  |  |  |  |
+var listOfNumbers = [2, 3, 5, 7, 11];
+
+</code></pre>
+<p>Si no tienes antecedentes en programación, acostumbrarte a esta convención puede tomarte algún tiempo. Pero el conteo con base cero tiene una larga tradición en tecnología y mientras la convención se siga de manera consistente (que se ha hecho en Javascript), funciona bien.</p>
+<h2>Definiendo o cambiando los elementos de un <code>array</code></h2>
+<p>Podemos utilizar los <em>indexes</em> entre corchetes para establecer, cambiar o incluso agregar elementos a un <code>array</code>. Por ejemplo, para reemplazar el primer elemento del array <code>listOfNumbers</code> por el número 1, podríamos hacer lo siguiente:</p>
+<pre class="hljs" class="language-js"><code>
+var listOfNumbers = [2, 3, 5, 7, 11];
+listOfNumbers[0] = 1;
+
+console.log(listOfNumbers);
+// → [1, 3, 5, 7, 11]
+
+</code></pre>
+<p>También podemos utilizar los <em>indexes</em> entre corchetes para agregar elementos en un <code>array</code>. Por ejemplo, para agregar el número 13 al array <code>listOfNumbers</code>, haríamos lo siguiente:</p>
+<pre class="hljs" class="language-js"><code>
+var listOfNumbers = [2, 3, 5, 7, 11];
+listOfNumbers[5] = 13;
+
+console.log(listOfNumbers);
+// → [2, 3, 5, 7, 11, 13]
+
+</code></pre>
+<p>De hecho, podemos crear un <code>array</code> vacío y luego definir cada elemento de forma individual, así:</p>
+<pre class="hljs" class="language-js"><code>var listOfNumbers = [];
+
+listOfNumbers[0] = 2;
+listOfNumbers[1] = 3;
+listOfNumbers[2] = 5;
+listOfNumbers[3] = 7;
+listOfNumbers[4] = 11;
+
+//imprime el arreglo en la consola
+
+console.log(listOfNumbers);
+// → [2, 3, 5, 7, 11]
+
+</code></pre>
+<h2>Mezclando tipos de datos en <code>arrays</code></h2>
+<p>Los elementos de un <code>array</code> no tienen que ser todos del mismo tipo de dato. Podemos, por ejemplo, tener un <code>array</code> que contenta un <code>number</code> (el número 3), un <code>string</code> (“dinosaurios”) y otro <code>number</code> (el número 3627.5):</p>
+<pre class="hljs" class="language-js"><code>
+var mixedArray = [3, &quot;hola mundo&quot;, 3627.5];
+console.log(mixedArray[0]);
+// → 3
+console.log(mixedArray[1]);
+// → hola mundo
+console.log(mixedArray[2]);
+// → 3627.5
+</code></pre>
+<p>Inclusive podemos tener un <code>array</code> dentro de otro <code>array</code> (algo que mucha gente llama arrays de 2 dimensiones) Por ejemplo, para organizar la data de preguntas y respuesta de un quiz, podemos utilizar un <code>array</code> en el que cada elemento es, as vez, un <code>array</code> que tiene dos elementos: una pregunta y una respuesta.</p>
+<pre class="hljs" class="language-js"><code>var questions = [
+  [&quot;¿En cuántos países opera Laboratoria?&quot;, 3],
+  [&quot;¿Cuál es la capital de Perú?&quot;, &quot;Lima&quot;],
+  [&quot;¿Cuál es baile típico Chileno?&quot;, &quot;Cueca&quot;],
+  [&quot;¿Cuál es la moneda de México?&quot;, &quot;Peso&quot;]
+  ];
+
+</code></pre>
+<p>Para acceder a elementos individuales de los arrays internos simplemente se añade un nuevo par de corchetes con el index correspondiente. Por ejemplo, para obtener la respuesta a la pregunta “¿Cuál es la moneda de México?” haríamos:</p>
+<pre class="hljs" class="language-js"><code>var questions = [
+  [&quot;¿En cuántos países opera Laboratoria?&quot;, 3],
+  [&quot;¿Cuál es la capital de Perú?&quot;, &quot;Lima&quot;],
+  [&quot;¿Cuál es baile típico Chileno?&quot;, &quot;Cueca&quot;],
+  [&quot;¿Cuál es la moneda de México?&quot;, &quot;Peso&quot;]
+  ];
+console.log(questions[3][1]);
+// → Peso
+</code></pre>
+<p>Cuando escribimos <code>console.log(questions[3][1])</code> le estamos diciendo a JavaScript que busque el <code>index 3</code> del array <code>questions</code> (lo cual es, a su vez, un array:<code>[&quot;¿Cuál es la moneda de México?&quot;, &quot;Peso&quot;]</code>), y que dentro de ese array busque el <code>index 1</code> (lo cual es el <code>string</code> <code>&quot;Peso&quot;</code>) e imprima el resultado en la consola.</p>
+<p>A continuación Michelle nos explica los conceptos principales de <code>arrays</code> con un ejemplo</p>
+<p><a href="https://www.youtube.com/watch?v=-hLSzYr3z44"><img src="https://img.youtube.com/vi/-hLSzYr3z44/0.jpg" alt="ejemplo array dinosaurios pg 44 JS for Kids" /></a></p>
+<hr />
+<p><a href="05-objects.md">Continuar</a></p>
+
+    </div>
+
+  </template>
+    <script>
+        Polymer({
+            is: "unit-04-arrays",
+            ready: function () {
+                hljs.initHighlightingOnLoad();
+            }
+        });
+    </script>
+</dom-module>

@@ -1,0 +1,1173 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../style/shared-style.html">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+<dom-module id="unit-02-html">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <template strip-whitespace="">
+    
+    
+    <style include="shared-style">        
+    /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:0.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}*{box-sizing:border-box}input,select,textarea,button{font:13px/1.4 Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Segoe UI Emoji","Segoe UI Symbol"}body{font:13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";color:#333;background-color:#fff}a{color:#4078c0;text-decoration:none}a:hover,a:active{text-decoration:underline}hr,.rule{height:0;margin:15px 0;overflow:hidden;background:transparent;border:0;border-bottom:1px solid #ddd}hr:before,.rule:before{display:table;content:""}hr:after,.rule:after{display:table;clear:both;content:""}h1,h2,h3,h4,h5,h6{margin-top:15px;margin-bottom:15px;line-height:1.1}h1{font-size:30px}h2{font-size:21px}h3{font-size:16px}h4{font-size:14px}h5{font-size:12px}h6{font-size:11px}small{font-size:90%}blockquote{margin:0}ul,ol{padding:0;margin-top:0;margin-bottom:0}ol ol,ul ol{list-style-type:lower-roman}ul ul ol,ul ol ol,ol ul ol,ol ol ol{list-style-type:lower-alpha}dd{margin-left:0}tt,code{font-family:Consolas, "Liberation Mono", Menlo, Courier, monospace;font-size:12px}pre{margin-top:0;margin-bottom:0;font:12px Consolas,"Liberation Mono",Menlo,Courier,monospace}html,body{color:black}#wrapper{-webkit-font-smoothing:antialiased;line-height:1.6;padding:3px;background:#fff;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;color:#333}p{margin:1em 0}a{color:#4183c4;text-decoration:none}#wrapper{background-color:#fff;font-size:16px;line-height:1.6}#wrapper>*:first-child{margin-top:0 !important}#wrapper>*:last-child{margin-bottom:0 !important}@media screen{#wrapper{}}h1,h2,h3,h4,h5,h6{position:relative;font-weight:700;line-height:1.4;color:#333}h1{padding-bottom:.3em;font-size:2.25em;line-height:1.2;border-bottom:1px solid #eee}h2{padding-bottom:0.3em;font-size:1.75em;line-height:1.225;border-bottom:1px solid #eee}h3{font-size:1.5em;line-height:1.43}h4{font-size:1.25em}h5{font-size:1em}h6{color:#777;font-size:1em}p,blockquote,ul,ol,dl,table,pre{margin-top:0;margin-bottom:16px}hr{height:4px;padding:0;margin:16px 0;background-color:#e7e7e7;border:0 none}ul,ol{padding-left:2em}ul.no-list,ol.no-list{padding:0;list-style-type:none}ul ul,ul ol{margin-top:0;margin-bottom:0}ol ol,ol ul{margin-top:0;margin-bottom:0}li>p{margin-top:16px}dl{padding:0}dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}dl dd{padding:0 16px;margin-bottom:16px}blockquote{padding:0 15px;margin-left:0;color:#777;border-left:4px solid #ddd}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{display:block;width:100%;overflow:auto}table th{font-weight:700;padding:6px 13px;border:1px solid #ddd}table td{padding:6px 13px;border:1px solid #ddd}table tr{background-color:#fff;border-top:1px solid #ccc}table tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%;-moz-box-sizing:border-box;box-sizing:border-box}span.frame{display:block;overflow:hidden}span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}span.frame span img{display:block;float:left}span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}span.align-center{display:block;overflow:hidden;clear:both}span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}span.align-center span img{margin:0 auto;text-align:center}span.align-right{display:block;overflow:hidden;clear:both}span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}span.align-right span img{margin:0;text-align:right}span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}span.float-left span{margin:13px 0 0}span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}code,tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,0.04);border-radius:3px}code:before,code:after{letter-spacing:-.2em;content:"\00a0"}tt:before,tt:after{letter-spacing:-.2em;content:"\00a0"}code br,tt br{display:none}del code{text-decoration:inherit;vertical-align:text-top}pre>code{padding:0;margin:0;font-size:100%;white-space:pre;background:transparent;border:0}.highlight{margin-bottom:16px}.highlight pre{padding:16px;margin-bottom:0;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}pre{padding:16px;margin-bottom:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px;word-wrap:normal}pre code,pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}pre code:before,pre code:after{content:normal}pre tt:before,pre tt:after{content:normal}.poetry pre{font-family:Georgia, Garamond, serif !important;font-style:italic;font-size:110% !important;line-height:1.6em;display:block;margin-left:1em}.poetry pre code{font-family:Georgia, Garamond, serif !important;word-break:break-all;word-break:break-word;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto;white-space:pre-wrap}sup,sub,a.footnote{font-size:1.4ex;height:0;line-height:1;vertical-align:super;position:relative}sub{vertical-align:sub;top:-1px}@media print{body{background:#fff}img,table,figure{page-break-inside:avoid}#wrapper{background:#fff;border:none !important;font-size:12px}pre code{overflow:visible}}@media screen{body.inverted{color:#eee !important;border-color:#555;box-shadow:none}.inverted #wrapper,.inverted hr,.inverted p,.inverted td,.inverted li,.inverted h1,.inverted h2,.inverted h3,.inverted h4,.inverted h5,.inverted h6,.inverted th,.inverted .math,.inverted caption,.inverted dd,.inverted dt,.inverted blockquote{color:#eee !important;border-color:#555;box-shadow:none}.inverted td,.inverted th{background:#333}.inverted pre,.inverted code,.inverted tt{background:#eeeeee !important;color:#111}.inverted h2{border-color:#555555}.inverted hr{border-color:#777;border-width:1px !important}::selection{background:rgba(157,193,200,0.5)}h1::selection{background-color:rgba(45,156,208,0.3)}h2::selection{background-color:rgba(90,182,224,0.3)}h3::selection,h4::selection,h5::selection,h6::selection,li::selection,ol::selection{background-color:rgba(133,201,232,0.3)}code::selection{background-color:rgba(0,0,0,0.7);color:#eeeeee}code span::selection{background-color:rgba(0,0,0,0.7) !important;color:#eeeeee !important}a::selection{background-color:rgba(255,230,102,0.2)}.inverted a::selection{background-color:rgba(255,230,102,0.6)}td::selection,th::selection,caption::selection{background-color:rgba(180,237,95,0.5)}.inverted{background:#0b2531;background:#252a2a}.inverted #wrapper{background:#252a2a}.inverted a{color:#acd1d5}}.highlight{background:#fff}.highlight .c{color:#998;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .k,.highlight .o{font-weight:700}.highlight .cm{color:#998;font-style:italic}.highlight .cp{color:#999;font-weight:700}.highlight .c1{color:#998;font-style:italic}.highlight .cs{color:#999;font-weight:700;font-style:italic}.highlight .gd{color:#000;background-color:#fdd}.highlight .gd .x{color:#000;background-color:#faa}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#999}.highlight .gi{color:#000;background-color:#dfd}.highlight .gi .x{color:#000;background-color:#afa}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:700}.highlight .gu{color:purple;font-weight:700}.highlight .gt{color:#a00}.highlight .kc,.highlight .kd,.highlight .kn,.highlight .kp,.highlight .kr{font-weight:700}.highlight .kt{color:#458;font-weight:700}.highlight .m{color:#099}.highlight .s{color:#d14}.highlight .n{color:#333}.highlight .na{color:teal}.highlight .nb{color:#0086b3}.highlight .nc{color:#458;font-weight:700}.highlight .no{color:teal}.highlight .ni{color:purple}.highlight .ne,.highlight .nf{color:#900;font-weight:700}.highlight .nn{color:#555}.highlight .nt{color:navy}.highlight .nv{color:teal}.highlight .ow{font-weight:700}.highlight .w{color:#bbb}.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx{color:#d14}.highlight .sr{color:#009926}.highlight .s1{color:#d14}.highlight .ss{color:#990073}.highlight .bp{color:#999}.highlight .vc,.highlight .vg,.highlight .vi{color:teal}.highlight .il{color:#099}.highlight .gc{color:#999;background-color:#EAF2F5}.type-csharp .highlight .k,.type-csharp .highlight .kt{color:blue}.type-csharp .highlight .nf{color:#000;font-weight:400}.type-csharp .highlight .nc{color:#2b91af}.type-csharp .highlight .nn{color:#000}.type-csharp .highlight .s,.type-csharp .highlight .sc{color:#a31515}.type-csharp .highlight .k,.type-csharp .highlight .kt{color:#00F}.type-csharp .highlight .nf{color:#000;font-weight:normal}.type-csharp .highlight .nc{color:#2B91AF}.type-csharp .highlight .nn{color:#000}.type-csharp .highlight .s,.type-csharp .highlight .sc{color:#A31515}body.dark #wrapper{background:transparent !important;box-shadow:none !important}
+    .hljs{display:block;overflow-x:auto;padding:0.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#333;font-weight:bold}.hljs-number,.hljs-literal,.hljs-variable,.hljs-template-variable,.hljs-tag .hljs-attr{color:#008080}.hljs-string,.hljs-doctag{color:#d14}.hljs-title,.hljs-section,.hljs-selector-id{color:#900;font-weight:bold}.hljs-subst{font-weight:normal}.hljs-type,.hljs-class .hljs-title{color:#458;font-weight:bold}.hljs-tag,.hljs-name,.hljs-attribute{color:#000080;font-weight:normal}.hljs-regexp,.hljs-link{color:#009926}.hljs-symbol,.hljs-bullet{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}#mkreplaced-toc{list-style-position:inside;padding:0;margin:0 0 0 1rem;list-style-type:none}#mkreplaced-toc li::before{content:''}#mkreplaced-toc li{font-size:1rem;line-height:1.25;font-weight:normal}#mkreplaced-toc li ul{font-size:1.3rem;font-weight:300;padding:.5rem 0;margin:0 0 0 1rem}#mkreplaced-toc li.missing{list-style-type:none !important}#mkreplaced-toc.max-1 ul,#mkreplaced-toc.max1 ul{display:none}#mkreplaced-toc.max-2 ul ul,#mkreplaced-toc.max2 ul ul{display:none}#mkreplaced-toc.max-3 ul ul ul,#mkreplaced-toc.max3 ul ul ul{display:none}#mkreplaced-toc.max-4 ul ul ul ul,#mkreplaced-toc.max4 ul ul ul ul{display:none}#mkreplaced-toc.max-5 ul ul ul ul ul,#mkreplaced-toc.max5 ul ul ul ul ul{display:none}.rtl{direction:rtl;text-align:right}@media print{body{background:white;line-height:1.4}html,body,#wrapper{max-width:100%;width:100%;-webkit-text-size-adjust:none;-webkit-perspective:none !important;box-sizing:border-box;width:auto;border:0;margin:0;padding:0;float:none;-moz-box-shadow:none !important;-webkit-box-shadow:none !important;box-shadow:none !important}mark{background:transparent !important}h1,h2,h3,h4,h5,h6{page-break-after:avoid}p,h2,h3{orphans:3;widows:3}section{page-break-before:avoid}pre>code{white-space:pre;word-break:break-word}#generated-toc,#firstdiff,#toc-title,#mkdocumentprogress,#mkincludechart,#mkprogressbar1,#mkprogressbar2,.mkscrollmeter,#alllinks,.popup{display:none !important}.suppressprintlinks a{color:inherit !important;text-decoration:none !important;border-bottom:none !important;cursor:default !important}.hrefafterlinktext #wrapper a:link:after,.hrefafterlinktext #wrapper a:visited:after{content:" (" attr(href) ") ";font-size:90%;opacity:0.9}.nocodebreak pre{page-break-inside:avoid}img,table,figure{page-break-inside:avoid}.breakfootnotes .footnotes{page-break-before:always}.breakfootnotes .footnotes hr{display:none}#mktoctitle{display:block}#print-title{display:block;border-bottom:solid 1px #666}#wrapper pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}#wrapper #generated-toc-clone,#wrapper #mkreplaced-toc{display:block}.task-list .task-list-item{list-style-type:none !important}.task-list .gh-complete.task-list-item .task-list-item-checkbox:before{content:'\2713';background:#838387}.task-list .task-list-item-checkbox{-webkit-appearance:none;position:relative}.task-list .task-list-item-checkbox:before{content:' ';border:solid 1px #aaa;width:1em;height:1em;display:block;border-radius:2px;left:-20px;top:-.75em;color:white;font-weight:bold;line-height:1;text-align:center;position:absolute}}
+    #wrapper #generated-toc-clone,#wrapper #mkreplaced-toc,#wrapper #generated-toc-clone ul,#wrapper #mkreplaced-toc ul{list-style-position:inside}#wrapper #generated-toc-clone li.missing,#wrapper #mkreplaced-toc li.missing{list-style-type: none!important}#wrapper #generated-toc-clone,#wrapper #mkreplaced-toc{list-style-type: upper-roman}#wrapper #generated-toc-clone>li>ul,#wrapper #mkreplaced-toc>li>ul {list-style-type: decimal}#wrapper #generated-toc-clone>li>ul>li>ul,#wrapper #mkreplaced-toc>li>ul>li>ul{list-style-type: decimal-leading-zero}#wrapper #generated-toc-clone>li>ul>li>ul>li>ul,#wrapper #mkreplaced-toc>li>ul>li>ul>li>ul{list-style-type: lower-greek}#wrapper #generated-toc-clone>li>ul>li>ul>li>ul>li>ul,#wrapper #mkreplaced-toc>li>ul>li>ul>li>ul>li>ul{list-style-type: disc}#wrapper #generated-toc-clone>li>ul>li>ul>li>ul>li>ul>li>ul,#wrapper #mkreplaced-toc>li>ul>li>ul>li>ul>li>ul>li>ul{list-style-type: square}#wrapper #generated-toc-clone,#wrapper #mkreplaced-toc{list-style-position:outside!important;margin-left:2rem;}
+    </style>
+
+    <style id="mkprintstyles">@media print{#wrapper #generated-toc-clone,#generated-toc{display:none!important}
+    html,body,#wrapper{font-size:10pt!important}
+    }
+    </style>
+        
+    <div id="wrapper">
+        <ul>
+<li>Formato: <code>self-learning</code></li>
+<li>Tipo: <code>lectura</code></li>
+<li>Duración: <code>30min</code></li>
+</ul>
+<h2>Objetivos de Aprendizaje</h2>
+<ul>
+<li>Profundizar el entendimiento de Qué es HTML.</li>
+<li>Entender y usar etiquetas de Estructura de manera adecuada.</li>
+<li>Entender y usar adecuadamente etiquetas HTML para el contenido de su página web.</li>
+<li>Crear un formulario sólo con HTML.</li>
+</ul>
+<hr />
+<p>link a slides de lab: <a href="https://docs.google.com/presentation/d/1xA1tofzNZKya0IOBpFRjrfeMKBsy0cjgdHNcztSwKgQ/edit#slide=id.g1cea969e01_0_65">https://docs.google.com/presentation/d/1xA1tofzNZKya0IOBpFRjrfeMKBsy0cjgdHNcztSwKgQ/edit#slide=id.g1cea969e01_0_65</a></p>
+<p>materaial previo:<br />
+<a href="https://github.com/Laboratoria/curricula-js/blob/master/01-intro/01-introduction/03-your-first-website.md">https://github.com/Laboratoria/curricula-js/blob/master/01-intro/01-introduction/03-your-first-website.md</a></p>
+<p>referencia:<br />
+<a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started">https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started</a></p>
+<h2>¿Qué es HTML?</h2>
+<p>En la unidad de Introducción vimos como hacer tu primera web. Recapitulemos un poco en lo que vimos.</p>
+<p>Recordemos que <em>Hipertext Markup Language</em> o <em>HTML</em> es un lenguaje de marcado.  <strong>No es un lenguaje de programación</strong>. Digamos que es un lenguaje donde indicas qué es cada cosa a través de etiquetas. A través de este lenguaje le decimos al navegador cómo estructurar el contenido de la página web en pequeños bloques de elementos html. Dependiendo de la <em>etiqueta</em> que usemos, el elemento html se verá un poco diferente.</p>
+<h2>Anatomía de un elemento HTML</h2>
+<p>Como vimos anteriormente, una etiqueta esta formada principalmente por:<br />
+<img src="tag-structure.png" alt="Code that transforms" /></p>
+<p>En este ejemplo estamos definiendo un elemento <strong>párrafo</strong> con la etiqueta <strong><em>p</em></strong>. Este pequeño párrafo tiene un contenido de texto que es <strong><em>Code that transforms</em></strong>.</p>
+<h3>Atributos</h3>
+<p>Un elemento HTML además puede tener varios atributos que lo modifican, especializan, identifican o demás.</p>
+<p><img src="tag-structure-attributes.png" alt="Code that transforms" /></p>
+<p>Los atributos nos dan información adicional sobre el contenido de una elemento. En algunos casos agregan características y/o comportamiento a tu elemento HTML. Los atributos aparencen en la apertura de una etiqueta de un elemento de html y consiste de dos partes, un nombre y un valor separados por un signo de <code>=</code>.</p>
+<h3>Etiquetas vacías</h3>
+<p>Algunas etiquetas no tienen directamente contenido, sino que, en algunos casos reciben un fuente de la que obtendrán contenido. Por ejemplo el elemento <strong>imagen</strong> que creamos con la etiqueta <strong>img</strong>.</p>
+<p><img src="tag-img.png" alt="" /></p>
+<p>Ese es el caso de la etiqueta <strong>br</strong></p>
+<p>En otros casos crean un comportamiento en si mismas. Es el caso de la etiqueta <strong>br</strong> que define un salto de línea en el contenido:</p>
+<p><img src="tag-br-closing.png" alt="" /></p>
+<p>Más adelante vamos a aprender más sobre las versiones de HTML, pero te voy adelantando que en HTML5 ya no es necesario que pongas el <strong>/</strong> de cierre, por ejemplo el <strong>br</strong> quedaría como:</p>
+<p><img src="tag-br.png" alt="" /></p>
+<h3>Anidado de etiquetas</h3>
+<p>Como recordarás, una etiqueta puede contener en su <em>contenido</em> otras etiquetas o elementos HTML</p>
+<p>Por ejemplo, cuando vimos nuestra primera página web:</p>
+<pre class="hljs" class="language-js"><code>&lt;body&gt;
+    &lt;h1&gt;Hola Mundo&lt;/h1&gt;
+&lt;/body&gt;
+</code></pre>
+<p>Aquí el elemento <strong>body</strong> que tiene como objetivo contener el cóntenido de la página web, tiene un elemento anidado o hijo que es el título <strong>h1</strong>.</p>
+<p>Por ejemplo, si definimos una lista no ordenada de frutas:</p>
+<pre class="hljs" class="language-js"><code>&lt;ul&gt;
+    &lt;li&gt;fresa&lt;/li&gt;
+    &lt;li&gt;melón&lt;/li&gt;
+    &lt;li&gt;naranja&lt;/li&gt;
+    &lt;li&gt;kiwi&lt;/li&gt;
+&lt;ul&gt;
+</code></pre>
+<p>El <strong>ul</strong> o <em>lista no ordenada</em> (unordered list) tendrá internamente varios elementos <strong>li</strong> de la lista. Cada uno de ellos con su propio contenido.</p>
+<h2>Comentarios en HTML</h2>
+<p>Para definir un comentario recordemos que usamos las etiquetas <code>&lt;!--</code> para arbri el comentario y <code>--&gt;</code> para cerrar el comentario.</p>
+<pre class="hljs" class="language-js"><code>&lt;ul&gt;
+    &lt;li&gt;fresa&lt;/li&gt;
+    &lt;li&gt;melón&lt;/li&gt;
+    &lt;li&gt;naranja&lt;/li&gt;
+    &lt;!-- Este es un comentario y no se verá en mi página web, pero si en mi código. --&gt;
+    &lt;li&gt;kiwi&lt;/li&gt;
+&lt;ul&gt;
+</code></pre>
+<h2>Estructura HTML</h2>
+<p>Las etiquetas actuan como contenedores de la información que esté entre sus etiquetas de apertura y cierre.</p>
+<p>Si definimos como contenedores, tendremos que :</p>
+<pre class="hljs" class="language-js"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hola Mundo!&lt;/h1&gt;
+    &lt;p&gt;Bienvenidos a mi primera página web&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Si recordamos, cuando guardes este código en un archivo <code>index.html</code> y luego decidas abrirlo con un navegador, ser verá más o menos así:</p>
+<p><img src="test-html.png" alt="Mi primera página web" /></p>
+<p>He agregado un poco de CSS para que puedas tener una idea de los contenedores que mencionaba:</p>
+<p><img src="test-html-containers.png" alt="Mi primera página web - contenedores" /></p>
+<p>A parte del <code>&lt;!DOCTYPE html&gt;</code> que nos dice que el siguiente documento es un documento HTML, las demás etiquetan generan contenedores. Más allá de esos contenedores, es importante recordar que cada una de las etiquetas que vemos arriba tiene un propósito.</p>
+<p>El elemento <body> ya lo conoces. Todo lo que este dentro de este elemento se muestra en la vetana del navegador.</p>
+<p>Antes del elemento <code>&lt;body&gt;</code>, por lo general verás un elemento <code>&lt;head&gt;</code>. <code>&lt;head&gt;</code> contiene información sobre la página, esta información no se muestra directamente, como el elemento <code>body</code>, pero le dice al navegador datos sobre la información que se contendrá, cómo mostrar la página y detalles que la ventana del navegador puede usar. Es el caso del <code>&lt;title&gt;</code>, que se mostrará en la barra de título del navegador.</p>
+<p>Veremos un poco más de <code>head</code> y otras etiquetas HTML que es importante que conozcas para poder estructurar tu página web.</p>
+<h3>Un poco de historia</h3>
+<hr />
+<p>En un momento de la historia de la web, muchas de las estructuras en la web se hacían con tablas, usando la etiqueta <code>&lt;table&gt;</code>.</p>
+<p>Incluso puedes ver algunos rezagos de estas antigüedades de la web circulando en internet. Por ejemplo este site de <a href="http://www.3riversstadium.com/index2.html">Three Rivers Stadium</a>, si vemos estructura HTML en su contenido notarás que la navegación y todo esta escrito con tablas:</p>
+<pre class="hljs" class="language-js"><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//IETF//DTD HTML 3.0//EN&quot;&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+
+  &lt;title&gt;Three Rivers Stadium&lt;/title&gt;
+
+  &lt;meta NAME=&quot;Keywords&quot; CONTENT=&quot;Three Rivers Stadium, Pittsburgh, Pennsylvania, stadium, Steelers, Pirates, three rivers&quot;&gt;
+  &lt;meta NAME=&quot;Description&quot; CONTENT=&quot;Welcome to the Three Rivers Stadium website.&quot;&gt;
+  &lt;!--Aquí había varios scripts, que retiré ya que por el momento no vienen al caso--&gt;
+&lt;/head&gt;
+&lt;body BGCOLOR=&quot;#000000&quot; TOPMARGIN=&quot;15&quot; LEFTMARGIN=&quot;11&quot; LINK=&quot;#993399&quot; VLINK=&quot;#006600&quot; ALINK=&quot;#FFCC00&quot;&gt;
+
+
+  &lt;!--*********************************** TOP NAVIGATION *******************************************--&gt;
+  &lt;table WIDTH=&quot;599&quot; BORDER=&quot;0&quot; CELLSPACING=&quot;0&quot; CELLPADDING=&quot;0&quot;&gt;
+    &lt;tr ALIGN=&quot;LEFT&quot; VALIGN=&quot;TOP&quot;&gt;
+      &lt;td WIDTH=&quot;32&quot; BGCOLOR=&quot;#000000&quot;&gt;
+        &lt;img SRC=&quot;images/spacer.gif&quot; ALT WIDTH=&quot;32&quot; HEIGHT=&quot;10&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;br&gt;
+      &lt;/td&gt;
+      &lt;td COLSPAN=&quot;3&quot; BGCOLOR=&quot;#FFFFFF&quot;&gt;
+        &lt;img SRC=&quot;images/header.gif&quot; ALT=&quot;Welcome to Three Rivers Stadium&quot; WIDTH=&quot;535&quot; HEIGHT=&quot;38&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;br&gt;
+        &lt;img SRC=&quot;images/t1a.gif&quot; ALT=&quot;Welcome to the Three Rivers Stadium Website&quot; ALIGN=&quot;bottom&quot; WIDTH=&quot;535&quot; HEIGHT=&quot;9&quot; BORDER=&quot;0&quot;&gt;&lt;br&gt;
+        &lt;img SRC=&quot;images/t2.gif&quot; ALT=&quot; &quot; WIDTH=&quot;17&quot; HEIGHT=&quot;17&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;a HREF=&quot;index2.html&quot; onMouseOver=&quot;return bar('Three Rivers Stadium Home')&quot;
+          onMouseOut=&quot;return bar('')&quot; TARGET=&quot;_top&quot;&gt;&lt;img SRC=&quot;images/t3on.gif&quot; ALT=&quot;home&quot; WIDTH=&quot;39&quot; HEIGHT=&quot;17&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot; NAME=&quot;t3&quot;&gt;&lt;/a&gt;
+        &lt;a HREF=&quot;contact/index.html&quot; onMouseOver=&quot;img_act('t4'); 
+		return bar('Contact Three Rivers Stadium')&quot; onMouseOut=&quot;img_inact('t4'); return bar('')&quot; TARGET=&quot;_top&quot;&gt;&lt;img SRC=&quot;images/t4off.gif&quot; ALT=&quot;contact us&quot; WIDTH=&quot;55&quot; HEIGHT=&quot;17&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;
+                                                NAME=&quot;t4&quot;&gt;&lt;/a&gt;&lt;a HREF=&quot;directions/index.html&quot; onMouseOver=&quot;img_act('t5'); return bar('Directions to Three Rivers Stadium')&quot;
+          onMouseOut=&quot;img_inact('t5'); return bar('')&quot; TARGET=&quot;_top&quot;&gt;&lt;img SRC=&quot;images/t5off.gif&quot; ALT=&quot;getting here&quot; WIDTH=&quot;67&quot; HEIGHT=&quot;17&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot; NAME=&quot;t5&quot;&gt;&lt;/a&gt;
+        &lt;a HREF=&quot;search/index.html&quot; onMouseOver=&quot;img_act('t6'); return bar('Site Search')&quot; onMouseOut=&quot;img_inact('t6'); return bar('')&quot;
+          TARGET=&quot;_top&quot;&gt;&lt;img SRC=&quot;images/t6off.gif&quot; ALT=&quot;site search&quot; WIDTH=&quot;39&quot; HEIGHT=&quot;17&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;
+                                                        NAME=&quot;t6&quot;&gt;&lt;/a&gt;&lt;img SRC=&quot;images/t7.gif&quot; ALT=&quot;Stadium club&quot;
+          WIDTH=&quot;69&quot; HEIGHT=&quot;17&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot; NAME=&quot;t7&quot;&gt;&lt;img SRC=&quot;images/t8.gif&quot; ALT=&quot; &quot; WIDTH=&quot;249&quot; HEIGHT=&quot;17&quot;
+          BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;br&gt;
+        &lt;img SRC=&quot;images/pixel.gif&quot; ALT=&quot; &quot; WIDTH=&quot;535&quot; HEIGHT=&quot;1&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;br&gt;
+      &lt;/td&gt;
+      &lt;td WIDTH=&quot;32&quot; BGCOLOR=&quot;#000000&quot;&gt;
+        &lt;img SRC=&quot;images/spacer.gif&quot; ALT WIDTH=&quot;32&quot; HEIGHT=&quot;10&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;br&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;!--*********************************** END TOP NAVIGATION ***************************************--&gt;
+
+  &lt;!--*********************************** MIDDLE NAVIGATION ****************************************--&gt;
+  &lt;table WIDTH=&quot;599&quot; BORDER=&quot;0&quot; CELLSPACING=&quot;0&quot; CELLPADDING=&quot;0&quot;&gt;
+    &lt;tr ALIGN=&quot;LEFT&quot; VALIGN=&quot;TOP&quot;&gt;
+      &lt;td WIDTH=&quot;32&quot; BGCOLOR=&quot;#000000&quot;&gt;
+        &lt;img SRC=&quot;images/spacer.gif&quot; ALT WIDTH=&quot;32&quot; HEIGHT=&quot;10&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;br&gt;
+      &lt;/td&gt;
+      &lt;td WIDTH=&quot;286&quot; BGCOLOR=&quot;#FFFFFF&quot;&gt;
+        &lt;a HREF=&quot;music/index.html&quot;&gt;&lt;img SRC=&quot;images/h3.gif&quot; LOWSRC=&quot;images/h3ls.gif&quot; ALT=&quot;Music and Concerts&quot; ALIGN=&quot;BOTTOM&quot; WIDTH=&quot;286&quot; HEIGHT=&quot;64&quot; BORDER=&quot;0&quot;&gt;&lt;/a&gt;&lt;br&gt;
+        &lt;a HREF=&quot;events/index.html&quot;&gt;&lt;img SRC=&quot;images/h4.gif&quot; LOWSRC=&quot;images/h4ls.gif&quot; ALT=&quot;Summer Events&quot; ALIGN=&quot;BOTTOM&quot; WIDTH=&quot;286&quot; HEIGHT=&quot;66&quot; BORDER=&quot;0&quot;&gt;&lt;/a&gt;&lt;br&gt;
+        &lt;a HREF=&quot;sports/index.html&quot;&gt;&lt;img SRC=&quot;images/h5.gif&quot; LOWSRC=&quot;images/h5ls.gif&quot; ALT=&quot;Sports Excitement&quot; ALIGN=&quot;BOTTOM&quot; WIDTH=&quot;286&quot; HEIGHT=&quot;65&quot; BORDER=&quot;0&quot;&gt;&lt;/a&gt;&lt;br&gt;
+      &lt;/td&gt;
+      &lt;td BGCOLOR=&quot;#FFFFFF&quot;&gt;
+        &lt;img SRC=&quot;images/a1.gif&quot; ALT=&quot;About Three Rivers Stadium&quot; ALIGN=&quot;bottom&quot; WIDTH=&quot;140&quot; HEIGHT=&quot;77&quot; BORDER=&quot;0&quot;&gt;
+        &lt;a HREF=&quot;about/index.html&quot; onMouseOver=&quot;img_act('a2'); 
+		return bar('About Three Rivers Stadium')&quot; onMouseOut=&quot;img_inact('a2'); return bar('')&quot; TARGET=&quot;_top&quot;&gt;&lt;img SRC=&quot;images/a2off.gif&quot; ALT=&quot;About Three Rivers Stadium&quot; WIDTH=&quot;109&quot; HEIGHT=&quot;77&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot; NAME=&quot;a2&quot;&gt;&lt;/a&gt;&lt;br&gt;
+        &lt;img SRC=&quot;images/a3.gif&quot; ALT=&quot;About Three Rivers Stadium&quot; WIDTH=&quot;249&quot; HEIGHT=&quot;118&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;br&gt;
+      &lt;/td&gt;
+      &lt;td WIDTH=&quot;32&quot; BGCOLOR=&quot;#000000&quot;&gt;
+        &lt;img SRC=&quot;images/spacer.gif&quot; ALT WIDTH=&quot;32&quot; HEIGHT=&quot;10&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;br&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr ALIGN=&quot;LEFT&quot; VALIGN=&quot;TOP&quot;&gt;
+      &lt;td WIDTH=&quot;32&quot; BGCOLOR=&quot;#000000&quot;&gt;
+        &lt;img SRC=&quot;images/spacer.gif&quot; ALT WIDTH=&quot;32&quot; HEIGHT=&quot;2&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;br&gt;
+      &lt;/td&gt;
+      &lt;td COLSPAN=&quot;2&quot; BGCOLOR=&quot;#000000&quot;&gt;
+        &lt;img SRC=&quot;images/pixel.gif&quot; ALT=&quot; &quot; WIDTH=&quot;535&quot; HEIGHT=&quot;1&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;br&gt;
+      &lt;/td&gt;
+      &lt;td WIDTH=&quot;32&quot; BGCOLOR=&quot;#000000&quot;&gt;
+        &lt;img SRC=&quot;images/spacer.gif&quot; ALT WIDTH=&quot;32&quot; HEIGHT=&quot;2&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;br&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;!--********************************** END MIDDLE NAVIGATION *************************************--&gt;
+
+  &lt;!--*********************************** EVENTS/ADVERTISING ***************************************--&gt;
+  &lt;table WIDTH=&quot;599&quot; BORDER=&quot;0&quot; CELLSPACING=&quot;0&quot; CELLPADDING=&quot;0&quot;&gt;
+    &lt;tr ALIGN=&quot;LEFT&quot; VALIGN=&quot;TOP&quot;&gt;
+      &lt;td WIDTH=&quot;32&quot; BGCOLOR=&quot;#000000&quot;&gt;
+        &lt;img SRC=&quot;images/spacer.gif&quot; ALT WIDTH=&quot;32&quot; HEIGHT=&quot;10&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;br&gt;
+      &lt;/td&gt;
+      &lt;td WIDTH=&quot;20&quot; BGCOLOR=&quot;#FFFFFF&quot;&gt;
+        &lt;img SRC=&quot;images/spacer.gif&quot; ALT WIDTH=&quot;20&quot; HEIGHT=&quot;10&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;br&gt;
+      &lt;/td&gt;
+
+      &lt;td WIDTH=&quot;495&quot; BGCOLOR=&quot;#FFFFFF&quot;&gt;&lt;br&gt;
+        &lt;img SRC=&quot;images/partnersend.gif&quot; ALT=&quot;Three Rivers Stadium Partners&quot; WIDTH=&quot;495&quot; HEIGHT=&quot;220&quot; BORDER=&quot;0&quot; ALIGN=&quot;BOTTOM&quot;&gt;&lt;br&gt;
+        &lt;br&gt;
+        &lt;br&gt;
+        &lt;hr NOSHADE SIZE=&quot;1&quot;&gt; This site has been optimized for &lt;a HREF=&quot;http://home.netscape.com/comprod/mirror/client_download.html&quot; TARGET=&quot;_top&quot;&gt;Netscape 
+      3.0 or above&lt;/a&gt; and &lt;a HREF=&quot;http://www.microsoft.com/ie/download/&quot; TARGET=&quot;_top&quot;&gt;Internet 
+      Explorer 4.0 and above&lt;/a&gt;.
+        &lt;p&gt; &lt;a HREF=&quot;http://home.netscape.com/comprod/mirror/client_download.html&quot; TARGET=&quot;_top&quot;&gt;&lt;img SRC=&quot;images/NS30.gif&quot; ALT=&quot;Netscape Navigator&quot; ALIGN=&quot;BOTTOM&quot; WIDTH=&quot;88&quot; HEIGHT=&quot;31&quot; BORDER=&quot;0&quot;&gt;&lt;/a&gt;
+          &lt;a HREF=&quot;http://www.microsoft.com/ie/download/&quot; TARGET=&quot;_top&quot;&gt;&lt;img SRC=&quot;images/ieget_animated.gif&quot; ALT=&quot;Microsoft Internet Explorer&quot; ALIGN=&quot;BOTTOM&quot; WIDTH=&quot;88&quot; HEIGHT=&quot;31&quot; BORDER=&quot;0&quot;&gt;&lt;/a&gt;
+          &lt;br&gt;
+          &lt;font SIZE=&quot;1&quot;&gt;copyright  1998 Three Rivers Stadium.&lt;/font&gt; &lt;br&gt;
+          &lt;br&gt;
+          &lt;font SIZE=&quot;1&quot;&gt;Site development and management by &lt;a HREF=&quot;http://www.h2.com/&quot; TARGET=&quot;_top&quot;&gt;H2&lt;/a&gt;&lt;/font&gt;
+          &lt;img SRC=&quot;images/spacer.gif&quot; ALT WIDTH=&quot;20&quot; HEIGHT=&quot;20&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;br&gt;
+          &lt;br&gt;
+          &lt;br&gt;
+      &lt;/td&gt;
+      &lt;td WIDTH=&quot;20&quot; BGCOLOR=&quot;#FFFFFF&quot;&gt;
+        &lt;img SRC=&quot;images/spacer.gif&quot; ALT WIDTH=&quot;20&quot; HEIGHT=&quot;10&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;br&gt;
+      &lt;/td&gt;
+      &lt;td WIDTH=&quot;32&quot; BGCOLOR=&quot;#000000&quot;&gt;
+        &lt;img SRC=&quot;images/spacer.gif&quot; ALT WIDTH=&quot;32&quot; HEIGHT=&quot;10&quot; BORDER=&quot;0&quot; ALIGN=&quot;bottom&quot;&gt;&lt;br&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+  &lt;!--********************************* END EVENTS/ADVERTISING *************************************--&gt;
+  &lt;br&gt;
+  &lt;br&gt;
+  &lt;br&gt;
+  &lt;!-- * Author-Corporate: H2* Publisher: 		H2 (www.h2.com)* Publisher-Email: 	info@h2.com --&gt;
+&lt;/body&gt;
+</code></pre>
+<p>El resultado en un navegador moderno se ve:</p>
+<p><img src="three-rivers-stadium-site.png" alt="Three rivers stadium site" /></p>
+<p>Este sitio web se creo en 1998. Cerca de 2 décadas después, muchas cosas han cambiado.</p>
+<p>Por ejemplo notarás varias cosas:</p>
+<ul>
+<li><code>DOCTYPE</code> es de otra versión.</li>
+<li>El uso de atributos para dar estilo y color.</li>
+<li>Usar los atributos todo en mayúsculas.</li>
+<li>Y sobre todo, el uso de tabla para definir todas las estructuras.</li>
+</ul>
+<p>Todos estos detalles, hoy en día ya se consideran malas prácticas de desarrollo.</p>
+<p>Cuando el mundo del desarrollo reaccionó y recordó que las tablas están hechas para tabular datos y no para hacer estructuras en la web, surgió toda una “moda” de crear todo con etiquetas <code>div</code>.<br />
+También hubo un momento en la vida en que todo se quería hacer con <code>frameset</code>, un caso es este <a href="http://www.lost-world.com/ingen/index.html">site de Jurassic Park</a>.<br />
+Tiempos oscuros ahora, pero en su momento podían ser la mejor práctica.</p>
+<p>Regresemos a los <code>div</code>, se expandieron y tuvieron varias años para ser la mejor práctica.<br />
+Todo eran <code>div</code>s.<br />
+Para darle más sentido y significado a qué hacía dicho <code>div</code> los desarrolladores aprovecharon los atributos <code>class</code> y <code>id</code>.</p>
+<p>Surge HTML5 como la nueva versión del estándar de desarrollo y con ello trae nuevas buenas prácticas. Una de las principales características de HTML5 fue reclamar la semántica de los elementos HTML.</p>
+<p>En otros tiempos una estructura HTML y <code>DIV</code> podría ser:</p>
+<pre class="hljs" class="language-js"><code>&lt;body&gt;
+    &lt;div class=&quot;header&quot;&gt;
+    &lt;!-- Aquí iban la navegacion y demás cosas de la cabecera --&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;main&quot;&gt;
+    &lt;!-- Aquí iba el contenido principal --&gt;
+        &lt;div clas=&quot;gallery&quot;&gt;
+        &lt;!-- Aquí imaginemos que va una sección con la galería de imágenes --&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;comments&quot;&gt;
+         &lt;!-- Aquí imaginemos que va una sección de comentarios --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;side-menu&quot;&gt;
+    &lt;!-- Aquí iban la navegacion interna del contenido principal. --&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;footer&quot;&gt;
+    &lt;!-- Aquí nuevamente la navegacion como lista, copyright entre otros en el pie de la página. --&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<p>Con algo de CSS, la estructura a la que llegaríamos es:</p>
+<p><img src="html-structure-divitis.png" alt="DIV style development" /></p>
+<p>Con HTML5 tenemos etiquetas que por si mismas indican la función que cumplirá el elemento, por lo que se considera que es más semántico, es decir asociado a significado. Ahora tenemos etiquetas como <code>&lt;header&gt;&lt;/header&gt;</code> para la cabecera, <code>&lt;section&gt;&lt;/section&gt;</code> para indicar que estamos creando una sección en la página.</p>
+<p>Si bien la estructura es parecida a la anterior:<br />
+<img src="html-structure-html5.png" alt="HTML5 semantic development" /></p>
+<p>Las etiquetas ya tienen un significado en si mismas, y como desarrolladores nos da mejor idea de que es lo que esta sucediendo con ese código, que sería:</p>
+<pre class="hljs" class="language-js"><code>&lt;body&gt;
+    &lt;header&gt;
+    &lt;!-- Aquí iban la navegacion y demás cosas de la cabecera --&gt;
+    &lt;/header&gt;
+    &lt;section class=&quot;main&quot;&gt;
+    &lt;!-- Aquí iba el contenido principal --&gt;
+        &lt;section clas=&quot;gallery&quot;&gt;
+        &lt;!-- Aquí imaginemos que va una sección con la galería de imágenes --&gt;
+        &lt;/section&gt;
+        &lt;section class=&quot;comments&quot;&gt;
+         &lt;!-- Aquí imaginemos que va una sección de comentarios --&gt;
+        &lt;/section&gt;
+    &lt;/section&gt;
+    &lt;aside&gt;
+    &lt;!-- Aquí iban la navegacion interna del contenido principal. --&gt;
+    &lt;/aside&gt;
+    &lt;footer&gt;
+    &lt;!-- Aquí nuevamente la navegacion como lista, copyright entre otros en el pie de la página. --&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+</code></pre>
+<h3>¿Por qué necesitamos semántica?</h3>
+<p>La semántica nos rodean, confiamos en experiencias previas para decirnos cúal es la función de los objetos de cada día; cuando vemos algo, sabemos cuál será su función. Así que, por ejemplo, esperamos la luz roja del semáforo que significa “Pare”, y la luz verde del semáforo que significa “avanzar”. Algunas se pueden poner confusas rápidamente si se aplican las semánticas incorrectas.</p>
+<p>Conocemos de la luz roja, y la luz verde en el semáforo y entendemos que hacer cuando aparece cada una, porque hemos construído socialmente un <strong><em>entendimiento compartido</em></strong> de lo que <strong>significa</strong> para nosotros.</p>
+<h2>Meta data: Head</h2>
+<hr />
+<p><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML">https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML</a></p>
+<p>Como mencionamos, <code>head</code> contiene información de la página para el navegador. Esta etiqueta y su contenido no se ven por defecto en el contenido principal del navegador.  Esta información incluye:</p>
+<h3><code>&lt;title&gt;&lt;/title&gt;</code></h3>
+<p>Esta etiqueta despliega el título que verás en la barra de título del navegador.<br />
+Solo para aclarar. Puedes ver dónde aparece el contenido de la etiqueta <code>title</code> en el navegador.</p>
+<p><img src="test-html-browser-parts.png" alt="Mi primera página web - contenedores" /></p>
+<h3><code>&lt;link href=&quot;[direccion url de tu hoja de estilos]&quot; rel=&quot;stylesheet&quot;&gt;</code></h3>
+<p>También encontraras, por lo general, la etiqueta <code>link</code> que genera un vínculo entre la página y otros recursos. Puedes revisar la <a href="https://developer.mozilla.org/es/docs/Web/HTML/Elemento/link">documentacion de link que tiene disponible MDN</a>. Por lo general lo usamos para <em>stylesheets</em> (hojas de estilos). Hay algunos atributos que sería importante que conozcas:</p>
+<h4><code>href</code></h4>
+<p>Indica la dirección url donde se encuentra el recurso que vamos vincular.</p>
+<h4><code>rel</code></h4>
+<p>Este atributo indica que tipo de relación tiene el recurso que estamos vinculando respecto a nuestra página. Para hojas de estilos usamos el valor <em><code>stylesheet</code></em>, pero existen otros valores como <em>copyright</em>, <em>lincense</em>, <em>help</em>, <em>author</em>, entre otros.</p>
+<h4><code>type</code></h4>
+<p>Nos ayuda a especificar el tipo de archivo que que vincularemos. Para el caso de hojas de estilos este valor muchas veces se omite, pero el oficial es usar: <em><code>text/css</code></em>. Para otro tipo de recursos, <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">necesitarás otros types</a>.</p>
+<h4><code>media</code></h4>
+<p>Este atributo nos permite decirle al navegador para que tipos de medios físicos estará disponible el recurso. Tú, yo, viendo esto en una computadora desktop en un navegador, o en un celular, estaríamos usando un media conocido como <em><code>screen</code></em>, pero hay otros media, como <em><code>print</code></em> que usamos para indicar que este será usado para impresiones (pdf o impresoras). También otro bastante usado es el <em><code>speech</code></em> para lectores para personas con discapacidad visual. También <a href="https://www.w3schools.com/tags/att_link_media.asp">puedes unir este atributo a otros con los que especificar más el medio</a> al que dirijes el recurso.</p>
+<h3><code>&lt;meta&gt;</code></h3>
+<p>Es una etiqueta vacía. En sus atributos recibe información sobre la información de la página web. Hay variada información que puedes incluir con esta etiqueta y no es raro que la encuentres varias veces en el <code>head</code> con diferentes datos. Algunos de los datos esenciales-más importantes que indicar son:</p>
+<h4>`charset__:</h4>
+<p>Indica el sistema de caracteres que usaremos en la web. Por lo general usamos en esta atributo el valor <code>utf-8</code> que es el estándar de caracteres más usado ya que incluye letras, número, tildes, letras del alfabeto frances, español, ruso entre otros. En tu HTML tendras este meta: <code>&lt;meta charset=&quot;utf-8&quot;&gt;</code></p>
+<h4><code>name</code> y  <code>content</code>:</h4>
+<p>Usamos estos dos atributos juntos especificar diferentas datos que son útiles para guardar, búsquedas desde buscadores como Google o Bing, además de apoyo para vistas en redes sociales.</p>
+<p><em><code>name</code></em> nos ayuda a identificar la información que vamos a poner, por ejemplo si vamos a poner el autor de la página tendremos <code>name=&quot;author&quot;</code> y con <em><code>content</code></em> indicaremos la información que corresponde al autor, por ejemplo: <code>content=&quot;Laboratoria&quot;</code>. El meta sería: <code>&lt;meta name=&quot;author&quot; content=&quot;Laboratoria&quot;&gt;</code>.</p>
+<p>Otros valores que puedes usar en  que puedes usar en <code>name</code> incluyen <em>description</em> (descripción de la páginas para los buscadores), <em>generator</em> (indicar con que producto, tecnologias se generó esta página), <em>keyworkds</em> (palabras clave que responden al contenido de la página).</p>
+<p>Existen otros valores de <code>name</code> que si bien no son oficiales, son bastante usados: <em>viewport</em> (puede modificar cómo se verá la web, usualmente usado para dispositivos móviles), <em>creator</em> (similar a autor, pero asociado al creador de la página), <em>robots</em>, <em>googlebot</em> , <em>slurp</em>. Estos tres últimos están relacionados a información que queremos darle a los robots que actualizan los índices de los buscadores.</p>
+<h4><code>property</code> y <code>content</code>:</h4>
+<p>Similar al dúo <code>name</code> y <code>content</code>, por lo general usamos este dúo dinámico para dar información, por lo general, asociada a diferentes redes sociales. Un ejemplo es el caso de qué información queremos que se muestre en <strong>Facebook</strong> si usaremos:</p>
+<pre class="hljs" class="language-js"><code>&lt;!-- 
+    &lt;meta property=&quot;og:image&quot; content=&quot;http://[URL DE LA IMAGEN QUE QUEREMOS MOSTRAR]&quot;&gt;
+    
+    &lt;meta property=&quot;og:description&quot; content=&quot;[Descripción que aparecerá en la pubicación]&quot;&gt;
+    
+    &lt;meta property=&quot;og:title&quot; content=&quot;[Título que tomaría la publicación]&quot;&gt;
+
+--&gt;
+    &lt;meta property=&quot;og:url&quot; content=&quot;http://laboratoria.la&quot;&gt;
+    &lt;meta property=&quot;og:title&quot; content=&quot;Laboratoria&quot;&gt;
+    &lt;meta property=&quot;og:description&quot; content=&quot;Laboratoria is a tech social enterprise that empowers young women from low-income backgrounds by giving them access to education and work in the digital sector. &quot;&gt;
+</code></pre>
+<p>Cuando compartamos la página que tiene este código, en Facebook, obtendremos algo como lo que sigue:</p>
+<p><img src="og-facebook-laboratoria.png" alt="Facebook Laboratoria" /></p>
+<p>Twitter tiene también su propio estándar para propiedades que usará en caso de publicación.</p>
+<p>Como ves, la etiqueta meta especificará bastante información sobre tu página web. Puedes ver más en la <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">documentación de la etiqueta <code>meta</code></a>.</p>
+<h3><code>script</code></h3>
+<p>Es otra etiqueta que verás y por lo regular la usamos para vincular archivos de JavaScript. Pero eso lo veremos más adelante.</p>
+<p>Tal y cómo vimos, <code>head</code> entonces sera en contenedor de variada información sobre nuestra página. Puede ver más en este <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML">artículo de MDN</a> al respecto.</p>
+<h2>Principales etiquetas</h2>
+<p>De hecho existen montones de etiquetas que puedes usar, y podemos dividirlas entre etiquetas que definen estructura y etiquetas que definen contenido.</p>
+<h3>Etiquetas de estructuras</h3>
+<p>Las etiquetas de estructura nos ayudan a definir los grandes contenedores en donde organizaremos el contenido de nuestra página web.</p>
+<p>Aparte de las ya conocidas <code>head</code>y <code>body</code>, veamos otras etiquetas que nos apoyarán en generar estructura en el contenido dentro de <code>body</code>.</p>
+<h4><code>div</code>:</h4>
+<p>Define una división de la página web. Es uno de los  más usados para definir contenedores para estructura.</p>
+<p>Si bien las siguientes etiquetas funcionan como un <code>div</code>, la semántica juega un papel importante y deberías usarlas cuando creas que es necesario.</p>
+<h4><code>header</code>:</h4>
+<p>Significado de que lo que va dentro de este contenedor es parte de la <em>cabecera</em> de nuestra página web.</p>
+<h4><code>section</code>:</h4>
+<p>Nos ayuda a definir secciones de nuestra página web para las que luegos especificar a que se van a especializar.</p>
+<h4><code>aside</code>:</h4>
+<p>Define una sección lateral en la que por lo general va navegación o datos extra sobre el propio contenido.</p>
+<h4><code>main</code>:</h4>
+<p>Este contenedor tendra el contenido principal de la página web.</p>
+<h4><code>article</code>:</h4>
+<p>Esta sección define contenido que será actualizado regularmente. La característica principal de <code>article</code> es que el contenido que irá aquí debe hacer sentido por si mismo, sin necesidad de las otras secciones. Puede haber uno o varios <code>article</code> dentro de algún <code>section</code>, pero también puede ser a la inversa.</p>
+<h4><code>footer</code>:</h4>
+<p>Footer se refiere al pie de la página web, por lo general en esta sección irán algunos links importantes, el copyright, y/o incluso datos de contacto.</p>
+<h4><code>nav</code>:</h4>
+<p>Por lo general esta etiqueta esta anidada en algunas de las estructuras de <code>header</code>, <code>aside</code> o <code>footer</code>. Nos indica que el contenido que tiene ayuda a la navegación de la página, conteniendo vínculos por ejemplo.</p>
+<h4><code>address</code></h4>
+<p>Que por lo general se usa para poner información de contacto. Funcina como un bloque y puedes poner variada información dentro de él.</p>
+<h3>Etiquetas de contenido</h3>
+<p>Podríamos usar todas las etiquetas de estructura, pero lo que da forma y esencia a una página web es el contenido que tiene.</p>
+<h4>Textos</h4>
+<p>Para el caso de textos tenemos varias etiquetas.</p>
+<h5>Headlings o Cabeceras</h5>
+<p>Estas etiquetas dan un sentido jerárquito a los títulos y subtítulos. Las etiquetas son:</p>
+<pre class="hljs" class="language-js"><code>    &lt;h1&gt;H1&lt;/h1&gt;
+    &lt;h2&gt;H2&lt;/h2&gt;
+    &lt;h3&gt;H3&lt;/h3&gt;
+    &lt;h4&gt;H4&lt;/h4&gt;
+    &lt;h5&gt;H5&lt;/h5&gt;
+    &lt;h6&gt;H6&lt;/h6&gt;
+</code></pre>
+<p>Estós títulos se van a renderizar como:</p>
+<p><img src="herarchy-headlings.png" alt="Jerarquía de los Headlings" /></p>
+<p>Donde H1 es el título de mayor jerarquía, y H6 el de menor jerarquía.</p>
+<h5>Párrafos</h5>
+<p>Los párrafos los definimos con la etiqueta <code>&lt;p&gt;&lt;/p&gt;</code>. Como tal, define un bloque te texto.</p>
+<p>Por ejemplo, este párrafo:</p>
+<pre class="hljs" class="language-js"><code>&lt;p&gt;Space, the final frontier. These are the voyages of the starship Enterprise. Its continuing mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no one has gone before!&lt;p&gt;
+</code></pre>
+<p>Se verá como:<br />
+<img src="html-p.png" alt="" /></p>
+<h6><code>pre</code>:</h6>
+<p>A veces el formato del párrafo, en el que texto sigue su flujo, no es conveniente para lo que necesitamos. En ese caso podemos usar <code>pre</code> que estila tal y como lo dejaste en el código.</p>
+<pre class="hljs" class="language-js"><code>    &lt;strong&gt;Invictus&lt;/strong&gt;
+    &lt;pre&gt;
+    Fuera de la noche que me cubre,
+    Negra como el abismo de polo a polo,
+    Agradezco a cualquier dios que pudiera existir
+    Por mi alma inconquistable.
+    En las feroces garras de las circunstancias
+    Ni me he lamentado ni he dado gritos.
+    Bajo los golpes del azar
+    Mi cabeza sangra, pero no se inclina.
+    Más allá de este lugar de ira y lágrimas
+    Es inminente el Horror de la sombra,
+    Y sin embargo la amenaza de los años
+    Me encuentra y me encontrará sin miedo.
+    No importa cuán estrecha sea la puerta,
+    Cuán cargada de castigos la sentencia.
+    &lt;em&gt;Soy el amo de mi destino:
+    Soy el capitán de mi alma.&lt;em&gt;
+    &lt;/pre&gt;
+    &lt;em&gt;William Ernest Henley&lt;/em&gt;
+</code></pre>
+<p>Cuando lo veamos en nuestra página web, se verá así:</p>
+<p><img src="html-pre.png" alt="" /></p>
+<h6><code>strong</code></h6>
+<p>Usamos <code>strong</code> para dar importancia a tun texto. Puedes usarlo dentro de un párrafo.</p>
+<h6><code>em</code></h6>
+<p>Al igual que <code>strong</code> ayuda a dar importancia a un texto, aunque su estilo es diferente y más suave. Vienen de <em>“emphasis”</em>, o énfasis en español.</p>
+<h6><code>span</code></h6>
+<p>Aloja un pedazo de texto al que luego puedes estilar como prefieres específicamente.<br />
+<code>&lt;span&gt;Palabra&lt;/span&gt;</code></p>
+<h6><code>mark</code></h6>
+<p>Funciona como un resaltador en la web. Dando un color restaltante a lo que indicamos entre sus etiquetas.</p>
+<pre class="hljs" class="language-js"><code>    &lt;p&gt;Space, the final frontier. These are the voyages of the starship Enterprise. Its continuing mission: &lt;mark&gt;to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no one has gone before!&lt;/mark&gt;&lt;p&gt;
+</code></pre>
+<p>Se verá como:</p>
+<p><img src="html-p-mark.png" alt="" /></p>
+<h6><code>abbr</code></h6>
+<p>Define abreviaciones o acrónimos. La ventaja de usar <code>abbr</code> es que al dejar el cursor, se mostrará el título adecuado de dicha abreviatura.</p>
+<pre class="hljs" class="language-js"><code>    &lt;p&gt;En esta lectura veremos todo sobre &lt;abbr title=&quot;HiperText Markup Language&quot;&gt;HTML&lt;/abbr&gt;para construir tu página web&lt;/p&gt;
+</code></pre>
+<p>Notarás en la imagen cómo es que se ve, con un pequeño tooltip, el texto sin abreviar.</p>
+<p><img src="html-abbr.png" alt="" /></p>
+<p>Hay algunas otras que puedes revisar en la documentación de MDN.</p>
+<h5>Citas</h5>
+<p>Para citas, podemos usar dos etiquetas, la primera es <code>q</code> que nos dará la posibilidad de introducir citas en el mismo párrafo. Para citas más complejas que merecen su propio párrafo y descripción de la fuente, tenemos <code>blockquote</code>. Hay momentos en que sólo queremos nobrar el título del trabajo que inspira esas líneas, en ese caso usamos <code>cite</code>.</p>
+<p>Veamoslo con un pequeño ejemplo:</p>
+<pre class="hljs" class="language-js"><code>&lt;blockquote&gt;
+    &lt;p&gt;(...)Se necesita mucha confianza para admitir que necesitas ayuda. Como Q le había dicho Picard después de que Picard pidiera ayuda, &lt;q&gt;fue una admisión difícil, otro hombre habría sido humillado al decir esas palabras, otro hombre habría muerto antes que pedir ayuda&lt;/q&gt;. ¿Cuántos de nosotros hemos estado en proyectos condenados porque el líder del proyecto era demasiado orgulloso o demasiado ciego para pedir ayuda?(...)&lt;/p&gt;       
+    &lt;footer&gt;Es parte del artículo &lt;cite&gt;Five Leadership Lessons From Jean-Luc Picard&lt;/cite&gt; por &lt;em&gt;Alex Knapp&lt;/em&gt; de &lt;strong&gt;Forbes&lt;strong&gt;&lt;/footer&gt;    
+&lt;/blockquote&gt;
+</code></pre>
+<p>En este ejemplo estamos citando una parte de un artículo, como es una parte completa del artículo, estamos incluyendolo en <code>blockquote</code>. Notarás que dentro del artículo se hace referencia a la una frase de Picard. Para citar dicha frase estamos usando <code>q</code> que nos permite seguir con el párrafo sin interrumpir el flujo del contenido.<br />
+Hay algo extra. El uso de <code>footer</code> nos permite separar semánticamente la referencia del contenido de la cita. Podríamos usar otra etiqueta, pero <code>footer</code> es la que hace más sentido semántico. Por último, indicamos el trabajo, en este caso, artículo de donde obtuvimos esta cita, y enfatizamos el autor y la fuente.</p>
+<p>El resultado, será parecido al que sigue:</p>
+<p><img src="html-quotations.png" alt="Ejemplo de citas" /></p>
+<h5>Listas</h5>
+<p>Tenemos dos tipos de listas, las listas ordenadas y las no ordendas.<br />
+Las listas se componen del un elemento <code>&lt;ul&gt;&lt;/ul&gt;</code> para listas no ordenadas u <code>&lt;ol&gt;&lt;/ol&gt;</code> para listas ordendas. Este elemento anidará a los elementos de la lista que se limitan con la etiqueta <code>&lt;li&gt;&lt;li&gt;</code>.</p>
+<pre class="hljs" class="language-js"><code>    &lt;!-- listas ordenadas --&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Lima&lt;/li&gt;
+        &lt;li&gt;Arequipa&lt;/li&gt;
+        &lt;li&gt;Santiago de Chile&lt;/li&gt;
+        &lt;li&gt;Ciudad de Mexico&lt;/li&gt;
+        &lt;li&gt;Guadalajara&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;!-- listas ordenadas --&gt;
+    &lt;ol&gt;
+        &lt;li&gt;Lima&lt;/li&gt;
+        &lt;li&gt;Arequipa&lt;/li&gt;
+        &lt;li&gt;Santiago de Chile&lt;/li&gt;
+        &lt;li&gt;Ciudad de Mexico&lt;/li&gt;
+        &lt;li&gt;Guadalajara&lt;/li&gt;
+    &lt;/ol&gt;
+</code></pre>
+<p>Que se verán así:</p>
+<p><img src="html-lists.png" alt="Ejemplo de listas" /></p>
+<h6><code>ol</code></h6>
+<p>En el caso de la <em>lista ordenada</em> <code>ol</code>, puedes especificar el tipo de numeración escogiendo entre los diferentes valores del atributo <code>type</code>. Dependiendo de cada valor la numeración varía. Por defecto el valor es <code>type=&quot;1&quot;</code>, por eso ves los números por defecto.</p>
+<p><img src="html-ol-lists.png" alt="Ejemplo de listas ordenadas" /></p>
+<h6><code>ul</code></h6>
+<p>En el caso de las listas <em>no ordenadas</em> <code>ul</code>, podemos cambiar el símbolo a través de una propiedad que veremos en CSS llamada <code>list-style-type</code>.</p>
+<p><img src="html-ul-lists.png" alt="Ejemplo de listas ordenadas" /></p>
+<h6>Listas de definiciones</h6>
+<p>Estas listas son especificas para usar en terminos y sus definiciones</p>
+<pre class="hljs" class="language-js"><code>&lt;dl&gt;
+    &lt;dt&gt;Rock&lt;/dt&gt;
+    &lt;dd&gt;[...]&lt;/dd&gt;
+    &lt;dt&gt;Pop&lt;/dt&gt;
+    &lt;dd&gt;[...]&lt;/dd&gt;
+    &lt;dt&gt;Musica electrónica&lt;/dt&gt;
+    &lt;dd&gt;[...]&lt;/dd&gt;
+    &lt;dt&gt;Rap&lt;/dt&gt;
+    &lt;dd&gt;[...]&lt;/dd&gt;
+    &lt;dt&gt;Reggae&lt;/dt&gt;
+    &lt;dd&gt;[...]&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+<p>Por ejemplo se verá:</p>
+<p><img src="html-dd.png" alt="Ejemplo de listas ordenadas" /></p>
+<h4>Links</h4>
+<p>Para crear un hipervínculos usamos la etiqueta <code>&lt;a&gt;&lt;/a&gt;</code>.</p>
+<p>Un link típico se ve como:</p>
+<pre class="hljs" class="language-js"><code>    &lt;a href=&quot;http://laboratoria.la&quot; target=&quot;_blank&quot;&gt;Laboratoria&lt;/a&gt;
+</code></pre>
+<p>Notarás 2 atributes.</p>
+<h6><code>href</code></h6>
+<p>Nos dice que recurso, página, vinculará ese link. Aquí puedes poner links externos, como el del ejemplo, o puedes poner links a otras páginas de tu sitio, por ejemplo si quieres ir al admin de tu propio sitio web <code>href=&quot;/admin&quot;</code> creará un link que te lleve a esa dirección.</p>
+<h6><code>target</code></h6>
+<p>Nos permite decirle al navegador, cómo o donde abrirá el link que hemos creado. Tiene varios valores determinados:</p>
+<h6><code>_blank</code>:</h6>
+<p>Abre el documento en una nueva ventana o tab.</p>
+<h6><code>_self</code>:</h6>
+<p>este es el valor por defecto y abre el documento en el tab o ventana actual.</p>
+<h6><code>_parent</code>:</h6>
+<p>Abre el link en un fragmento padre (Probablemente no tengas que usarlo).</p>
+<h6><code>_top</code>:</h6>
+<p>Abre el link en todo el cuerpo de la ventana(Probablemente no tengas que usarlo).</p>
+<h6><code>framename</code>:</h6>
+<p>Abre el link en el frame con el nombre indicado, ya no se usa. Se usaba en el tiempo en que usabamos <code>frameset</code> para hacer estructuras en la página web.</p>
+<p>Los vínculos tienen estados, hablamos de un link:</p>
+<h6><em>no visitado</em>:</h6>
+<p>En este caso el link se verá en fuente azul y con subrayado.</p>
+<h6><em>visitado</em>:</h6>
+<p>Cuando la página que vincula al link ya ha sido visitada antes.</p>
+<h6><em>activo</em>:</h6>
+<p>Un link esta activo desde el momento que empezamos el tap o click hasta que soltamos la pantalla o el mouse. Por lo general esta representado con letras y subrayado rojo.</p>
+<p><img src="html-link.png" alt="Ejemplo de link" /></p>
+<h4>Imágenes</h4>
+<p>Para incluir imágenes como contenido usamos la etiqueta <code>&lt;img&gt;</code>. Esta es una etiqueta vacía. Tiene varios atributos con los que puedes manipular cómo llamar a la imagen, dimensiones entre otros.</p>
+<p>Los principales atributes de <code>img</code> son:</p>
+<h6><code>src</code>:</h6>
+<p>Este atributo nos permite especificar la fuente o la dirección en donde se encuentra la imagen que vamos a mostrar. Soporta varias extensiones.</p>
+<h6><code>alt</code>_:</h6>
+<p>Aquí especificamos el texto alternativo que se mostrará en caso el navegador no pueda cargar la imagen desde la fuente que indcamos.</p>
+<p>Por ejemplo si quiero incluir una imagen:</p>
+<pre class="hljs" class="language-js"><code>    &lt;img src=&quot;space-pug-apo.png&quot; alt=&quot;Apo, Space Brothers&quot;&gt;
+</code></pre>
+<p>En caso la imagen no existiera,en el navegador Chrome, solo mostrará el texto alternativo:</p>
+<p><img src="html-img-alt.png" alt="Ejemplo de IMG roto" /></p>
+<p>Pero si la imagen existe, si se mostrará:</p>
+<p><img src="html-img.png" alt="Ejemplo de IMG" /></p>
+<p>Puedes poner imágenes como contenido de etiquetas <code>a</code>, <code>p</code>, o dentro de otras etiquetas.</p>
+<p>Otro atributo de <code>img</code> que cada vez se usa más es <code>srcset</code>. A través de este atributo, indicamos una serie de imagenes para aplicarse a diferentes resoluciones de pantalla, pero verás más de esto cuando veamos web responsive. Puedes ver otros atributos en la <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">documentación de MDN de img</a>.</p>
+<h4>Tablas</h4>
+<p>Lo ideal es usarlas para lo que fueron creadas, tabular información. Las tablas son estructuras en sí mismas.</p>
+<p>Iniciamos una etiqueta principal: <code>&lt;table&gt;&lt;/table&gt;</code>. Dentro de esta etiqueta enc</p>
+<p>Hay varias etiquetas que anidar:</p>
+<h6><code>&lt;tr&gt;</code></h6>
+<p>Nos permite definir las files que tendra nuestra tabla.</p>
+<h6><code>&lt;th&gt;</code></h6>
+<p>Definiremos una celda de cabecera.</p>
+<h6><code>&lt;td&gt;</code></h6>
+<p>Crea una celda.</p>
+<p>Con estas etiquetas ya podemos crear varias formas de tablas. Por ejemplo esta tabla:</p>
+<pre class="hljs" class="language-js"><code>    &lt;table&gt;
+        &lt;tr&gt;&lt;th&gt;Programa&lt;/th&gt;&lt;th&gt;Fecha de Inicio&lt;/th&gt;&lt;th&gt;Fecha de Fin&lt;/th&gt;&lt;th&gt;No. de Misiones tripuladas&lt;/th&gt;&lt;th&gt;Notas&lt;/th&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;Mercury program&lt;/td&gt;&lt;td&gt;1959&lt;/td&gt;&lt;td&gt;1963&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;Primera misión estadounidense tripulada&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;Gemini program&lt;/td&gt;&lt;td&gt;1963&lt;/td&gt;&lt;td&gt;1966&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;td&gt;Program used to practice space rendezvous and EVAs&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;Apollo program&lt;/td&gt;&lt;td&gt;1961&lt;/td&gt;&lt;td&gt;1972&lt;/td&gt;&lt;td&gt;11[a]&lt;/td&gt;&lt;td&gt;Llevar el primer hombre a la luna&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;Skylab&lt;/td&gt;&lt;td&gt;1973&lt;/td&gt;&lt;td&gt;1974&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Las misiones tripuladas solo se dieron en 1973 y 1974; primera estación espacial americana&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;Apollo-Soyuz&lt;/td&gt;&lt;td&gt;1975&lt;/td&gt;&lt;td&gt;1975&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Junto a la unión soviética&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;Shuttle-Mir Program&lt;/td&gt;&lt;td&gt;1995&lt;/td&gt;&lt;td&gt;1998&lt;/td&gt;&lt;td&gt;9[b]&lt;/td&gt;&lt;td&gt;Partnership con Rusia&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;Project Constellation&lt;/td&gt;&lt;td&gt;2003&lt;/td&gt;&lt;td&gt;2010[4]&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;Programa cancelado. Buscaba llevar humanos a la Luna de nuevo, a Marte y más allá&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;Space Shuttle&lt;/td&gt;&lt;td&gt;1981&lt;/td&gt;&lt;td&gt;2011&lt;/td&gt;&lt;td&gt;135&lt;/td&gt;&lt;td&gt;Primera misión donde se reusó cohetes&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;International Space Station&lt;/td&gt;&lt;td&gt;1998&lt;/td&gt;&lt;td&gt;Ongoing&lt;/td&gt;&lt;td&gt;44&lt;/td&gt;&lt;td&gt;Junto a Rusia, Canada, Estación Espacial Europea, y JAXA(Agencia espacial Japonesa). Cooperan la agencia espacial italiana ASI y brasileña AEB.&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+</code></pre>
+<p>Si intentas el código anterior, puede que no veas ningún borde, porque esto requiere que uses el atributo <code>border=&quot;1&quot;</code> para que se vea. De igual manera no es recomendable ya que puedes manejar los borders y colores de mejor manera usando CSS.<br />
+En mi caso se ve como sigue:</p>
+<p><img src="html-table.png" alt="Ejemplo de tabla" /></p>
+<p>Cuando tenemos tablas más complejas, podemos usar <code>thead</code> (zona de cabecera), <code>tbody</code>(zona de contenido), <code>tfoot</code>(zona de pie), para agrupar celdas y filas en la tabla. Además los atributos <code>colspan</code> y   <code>rowspan</code> para indicar cuandas columnas o filas, respectivamente va a ocupar una celda, úsalo si van a usar más de 1.</p>
+<p>Por ejemplo, si hacemos un poco más compleja la tabla anterior.</p>
+<pre class="hljs" class="language-js"><code>    &lt;table&gt;
+        &lt;caption&gt;Programas espaciales de NASA&lt;/caption&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;&lt;th rowspan=&quot;2&quot;&gt;Programa&lt;/th&gt;&lt;th colspan=&quot;2&quot;&gt;Fechas&lt;/th&gt;&lt;th rowspan=&quot;2&quot;&gt;No. de Misiones tripuladas&lt;/th&gt;&lt;th rowspan=&quot;2&quot;&gt;Notas&lt;/th&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;th&gt;Inicio&lt;/th&gt;&lt;th&gt;Fin&lt;/th&gt;&lt;/tr&gt;    
+        &lt;/thead&gt;
+        &lt;tbody&gt; 
+            &lt;tr&gt;&lt;td&gt;Mercury program&lt;/td&gt;&lt;td&gt;1959&lt;/td&gt;&lt;td&gt;1963&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;Primera misión estadounidense tripulada&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Gemini program&lt;/td&gt;&lt;td&gt;1963&lt;/td&gt;&lt;td&gt;1966&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;td&gt;Program used to practice space rendezvous and EVAs&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Apollo program&lt;/td&gt;&lt;td&gt;1961&lt;/td&gt;&lt;td&gt;1972&lt;/td&gt;&lt;td&gt;11[a]&lt;/td&gt;&lt;td&gt;Llevar el primer hombre a la luna&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Skylab&lt;/td&gt;&lt;td&gt;1973&lt;/td&gt;&lt;td&gt;1974&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Las misiones tripuladas solo se dieron en 1973 y 1974; primera estación espacial americana&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Apollo-Soyuz&lt;/td&gt;&lt;td&gt;1975&lt;/td&gt;&lt;td&gt;1975&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Junto a la unión soviética&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Shuttle-Mir Program&lt;/td&gt;&lt;td&gt;1995&lt;/td&gt;&lt;td&gt;1998&lt;/td&gt;&lt;td&gt;9[b]&lt;/td&gt;&lt;td&gt;Partnership con Rusia&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Project Constellation&lt;/td&gt;&lt;td&gt;2003&lt;/td&gt;&lt;td&gt;2010[4]&lt;/td&gt;&lt;td&gt;0&lt;/td&gt;&lt;td&gt;Programa cancelado. Buscaba llevar humanos a la Luna de nuevo, a Marte y más allá&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;Space Shuttle&lt;/td&gt;&lt;td&gt;1981&lt;/td&gt;&lt;td&gt;2011&lt;/td&gt;&lt;td&gt;135&lt;/td&gt;&lt;td&gt;Primera misión donde se reusó cohetes&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;International Space Station&lt;/td&gt;&lt;td&gt;1998&lt;/td&gt;&lt;td&gt;Ongoing&lt;/td&gt;&lt;td&gt;44&lt;/td&gt;&lt;td&gt;Junto a Rusia, Canada, Estación Espacial Europea, y JAXA(Agencia espacial Japonesa). Cooperan la agencia espacial italiana ASI y brasileña AEB.&lt;/td&gt;&lt;tr&gt;
+        &lt;/tbody&gt;
+        &lt;tfoot&gt;
+            &lt;tr&gt;&lt;td colspan=&quot;5&quot;&gt;Continuará&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tfoot&gt;
+    &lt;/table&gt;
+</code></pre>
+<p>Notarás que en <code>thead</code> hemos anidado las filas <code>tr</code> que contienen cabeceras. Hemos agregado un <code>tbody</code> para agrupar la información. Además un <code>tfoot</code> con un pequeño mensaje. También tendré un <code>caption</code> que nos permite decir en algunas palabras qué información se mostrará en la tabla.</p>
+<p>Si intentas el código anterior, puede que no veas ningún borde, porque esto requiere que uses el atributo <code>border=&quot;1&quot;</code> para que se vea. De igual manera no es recomendable ya que puedes manejar los borders y colores de mejor manera usando CSS.</p>
+<p>Por último, se verá como sigue:</p>
+<p><img src="html-table-complex.png" alt="Ejemplo de tabla compleja" /></p>
+<h4>Formularios</h4>
+<p>Los formularios nos ayudan a interactuar y obtener información de los usuarios. De hecho haz llenado algún formulario antes, desde el formulario de admisión, pasando por tu regisro y login de redes sociales, y hasta el registro y login de tu correo electrónico.</p>
+<p>Los formualarios tienen un marqueje especial con sus propias etiquetas. La principal es <code>&lt;form&gt;&lt;/form&gt;</code> que nos ayuda a definir el formulario.</p>
+<p>La principal etiqueta para obtener información del usario es la etiquta <code>&lt;input&gt;</code>. Esta es una etiqueta vacía que indica que se mostrará un campo donde el usuario podrá ingresar información. Como se usa para introducir diferentes tipos de información, un atributo que no podemos evitar poenr es el tipo de input que será nuestro elemento:</p>
+<p>Todos navegadores soportan <code>type</code> con valores <code>text</code> para texto, <code>password</code> para texto encubierto, <code>submit</code> para el botón de enviar, <code>reset</code> para tener un botón que limpie los datos del formulario,</p>
+<p>Un formulario básico tendrá:</p>
+<pre class="hljs" class="language-js"><code>&lt;form action=&quot;login&quot;&gt;
+    &lt;label for=&quot;field1&quot; &gt;Nombre&lt;/label&gt;&lt;input name=&quot;field1&quot;type=&quot;text&quot;&gt;&lt;br&gt;
+    &lt;label for=&quot;field2&quot; &gt;Contraseña&lt;/label&gt;&lt;input name=&quot;field2&quot;type=&quot;password&quot;&gt;&lt;br&gt;
+    &lt;label for=&quot;field7&quot; &gt;&lt;/label&gt;&lt;input name=&quot;field7&quot;type=&quot;submit&quot;&gt;&lt;br&gt;
+    &lt;label for=&quot;field8&quot; &gt;&lt;/label&gt;&lt;input name=&quot;field8&quot;type=&quot;reset&quot;&gt;&lt;br&gt;
+&lt;/form&gt;
+</code></pre>
+<p>En este caso he puesto unos <code>br</code> solo para darle salto de línea a los elementos.</p>
+<p>Que se verá un poco como sigue:</p>
+<p><img src="html-form-login.png" alt="Ejemplo de formulario de login" /></p>
+<p>Si ejecutas ese formulario, verás que al dar click en <code>submit</code> el formulario intentará enviar la información. El botón <code>reset</code> limpiará los campos. Cuando llenes algunos datos en el formulario, verás como en el caso de <code>type=&quot;password</code> los caracteres se ocultan.</p>
+<p><img src="html-form-login-c.png" alt="Ejemplo de formulario de login con datos" /></p>
+<p>Hay otra cosa que notarás, la etiqueta <code>&lt;label&gt;</code>. Esta etiqueta nos ayudará  a darle más información al usuario al indicarle que datos se esperan. Con el atributo <code>for</code> podemos asociar un <code>label</code> al campo al que se refiere, en este caso un <code>input</code>.</p>
+<h5><code>input</code></h5>
+<p>Hay más tipos de inputs. Algunos requieren un tratamiento extra a través de otras etiquetas o asociando a través de atributos.</p>
+<h6><code>input type=&quot;radio&quot;</code></h6>
+<p>El input tipo radio, se refiere a Radio Button. Están diseñados para que el usuario elija 1 opción entre varias.</p>
+<pre class="hljs" class="language-js"><code>&lt;form action=&quot;update&quot;&gt;
+        &lt;p&gt;Elija su nivel de instrucción&lt;/p&gt;
+        &lt;input type=&quot;radio&quot; id=&quot;instruction-level-1&quot; name=&quot;instruction-level&quot; value=&quot;undegraduate&quot;&gt;
+        &lt;label for=&quot;instruction-level-1&quot;&gt;Undegraduate&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; id=&quot;instruction-level-2&quot; name=&quot;instruction-level&quot; value=&quot;graduate&quot;&gt;
+        &lt;label for=&quot;instruction-level-2&quot;&gt;Graduate&lt;/label&gt;            
+        &lt;input type=&quot;radio&quot; id=&quot;instruction-level-3&quot; name=&quot;instruction-level&quot; value=&quot;master&quot;&gt;
+        &lt;label for=&quot;instruction-level-3&quot;&gt;Master&lt;/label&gt;
+        &lt;input type=&quot;radio&quot; id=&quot;instruction-level-4&quot; name=&quot;instruction-level&quot; value=&quot;doctor&quot;&gt;
+        &lt;label for=&quot;instruction-level-4&quot;&gt;Doctor&lt;/label&gt;
+        &lt;br&gt;
+        &lt;button type=&quot;submit&quot;&gt;Enviar&lt;/button&gt;
+    &lt;/form&gt;
+</code></pre>
+<p><img src="html-form-radiobtn.png" alt="Ejemplo de formulario con radiobutton" /></p>
+<p>Si pruebas el código anterior, notarás que sólo puedo seleccionar una de las opciones a la vez. La forma en que se asocian todos los radio button para indicar que corresponden a seleccionar un sólo valor es gracias al atributo <code>name</code>.</p>
+<h6><code>input type=&quot;checkbox&quot;</code></h6>
+<p>El input tipo checkbox esta diseñado para darte varias opciones y que puedas seleccionar más de una.</p>
+<pre class="hljs" class="language-js"><code>    &lt;form action=&quot;update&quot;&gt;
+        &lt;p&gt;Elige tus géneros de películas favoritos&lt;/p&gt;
+        &lt;input type=&quot;checkbox&quot; id=&quot;favorite-genre-1&quot; name=&quot;favorite-genre&quot; value=&quot;romance&quot;&gt;
+        &lt;label for=&quot;favorite-genre-1&quot;&gt;Romance&lt;/label&gt;
+        &lt;input type=&quot;checkbox&quot; id=&quot;favorite-genre-2&quot; name=&quot;favorite-genre&quot; value=&quot;comedy&quot;&gt;
+        &lt;label for=&quot;favorite-genre-2&quot;&gt;Comedy&lt;/label&gt;
+        &lt;input type=&quot;checkbox&quot; id=&quot;favorite-genre-3&quot; name=&quot;favorite-genre&quot; value=&quot;horror&quot;&gt;
+        &lt;label for=&quot;favorite-genre-3&quot;&gt;Horror&lt;/label&gt;
+        &lt;input type=&quot;checkbox&quot; id=&quot;favorite-genre-4&quot; name=&quot;favorite-genre&quot; value=&quot;thriller&quot;&gt;
+        &lt;label for=&quot;favorite-genre-4&quot;&gt;Thriller&lt;/label&gt;
+        &lt;input type=&quot;checkbox&quot; id=&quot;favorite-genre-5&quot; name=&quot;favorite-genre&quot; value=&quot;sciencefi&quot;&gt;
+        &lt;label for=&quot;favorite-genre-4&quot;&gt;Science Fiction&lt;/label&gt;
+        &lt;input type=&quot;checkbox&quot; id=&quot;favorite-genre-6&quot; name=&quot;favorite-genre&quot; value=&quot;action&quot;&gt;
+        &lt;label for=&quot;favorite-genre-4&quot;&gt;Action&lt;/label&gt;
+        &lt;br&gt;
+        &lt;button type=&quot;submit&quot;&gt;Enviar&lt;/button&gt;
+    &lt;/form&gt;
+</code></pre>
+<p><img src="html-form-checkbox.png" alt="Ejemplo de formulario con checkbox" /></p>
+<p>Otros tipos de input son:</p>
+<h6><code>input type=&quot;file&quot;</code></h6>
+<p>Que nos sirve para que el usuario seleccione archivos en su computador. Por ejemplo, su código se verá cómo:</p>
+<pre class="hljs" class="language-js"><code>    &lt;form action=&quot;update&quot;&gt;
+        &lt;input type=&quot;file&quot; name=&quot;archivo&quot; id=&quot;file-field&quot;&gt;
+        &lt;button type=&quot;submit&quot;&gt;Enviar&lt;/button&gt;
+    &lt;/form&gt;
+</code></pre>
+<p>Y en funcionalidad lo veremos comportarse cómo:</p>
+<p><img src="html-form-file.gif" alt="Ejemplo de input file" /></p>
+<p>Puedes restringir que tipos de archivos puede subir el archivo usando el atributo <code>accept</code> y en el mismo indicar que extensiones de archivos acepta. Puedes ver más en la <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file">documentación de MDN sobre el input file</a>.</p>
+<h6><code>input type=&quot;hidden&quot;</code></h6>
+<p>En el caso de hidden, este campo no lo podrá ver usuario, pero el valor que pongas aquí igualmente viajará con los demás datos que ponga el usuario.</p>
+<h6><code>input type=&quot;image&quot;</code></h6>
+<p>En realidad sirve para crear un botón funciona igual que el <code>submit</code>. El detalle es que este botón nos permite costumizarlo usando una imagen que le indicamos en el atributo <code>src</code>. Además debes ponerle dimensiones, ya sea con HTML con los atributos <code>height</code> y <code>width</code>, o con CSS.</p>
+<p>Existen otros input types que se establecieron gracias a HTML5.</p>
+<h6><code>input type=&quot;color&quot;</code></h6>
+<p>Despliega un elemento de seleccion, de manera que puedas elegir un color. Recibe un texto que represente un colo.</p>
+<h6><code>input type=&quot;date&quot;</code></h6>
+<p>Este control es para ingresar la fecha, Año, mes y día, sin hora.</p>
+<h6><code>input type=&quot;datetime-local&quot;</code></h6>
+<p>Para ingresar la fecha y hora, sin indicar la zona horaria.</p>
+<h6><code>input type=&quot;email&quot;</code></h6>
+<p>Para ingresar y validar correos electrónicos.</p>
+<h6><code>input type=&quot;month&quot;</code></h6>
+<p>Un control para ingresar un mes y año, sin zona horaria.</p>
+<h6><code>input type=&quot;month&quot;</code></h6>
+<p>Un control paa  ingresar números.</p>
+<h6><code>input type=&quot;tel&quot;</code></h6>
+<p>Para ingresar y validar números de teléfono.</p>
+<h6><code>input type=&quot;range&quot;</code></h6>
+<p>Te ayuda a ingresar números de teléfono en el caso en que el número exacto no es tan importante.</p>
+<h6><code>input type=&quot;week&quot;</code></h6>
+<p>Sólo esta soportado por Chrome por el memento, pero te permite elegir una seman, sin zona horaria.</p>
+<h6><code>input type=&quot;month&quot;</code></h6>
+<p>Al igual que <code>week</code> sólo esta soportado con Chrome y tiene como característica que te permite elegir un mes en algún año.</p>
+<h6><code>input type=&quot;search&quot;</code></h6>
+<p>Usualmente se comporta sólo como <code>text</code> y se le pone a formularios de búsqueda.</p>
+<h6><code>input type=&quot;number&quot;</code></h6>
+<p>Permite seleccionar o ingresar un número.</p>
+<p>Puedes revisar la documentación sobre <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">input en MDN</a></p>
+<h5><code>select</code></h5>
+<p>Los <code>select</code> son otros elementos que nos ayudan a ofrecerle oopciones a los usuarios. En este caso le presentas una lista de opciones de las que puede elegir.</p>
+<pre class="hljs" class="language-js"><code>    &lt;form action=&quot;&quot;&gt;
+        &lt;p&gt;Selectiona tu Persona de Macbeth&lt;/p&gt;
+        &lt;select name=&quot;&quot; id=&quot;&quot;&gt;
+            &lt;option value=&quot;macbeth-1&quot;&gt;Duncan – King of Scotland&lt;/option&gt;
+            &lt;option value=&quot;macbeth-2&quot;&gt;Malcolm – Duncan's elder son&lt;/option&gt;
+            &lt;option value=&quot;macbeth-3&quot;&gt;Donalbain – Duncan's younger son&lt;/option&gt;
+            &lt;option value=&quot;macbeth-4&quot;&gt;Macbeth – a general in the army of King Duncan; originally Thane of Glamis, then Thane of Cawdor, and later King of Scotland&lt;/option&gt;
+            &lt;option value=&quot;macbeth-5&quot;&gt;Lady Macbeth – Macbeth's wife, and later Queen of Scotland&lt;/option&gt;
+            &lt;!-- ... más opciones --&gt;
+        &lt;/select&gt;
+    &lt;/form&gt;
+</code></pre>
+<p>Se verá cómo:</p>
+<p><img src="html-select-first.gif" alt="Ejemplo de select" /></p>
+<p>También puedes agregar un elemento <code>option</code> sin valor <code>value</code> al inicio para que sea el primero el verse antes de seleccionar nada.</p>
+<p><img src="html-select-second.gif" alt="Ejemplo de select" /></p>
+<p>También anidar varios <code>option</code> en un <code>optgroup</code> que te permite agruparlos de alguna manera que haga sentido con la información.</p>
+<p><img src="html-select-third.gif" alt="Ejemplo de select" /></p>
+<p>El detalle especial con respecto a <code>select</code> es que sólo puedes escoger los valores que te ofrece, ninguno más o menos. Puedes decirle que se puede elegir más de una opción de la lista, pero nada más.</p>
+<h5><code>datalist</code></h5>
+<p>Incluído en HTML5. Este campo se compone de dos partes. Un <code>input</code>, y la lista de opciones. Si bien el usuario puede elegir alguna de las opciones, la que hace diferente <code>datalist</code> de <code>select</code> es que en caso se requiera, el usuario puede ingresar otro valor, diferente a los disponibles.</p>
+<p>Por ejemplo para código:</p>
+<pre class="hljs" class="language-js"><code>    &lt;input list=&quot;personajes&quot; name=&quot;personaje&quot;&gt;
+    &lt;datalist id=&quot;personajes&quot;&gt;
+        &lt;option value=&quot;Duncan – King of Scotland&quot;&gt;
+        &lt;option value=&quot;Malcolm – Duncan's elder son&quot;&gt;
+        &lt;option value=&quot;Donalbain – Duncan's younger son&quot;&gt;        
+        &lt;option value=&quot;Third Apparition – crowned child&quot;&gt;
+        &lt;option value=&quot;Attendants, Messengers, Servants, Soldiers&quot;&gt;
+        &lt;!-- Aquí hay muchas más opciones --&gt;
+    &lt;/datalist&gt;
+</code></pre>
+<p>Que funcionando se verá como:</p>
+<p><img src="html-form-datalist.gif" alt="Ejemplo de datalist" /></p>
+<p>Puedes ver más de <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">Datalist en MDN</a></p>
+<h5><code>textarea</code></h5>
+<p>Es un input en que puedes ingresar gran cantidad de caracteres. Por lo general se recomienda si el texto que va a ingresar el usuario podría tener varías líneas. En código:</p>
+<pre class="hljs" class="language-js"><code>    &lt;label for=&quot;texto&quot;&gt;Tell me about Spacce&lt;/label&gt;&lt;br&gt;
+    &lt;textarea rows=&quot;6&quot; cols=&quot;80&quot; name=&quot;texto&quot;&gt;&lt;/textarea&gt;
+</code></pre>
+<p><img src="html-form-textarea.gif" alt="Ejemplo de textarea" /></p>
+<p>Puedes ver más de <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea">Textarea en MDN</a>, incluyendo las propiedades de <code>rows</code> y <code>cols</code>, que indican al navegador el tamaño con el que deberá aparecer como mínimo.</p>
+<h5><code>fieldset</code>:</h5>
+<p>Si bien no es una forma de agregar información, nos ayuda a indicarle a un usuario que algunos campos están relacionados.</p>
+<pre class="hljs" class="language-js"><code>    &lt;form action=&quot;&quot;&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;Datos Personales&lt;/legend&gt;
+            &lt;label for=&quot;name&quot;&gt;Nombres:&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot; placeholder=&quot;ej. John&quot;&gt;
+            &lt;br&gt;
+            &lt;label for=&quot;lastname&quot;&gt;Apellidos:&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;lastname&quot; id=&quot;lastname&quot; placeholder=&quot;ej. Doe&quot;&gt;
+            &lt;br&gt;
+            &lt;label for=&quot;phone&quot;&gt;Teléfono:&lt;/label&gt;&lt;input type=&quot;tel&quot; name=&quot;phone&quot; id=&quot;phone&quot; placeholder=&quot;ej. +5190000000&quot;&gt;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;
+</code></pre>
+<p>Que se mostrará  como:</p>
+<p><img src="html-form-fieldset.png" alt="Ejemplo de textarea" /></p>
+<p>Recuerda usar la etiqueta <code>legend</code> junto a <code>fieldset</code>. <code>legend</code> te permite darle un título que describa al grupo de campos que tienes agrupados por el <code>fieldset</code>.</p>
+<h3>HTML5</h3>
+<h2>Block vs in-line</h2>
+<p>Notarás que en varios de los ejemplos tuve que agregar un elemento <code>br</code> para indicar una nueva línea, esto debido a que algunos elementos suelen usar sólo el espacio que requieren para su contenido y no necesitan más epacio, por lo que otro elemento de similares características puede seguir al costado del primero, si el espacio le alcanzara. A estos elementos se les denomina <strong><code>inline</code></strong>.</p>
+<p>Por ejemplo, si en los elementos de <code>fieldset</code> retiramos todos los <code>br</code>, tendríamos las siguientes características.</p>
+<pre class="hljs" class="language-js"><code>        &lt;form action=&quot;#&quot;&gt;
+            &lt;fieldset&gt;
+                &lt;legend&gt;Datos Personales&lt;/legend&gt;
+                &lt;label for=&quot;name&quot;&gt;Nombres:&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot; placeholder=&quot;ej. John&quot;&gt;
+                &lt;label for=&quot;lastname&quot;&gt;Apellidos:&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;lastname&quot; id=&quot;lastname&quot; placeholder=&quot;ej. Doe&quot;&gt;
+                &lt;label for=&quot;phone&quot;&gt;Teléfono:&lt;/label&gt;&lt;input type=&quot;tel&quot; name=&quot;phone&quot; id=&quot;phone&quot; placeholder=&quot;ej. +5190000000&quot;&gt;
+            &lt;/fieldset&gt;
+        &lt;/form&gt;
+</code></pre>
+<p>Por lo que al mostrarse se verá como:</p>
+<p><img src="html-inline-fieldset.png" alt="Ejemplo de fieldset inline" /></p>
+<p>Notarás, como mencionaba, que los elementos tratan de acomodarse uno al costadao del otro tan pronto tengan espacio.</p>
+<p>Los elementos inline son:</p>
+<ul>
+<li><code>&lt;a&gt;</code></li>
+<li><code>&lt;b&gt;</code></li>
+<li><code>&lt;big&gt;</code></li>
+<li><code>&lt;i&gt;</code></li>
+<li><code>&lt;small&gt;</code></li>
+<li><code>&lt;tt&gt;</code></li>
+<li><code>&lt;abbr&gt;</code></li>
+<li><code>&lt;acronym&gt;</code></li>
+<li><code>&lt;cite&gt;</code></li>
+<li><code>&lt;code&gt;</code></li>
+<li><code>&lt;dfn&gt;</code></li>
+<li><code>&lt;em&gt;</code></li>
+<li><code>&lt;kbd&gt;</code></li>
+<li><code>&lt;strong&gt;</code></li>
+<li><code>&lt;samp&gt;</code></li>
+<li><code>&lt;time&gt;</code></li>
+<li><code>&lt;var&gt;</code></li>
+<li><code>&lt;bdo&gt;</code></li>
+<li><code>&lt;br&gt;</code></li>
+<li><code>&lt;img&gt;</code></li>
+<li><code>&lt;map&gt;</code></li>
+<li><code>&lt;object&gt;</code></li>
+<li><code>&lt;q&gt;</code></li>
+<li><code>&lt;script&gt;</code></li>
+<li><code>&lt;span&gt;</code></li>
+<li><code>&lt;sub&gt;</code></li>
+<li><code>&lt;sup&gt;</code></li>
+<li><code>&lt;button&gt;</code></li>
+<li><code>&lt;input&gt;</code></li>
+<li><code>&lt;label&gt;</code></li>
+<li><code>&lt;select&gt;</code></li>
+<li><code>&lt;textarea&gt;</code></li>
+</ul>
+<p>Los elementos inline, pueden contener otros inline sin generar un salto de línea.</p>
+<p>Pero, hay otros elementos que son solo ser declarador generan una nueva línea, y si visualizamos el html como una caja que puede contener otras cajas, los visualizaremos como cajas que tiene todo el ancho y largo de la caja, no dejando que otros elementos intenten ocupar las líneas que él ya ocupa. Hablamos de los elementos tipo <code>block</code>.</p>
+<p>Entre las etiquetas que tienen comportamiento de bloque, tenemos :</p>
+<ul>
+<li>
+<p><code>&lt;address&gt;</code><br />
+Información de contacto.</p>
+</li>
+<li>
+<p><code>&lt;article&gt;</code><br />
+Propio de HTML5. Contenido del artículo.</p>
+</li>
+<li>
+<p><code>&lt;aside&gt;</code> HTML5<br />
+Propio de HTML5. Contenido de costado, o al lado.</p>
+</li>
+<li>
+<p><code>&lt;blockquote&gt;</code><br />
+Cita larga (“bloque”).</p>
+</li>
+<li>
+<p><code>&lt;canvas&gt;</code><br />
+Propio de HTML5. Sirve para dibujar.</p>
+</li>
+<li>
+<p><code>&lt;dd&gt;</code><br />
+Describe un termino en una lista de descripciones.</p>
+</li>
+<li>
+<p><code>&lt;div&gt;</code><br />
+División del documento</p>
+</li>
+<li>
+<p><code>&lt;dl&gt;</code><br />
+Lista de descripciones.</p>
+</li>
+<li>
+<p><code>&lt;dt&gt;</code><br />
+Lista de términos.</p>
+</li>
+<li>
+<p><code>&lt;fieldset&gt;</code><br />
+Agrupa elementos.</p>
+</li>
+<li>
+<p><code>&lt;figcaption&gt;</code><br />
+Propio de HTML5. Le da una descripción al elemento <code>figure</code>.</p>
+</li>
+<li>
+<p><code>&lt;figure&gt;</code><br />
+Propio de HTML5. Agrupa contenido de medio como imágenes, con su respectivo <code>figcaption</code>.</p>
+</li>
+<li>
+<p><code>&lt;footer&gt;</code><br />
+Propio de HTML5. Pie de sección o página.</p>
+</li>
+<li>
+<p><code>&lt;form&gt;</code><br />
+Formulario</p>
+</li>
+<li>
+<p><code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>,<code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>,<code>&lt;h6&gt;</code><br />
+Cabeceras de nivel 1-6.</p>
+</li>
+<li>
+<p><code>&lt;header&gt;</code><br />
+Propio de HTML5. Cabecera de sección o página.</p>
+</li>
+<li>
+<p><code>&lt;hgroup&gt;</code> HTML5<br />
+Propio de HTML5. Agrupa información de cabecera.</p>
+</li>
+<li>
+<p><code>&lt;hr&gt;</code><br />
+Línea horizontal</p>
+</li>
+<li>
+<p><code>&lt;li&gt;</code><br />
+Item de una lista.</p>
+</li>
+<li>
+<p><code>&lt;main&gt;</code><br />
+Contiene el contenido centras y único para este documento.</p>
+</li>
+<li>
+<p><code>&lt;nav&gt;</code><br />
+Contienen línks de navegación.</p>
+</li>
+<li>
+<p><code>&lt;noscript&gt;</code><br />
+Contenido a usar si script como JavaScript están deshabilitados</p>
+</li>
+<li>
+<p><code>&lt;ol&gt;</code><br />
+Lista ordenada.</p>
+</li>
+<li>
+<p><code>&lt;output&gt;</code> HTML5<br />
+Propio de HTML5. Para output.</p>
+</li>
+<li>
+<p><code>&lt;p&gt;</code><br />
+Párrafo.</p>
+</li>
+<li>
+<p><code>&lt;pre&gt;</code><br />
+Texto Preformateado.</p>
+</li>
+<li>
+<p><code>&lt;section&gt;</code> HTML5<br />
+Propio de HTML5. Sección de una página web.</p>
+</li>
+<li>
+<p><code>&lt;table&gt;</code><br />
+Tabla.</p>
+</li>
+<li>
+<p><code>&lt;tfoot&gt;</code><br />
+Pie de Table.</p>
+</li>
+<li>
+<p><code>&lt;ul&gt;</code><br />
+Lista no ordenada.</p>
+</li>
+<li>
+<p><code>&lt;video&gt;</code><br />
+Propio de HTML5. Cargar y mostrar video.</p>
+</li>
+</ul>
+<p>Los elementos de bloque o <code>block</code> por lo general pueden contener otros bloques y elementos inline.</p>
+<h2>Enlazando HTML con JavaScript</h2>
+<p>Para enlazar nuestro HTML con JavaScript, usamos la etiqueta <code>&lt;script&gt;&lt;script&gt;</code>. Tenemos dos forms de usarla.</p>
+<ol>
+<li>
+<p>Incluir el JavaScript directamente dentro del script.</p>
+<pre class="hljs" class="language-js"><code>    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;es&quot;&gt;
+    &lt;head&gt;
+        &lt;title&gt;Mi primera página&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+        alert(&quot;Hola&quot;);
+        &lt;/script&gt;
+        &lt;h1&gt;Hola Mundo!&lt;/h1&gt;
+        &lt;p&gt;Bienvenidos a mi primera página web&lt;/p&gt;
+        &lt;p&gt;Esta página tiene varios elementos&lt;/p&gt;
+        &lt;ul&gt;
+        &lt;li&gt;body&lt;/li&gt;
+        &lt;li&gt;head&lt;/li&gt;
+        &lt;li&gt;h1&lt;/li&gt;
+        &lt;li&gt;p&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+<p>Al ejecutar este código obtendremos:</p>
+<p><img src="html-script-inline.gif" alt="Ejemplo de script en html" /></p>
+<p>Sin embargo esta no es la mejor manera, ya que vamos a mantener demasiadas cosas, aparte del HTML, tendremos que preocuparnos de lo que pase en <code>script</code> y esto puede extenderse mucho, haciendo molesta y complicada la lectura dl código.</p>
+</li>
+<li>
+<p>La segunda forma es trayendo el código, a través de un <strong>source</strong> o fuente indicada en el atributo <code>src</code> de nuestro script.</p>
+<p>En nuestro archivo HTML tendremos</p>
+<pre class="hljs" class="language-js"><code>    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;es&quot;&gt;
+    &lt;head&gt;
+        &lt;title&gt;Mi primera página&lt;/title&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hola Mundo!&lt;/h1&gt;
+        &lt;p&gt;Bienvenidos a mi primera página web&lt;/p&gt;
+        &lt;p&gt;Esta página tiene varios elementos&lt;/p&gt;
+        &lt;ul&gt;
+        &lt;li&gt;body&lt;/li&gt;
+        &lt;li&gt;head&lt;/li&gt;
+        &lt;li&gt;h1&lt;/li&gt;
+        &lt;li&gt;p&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;js/app.js&quot;&gt;&lt;/script&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+<p>y en nuestro nuevo archivo <strong>app.js</strong> al que referenciamos con la etiqueta script antes de finalizar el documento, tendremos:</p>
+<pre class="hljs" class="language-js"><code>    alert(&quot;Hola&quot;);
+</code></pre>
+<p>Al ejecutar. Se verá más o menos:</p>
+<p><img src="html-script-src.gif" alt="Ejemplo de script en html usando src" /></p>
+<p>Se ve casi igual, porque nuestro ejemplo es bastante pequeño, pero verás como hace gran diferencia en el momento de escribir código</p>
+<p>Esta forma nos ayuda a tener mayor independencia de código. Notarás que pse el <code>script</code> justo antes de terminar el <code>body</code>. Esto de manera que al momento de cargar y ejecutar el archivo app.js, todos los elementos HTML, y hayan sido cargados y existan en nuestra aplicación web.</p>
+</li>
+</ol>
+<h2>Guía de estilos</h2>
+<p>Los archivos html inicialmente tenían varias restricciones. Conforme los navegadores se hicieron más robustos, ahora soportan más variaciones en el uso de etiquetas y atributos.</p>
+<p>Para mantener el orden, y un estilo adecuado en el código, usamos una <strong>guía de estilos</strong> que mantiene varios estándares de la industría de desarrollo de software.</p>
+<h3>Tipo de documento</h3>
+<p>Definiremos el DOCTYPE en la primera línea de nuestro archivo HTML.</p>
+<p><img src="tag-doctype.png" alt="" /></p>
+<p>El doctype que ves arriba es el que usamos para HTML5 y es soportado por todos los navegadores.</p>
+<p>Versiones más antiguas tendrán una definición un poco diferente, como en HTML 4.01 con algunas variaciones:</p>
+<pre class="hljs" class="language-js"><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;
+</code></pre>
+<p>o el de HTML 1.0 que se ve un poco así con algunas variaciones:</p>
+<pre class="hljs" class="language-js"><code>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+</code></pre>
+<h3>Idioma</h3>
+<p>Recuerda definir el idioma que usarás en tu web. Esto ayuda a la <strong>accesibilidad</strong> y a la optimización para resultados de búsqueda (<strong>seo</strong>).</p>
+<p><img src="tag-html.png" alt="" /></p>
+<h3>Nombre de los elementos en minúscula</h3>
+<p>HTML <strong>no</strong> es <strong>case sensitive</strong> con el nombre de sus elementos. <strong><em>Case Sensitive</em></strong> significa que no va a diferenciar entre mayúsculas y minúsculas.</p>
+<hr />
+<h4>Case sensitive:</h4>
+<p>Sensible a si las letras son mayúsculas o minúsculas. Si un elemento es case sensitive tendremos por ejemplo que:</p>
+<p><code>casa != Casa // casa es diferente de Casa</code></p>
+<p><code>Casa != cAsa // Casa es diferente de cAsa</code></p>
+<p>Cuando decimos que algo NO es Case sensitive, mas bien se da el caso contrario:<br />
+<code>casa == Casa // casa se refiere a lo mismo que Casa</code></p>
+<p><code>Casa == cAsa // Casa se refiere a lo mismo que cAsa</code></p>
+<hr />
+<p>Como decía, HTML <strong>N0</strong> es <em>case sensitive</em> para el nombre de las etiquetas por lo que puedes tener elementos como:</p>
+<pre class="hljs" class="language-js"><code> &lt;IMG src=&quot;logo.png&quot;&gt;
+ ... 
+ &lt;img src=&quot;logo.png&quot;&gt;
+</code></pre>
+<p>Ambos casos mostrará una imagen. Para mantener un estándar adecuado, escribe los nombres de las etiquetas con <em>minúsculas</em>.</p>
+<pre class="hljs" class="language-js"><code> &lt;IMG src=&quot;logo.png&quot;&gt; &lt;&lt;--- así NO
+ ... 
+ &lt;img src=&quot;logo.png&quot;&gt; &lt;&lt;--- así SI
+</code></pre>
+<h3>Nombre de atributos en minúscula</h3>
+<p>Del mismo modo que con el nombre de las etiquetas, HTML tampoco es case sensitive con el nombre de los atributos de HTML. Pero de igual manera, para mantener un estándar adecuado, escribe los atributos en <em>minúsculas</em>.</p>
+<pre class="hljs" class="language-js"><code> &lt;img SRC=&quot;logo.png&quot;&gt; &lt;&lt;--- así NO
+ &lt;img Src=&quot;logo.png&quot;&gt; &lt;&lt;--- así NO
+ ... 
+ &lt;img src=&quot;logo.png&quot;&gt; &lt;&lt;--- así SI
+</code></pre>
+<h3>Comillas simples vs Comillas dobles</h3>
+<p>En HTML podemos usar comillas dobles (double quotes) <code>&quot; &quot;</code> o comillas simples (single quotes) <code>' '</code> para definir atributos de los elementos. Por estándar, para HTML usaremos las comillas dobles.</p>
+<pre class="hljs" class="language-js"><code> &lt;img src='logo.png'&gt; &lt;&lt;--- así NO
+ ...
+ &lt;img src=&quot;logo.png&quot;&gt; &lt;&lt;--- así SI
+</code></pre>
+<h3>Espacios en blanco</h3>
+<p>No dejes espacios en blanco entre atributo y su valor.</p>
+<pre class="hljs" class="language-js"><code> &lt;img src= &quot;logo.png&quot; &gt; &lt;&lt;--- así NO
+ ...
+ &lt;img src=&quot;logo.png&quot;&gt; &lt;&lt;--- así SI
+</code></pre>
+<h3>Caracteres especiales</h3>
+<p>Incluye caracteres especiales como el de Copyright, Marca Registrada entre otros usando el markup de HTML para los mismos en vez de escribirlos directamente o pergarlos de algún lado.<br />
+Esto debido a que no interrumpen el Markup Language y lo hacen un HTML válido si otros programas lo quieren interpretar.</p>
+<p>Por ejemplo usa en tu HTML:</p>
+<ul>
+<li><code>&amp;copy;</code> para ©</li>
+<li><code>&amp;reg;</code> para ®</li>
+<li><code>&amp;#8482;</code> para ™</li>
+</ul>
+<p>Existen otros que puedes encontrar en la <a href="http://www.ascii.cl/htmlcodes.htm">web de ASCII</a>.</p>
+<h2>Debugging HTML</h2>
+<p>Nos referimos a <em>debugging</em> a la forma de encontrar, identificar y reparar errores. En HTML, estos errores tienden a ser:</p>
+<h3>Errores de Syntaxis.</h3>
+<p>Son errores que se refieren al mal uso del lenguaje. De repente escribir mal alguna etiqueta, o no cerrarla adecuadamente.</p>
+<h3>Errores de Lógica</h3>
+<p>Si bien las etiquetas pueden estar bien escritas, y cerradas, la estructura que tienen no es la adecuada o no apoyan a cumplir la función para la que fueron creadas.</p>
+<p>Para validar, y conocer nuestros errores en HTML de syntaxis, no basta con abrir el documento en un navegador, puesto que los navegador corren el HTML de manera <em>permisiva</em>, es decir, si se encuentran errores, el navegador, de acuerdo al contexto, cerrará en donde pueda las etiquetas, e interpretará las etiquetas que no conoce como <code>div</code> o algún bloque similar.</p>
+<p>Pero entonces, para conocer si nuestro HTML esta bien, y poder escribir código de calidad, es importante aplicar las buenas prácticas y validar el documento a través de otras herramientas. Podemos usar el <a href="https://validator.w3.org/#validate_by_input"><strong>HTML Validator de <em>W3C</em></strong></a>. Si ingresas al link, notarás que está en el tab <em>validate input</em>. Esto es para que ingresemos un código que quizá este mal escrito.</p>
+<p><img src="html-validator.png" alt="HTML Validator" /></p>
+<p>Supongamos que ingreso el siguiente código:</p>
+<pre class="hljs" class="language-js"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hola Mundo!&lt;/h1&gt;
+    &lt;p&gt;Bienvenidos a mi primera página web
+    &lt;p&gt;Esta página tiene varios elementos
+    &lt;ul&gt;
+     &lt;li&gt;body
+     &lt;li&gt;head
+     &lt;li&gt;h1
+     &lt;li&gt;p
+    &lt;ul&gt;
+  &lt;/body&gt;
+  &lt;br&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Este código ya contiene un error, que es que <em>no se ha cerrado la etiqueta <code>p</code>, ni el <code>ul</code>, ni sus <code>li</code></em>, además hay un <br> después del <code>body</code>.</p>
+<p>Si pegamos este código en el validator y seleccionamos <em>Check</em> tendremos un resultado como:</p>
+<p><img src="html-errors.png" alt="HTML Errores" /></p>
+<ol>
+<li>
+<p>[Error] End tag for <code>body</code> seen, but there were unclosed elements.<br />
+Este se refiere a que si bien se cierra la etiqueta body, hay varias etiquetas que no han cerrado como deberían.</p>
+</li>
+<li>
+<p>y 3. [Error]  Unclosed element <code>ul</code>.<br />
+Este error se refiere a que no se cerró la etiqueta <code>ul</code>. Y esto es porque en la línea 15, en lugar de escribir <code>&lt;/ul&gt;</code> escribimos sólo <code>&lt;ul&gt;</code></p>
+</li>
+<li>
+<p>[Error] Stray start tag <code>br</code>.<br />
+Se refiere al hecho de poner un <code>br</code> fuera del contexto de <code>body</code>.</p>
+</li>
+</ol>
+<p>Supongamos que corregimos primero estos 4 errores y probamos nuestro código.</p>
+<pre class="hljs" class="language-js"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hola Mundo!&lt;/h1&gt;
+    &lt;p&gt;Bienvenidos a mi primera página web
+    &lt;p&gt;Esta página tiene varios elementos
+    &lt;ul&gt;
+     &lt;li&gt;body
+     &lt;li&gt;head
+     &lt;li&gt;h1
+     &lt;li&gt;p
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Notarás que el validador ya no nos da más errores, aunque sabes que los tags no están cerrados adecuadamente. Esto es porque el anidado esta relativamente claro y el navegador podría interpretar donde cerrar las etiquetas. Aún así, recuerda cerrarlas adecuadamente. El código final quedaría como:</p>
+<pre class="hljs" class="language-js"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+  &lt;head&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hola Mundo!&lt;/h1&gt;
+    &lt;p&gt;Bienvenidos a mi primera página web&lt;/p&gt;
+    &lt;p&gt;Esta página tiene varios elementos&lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;body&lt;/li&gt;
+     &lt;li&gt;head&lt;/li&gt;
+     &lt;li&gt;h1&lt;/li&gt;
+     &lt;li&gt;p&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<hr />
+<p>Sources:<br />
+<a href="https://html.spec.whatwg.org">https://html.spec.whatwg.org</a><br />
+<a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals">https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals</a><br />
+<a href="https://www.w3schools.com/html/html_forms.asp">https://www.w3schools.com/html/html_forms.asp</a><br />
+<a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/How_to_structure_an_HTML_form">https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/How_to_structure_an_HTML_form</a><br />
+<a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals">https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals</a><br />
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#Inline_vs._block-level_elements_a_demonstration">https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#Inline_vs._block-level_elements_a_demonstration</a><br />
+<a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Debugging_HTML">https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Debugging_HTML</a></p>
+
+    </div>
+
+  </template>
+    <script>
+        Polymer({
+            is: "unit-02-html",
+            ready: function () {
+                hljs.initHighlightingOnLoad();
+            }
+        });
+    </script>
+</dom-module>
