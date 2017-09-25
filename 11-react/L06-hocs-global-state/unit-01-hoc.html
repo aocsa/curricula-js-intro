@@ -1,0 +1,273 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../style/shared-style.html">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+<dom-module id="unit-01-hoc">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <template strip-whitespace="">
+    
+    
+    <style include="shared-style">        
+    /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:0.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}*{box-sizing:border-box}input,select,textarea,button{font:13px/1.4 Helvetica,arial,nimbussansl,liberationsans,freesans,clean,sans-serif,"Segoe UI Emoji","Segoe UI Symbol"}body{font:13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";color:#333;background-color:#fff}a{color:#4078c0;text-decoration:none}a:hover,a:active{text-decoration:underline}hr,.rule{height:0;margin:15px 0;overflow:hidden;background:transparent;border:0;border-bottom:1px solid #ddd}hr:before,.rule:before{display:table;content:""}hr:after,.rule:after{display:table;clear:both;content:""}h1,h2,h3,h4,h5,h6{margin-top:15px;margin-bottom:15px;line-height:1.1}h1{font-size:30px}h2{font-size:21px}h3{font-size:16px}h4{font-size:14px}h5{font-size:12px}h6{font-size:11px}small{font-size:90%}blockquote{margin:0}ul,ol{padding:0;margin-top:0;margin-bottom:0}ol ol,ul ol{list-style-type:lower-roman}ul ul ol,ul ol ol,ol ul ol,ol ol ol{list-style-type:lower-alpha}dd{margin-left:0}tt,code{font-family:Consolas, "Liberation Mono", Menlo, Courier, monospace;font-size:12px}pre{margin-top:0;margin-bottom:0;font:12px Consolas,"Liberation Mono",Menlo,Courier,monospace}html,body{color:black}#wrapper{-webkit-font-smoothing:antialiased;line-height:1.6;padding:3px;background:#fff;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;color:#333}p{margin:1em 0}a{color:#4183c4;text-decoration:none}#wrapper{background-color:#fff;font-size:16px;line-height:1.6}#wrapper>*:first-child{margin-top:0 !important}#wrapper>*:last-child{margin-bottom:0 !important}@media screen{#wrapper{}}h1,h2,h3,h4,h5,h6{position:relative;font-weight:700;line-height:1.4;color:#333}h1{padding-bottom:.3em;font-size:2.25em;line-height:1.2;border-bottom:1px solid #eee}h2{padding-bottom:0.3em;font-size:1.75em;line-height:1.225;border-bottom:1px solid #eee}h3{font-size:1.5em;line-height:1.43}h4{font-size:1.25em}h5{font-size:1em}h6{color:#777;font-size:1em}p,blockquote,ul,ol,dl,table,pre{margin-top:0;margin-bottom:16px}hr{height:4px;padding:0;margin:16px 0;background-color:#e7e7e7;border:0 none}ul,ol{padding-left:2em}ul.no-list,ol.no-list{padding:0;list-style-type:none}ul ul,ul ol{margin-top:0;margin-bottom:0}ol ol,ol ul{margin-top:0;margin-bottom:0}li>p{margin-top:16px}dl{padding:0}dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}dl dd{padding:0 16px;margin-bottom:16px}blockquote{padding:0 15px;margin-left:0;color:#777;border-left:4px solid #ddd}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{display:block;width:100%;overflow:auto}table th{font-weight:700;padding:6px 13px;border:1px solid #ddd}table td{padding:6px 13px;border:1px solid #ddd}table tr{background-color:#fff;border-top:1px solid #ccc}table tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%;-moz-box-sizing:border-box;box-sizing:border-box}span.frame{display:block;overflow:hidden}span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}span.frame span img{display:block;float:left}span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}span.align-center{display:block;overflow:hidden;clear:both}span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}span.align-center span img{margin:0 auto;text-align:center}span.align-right{display:block;overflow:hidden;clear:both}span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}span.align-right span img{margin:0;text-align:right}span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}span.float-left span{margin:13px 0 0}span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}code,tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,0.04);border-radius:3px}code:before,code:after{letter-spacing:-.2em;content:"\00a0"}tt:before,tt:after{letter-spacing:-.2em;content:"\00a0"}code br,tt br{display:none}del code{text-decoration:inherit;vertical-align:text-top}pre>code{padding:0;margin:0;font-size:100%;white-space:pre;background:transparent;border:0}.highlight{margin-bottom:16px}.highlight pre{padding:16px;margin-bottom:0;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}pre{padding:16px;margin-bottom:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px;word-wrap:normal}pre code,pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}pre code:before,pre code:after{content:normal}pre tt:before,pre tt:after{content:normal}.poetry pre{font-family:Georgia, Garamond, serif !important;font-style:italic;font-size:110% !important;line-height:1.6em;display:block;margin-left:1em}.poetry pre code{font-family:Georgia, Garamond, serif !important;word-break:break-all;word-break:break-word;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto;white-space:pre-wrap}sup,sub,a.footnote{font-size:1.4ex;height:0;line-height:1;vertical-align:super;position:relative}sub{vertical-align:sub;top:-1px}@media print{body{background:#fff}img,table,figure{page-break-inside:avoid}#wrapper{background:#fff;border:none !important;font-size:12px}pre code{overflow:visible}}@media screen{body.inverted{color:#eee !important;border-color:#555;box-shadow:none}.inverted #wrapper,.inverted hr,.inverted p,.inverted td,.inverted li,.inverted h1,.inverted h2,.inverted h3,.inverted h4,.inverted h5,.inverted h6,.inverted th,.inverted .math,.inverted caption,.inverted dd,.inverted dt,.inverted blockquote{color:#eee !important;border-color:#555;box-shadow:none}.inverted td,.inverted th{background:#333}.inverted pre,.inverted code,.inverted tt{background:#eeeeee !important;color:#111}.inverted h2{border-color:#555555}.inverted hr{border-color:#777;border-width:1px !important}::selection{background:rgba(157,193,200,0.5)}h1::selection{background-color:rgba(45,156,208,0.3)}h2::selection{background-color:rgba(90,182,224,0.3)}h3::selection,h4::selection,h5::selection,h6::selection,li::selection,ol::selection{background-color:rgba(133,201,232,0.3)}code::selection{background-color:rgba(0,0,0,0.7);color:#eeeeee}code span::selection{background-color:rgba(0,0,0,0.7) !important;color:#eeeeee !important}a::selection{background-color:rgba(255,230,102,0.2)}.inverted a::selection{background-color:rgba(255,230,102,0.6)}td::selection,th::selection,caption::selection{background-color:rgba(180,237,95,0.5)}.inverted{background:#0b2531;background:#252a2a}.inverted #wrapper{background:#252a2a}.inverted a{color:#acd1d5}}.highlight{background:#fff}.highlight .c{color:#998;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .k,.highlight .o{font-weight:700}.highlight .cm{color:#998;font-style:italic}.highlight .cp{color:#999;font-weight:700}.highlight .c1{color:#998;font-style:italic}.highlight .cs{color:#999;font-weight:700;font-style:italic}.highlight .gd{color:#000;background-color:#fdd}.highlight .gd .x{color:#000;background-color:#faa}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#999}.highlight .gi{color:#000;background-color:#dfd}.highlight .gi .x{color:#000;background-color:#afa}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:700}.highlight .gu{color:purple;font-weight:700}.highlight .gt{color:#a00}.highlight .kc,.highlight .kd,.highlight .kn,.highlight .kp,.highlight .kr{font-weight:700}.highlight .kt{color:#458;font-weight:700}.highlight .m{color:#099}.highlight .s{color:#d14}.highlight .n{color:#333}.highlight .na{color:teal}.highlight .nb{color:#0086b3}.highlight .nc{color:#458;font-weight:700}.highlight .no{color:teal}.highlight .ni{color:purple}.highlight .ne,.highlight .nf{color:#900;font-weight:700}.highlight .nn{color:#555}.highlight .nt{color:navy}.highlight .nv{color:teal}.highlight .ow{font-weight:700}.highlight .w{color:#bbb}.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx{color:#d14}.highlight .sr{color:#009926}.highlight .s1{color:#d14}.highlight .ss{color:#990073}.highlight .bp{color:#999}.highlight .vc,.highlight .vg,.highlight .vi{color:teal}.highlight .il{color:#099}.highlight .gc{color:#999;background-color:#EAF2F5}.type-csharp .highlight .k,.type-csharp .highlight .kt{color:blue}.type-csharp .highlight .nf{color:#000;font-weight:400}.type-csharp .highlight .nc{color:#2b91af}.type-csharp .highlight .nn{color:#000}.type-csharp .highlight .s,.type-csharp .highlight .sc{color:#a31515}.type-csharp .highlight .k,.type-csharp .highlight .kt{color:#00F}.type-csharp .highlight .nf{color:#000;font-weight:normal}.type-csharp .highlight .nc{color:#2B91AF}.type-csharp .highlight .nn{color:#000}.type-csharp .highlight .s,.type-csharp .highlight .sc{color:#A31515}body.dark #wrapper{background:transparent !important;box-shadow:none !important}
+    .hljs{display:block;overflow-x:auto;padding:0.5em;color:#333;background:#f8f8f8}.hljs-comment,.hljs-quote{color:#998;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-subst{color:#333;font-weight:bold}.hljs-number,.hljs-literal,.hljs-variable,.hljs-template-variable,.hljs-tag .hljs-attr{color:#008080}.hljs-string,.hljs-doctag{color:#d14}.hljs-title,.hljs-section,.hljs-selector-id{color:#900;font-weight:bold}.hljs-subst{font-weight:normal}.hljs-type,.hljs-class .hljs-title{color:#458;font-weight:bold}.hljs-tag,.hljs-name,.hljs-attribute{color:#000080;font-weight:normal}.hljs-regexp,.hljs-link{color:#009926}.hljs-symbol,.hljs-bullet{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}#mkreplaced-toc{list-style-position:inside;padding:0;margin:0 0 0 1rem;list-style-type:none}#mkreplaced-toc li::before{content:''}#mkreplaced-toc li{font-size:1rem;line-height:1.25;font-weight:normal}#mkreplaced-toc li ul{font-size:1.3rem;font-weight:300;padding:.5rem 0;margin:0 0 0 1rem}#mkreplaced-toc li.missing{list-style-type:none !important}#mkreplaced-toc.max-1 ul,#mkreplaced-toc.max1 ul{display:none}#mkreplaced-toc.max-2 ul ul,#mkreplaced-toc.max2 ul ul{display:none}#mkreplaced-toc.max-3 ul ul ul,#mkreplaced-toc.max3 ul ul ul{display:none}#mkreplaced-toc.max-4 ul ul ul ul,#mkreplaced-toc.max4 ul ul ul ul{display:none}#mkreplaced-toc.max-5 ul ul ul ul ul,#mkreplaced-toc.max5 ul ul ul ul ul{display:none}.rtl{direction:rtl;text-align:right}@media print{body{background:white;line-height:1.4}html,body,#wrapper{max-width:100%;width:100%;-webkit-text-size-adjust:none;-webkit-perspective:none !important;box-sizing:border-box;width:auto;border:0;margin:0;padding:0;float:none;-moz-box-shadow:none !important;-webkit-box-shadow:none !important;box-shadow:none !important}mark{background:transparent !important}h1,h2,h3,h4,h5,h6{page-break-after:avoid}p,h2,h3{orphans:3;widows:3}section{page-break-before:avoid}pre>code{white-space:pre;word-break:break-word}#generated-toc,#firstdiff,#toc-title,#mkdocumentprogress,#mkincludechart,#mkprogressbar1,#mkprogressbar2,.mkscrollmeter,#alllinks,.popup{display:none !important}.suppressprintlinks a{color:inherit !important;text-decoration:none !important;border-bottom:none !important;cursor:default !important}.hrefafterlinktext #wrapper a:link:after,.hrefafterlinktext #wrapper a:visited:after{content:" (" attr(href) ") ";font-size:90%;opacity:0.9}.nocodebreak pre{page-break-inside:avoid}img,table,figure{page-break-inside:avoid}.breakfootnotes .footnotes{page-break-before:always}.breakfootnotes .footnotes hr{display:none}#mktoctitle{display:block}#print-title{display:block;border-bottom:solid 1px #666}#wrapper pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}#wrapper #generated-toc-clone,#wrapper #mkreplaced-toc{display:block}.task-list .task-list-item{list-style-type:none !important}.task-list .gh-complete.task-list-item .task-list-item-checkbox:before{content:'\2713';background:#838387}.task-list .task-list-item-checkbox{-webkit-appearance:none;position:relative}.task-list .task-list-item-checkbox:before{content:' ';border:solid 1px #aaa;width:1em;height:1em;display:block;border-radius:2px;left:-20px;top:-.75em;color:white;font-weight:bold;line-height:1;text-align:center;position:absolute}}
+    #wrapper #generated-toc-clone,#wrapper #mkreplaced-toc,#wrapper #generated-toc-clone ul,#wrapper #mkreplaced-toc ul{list-style-position:inside}#wrapper #generated-toc-clone li.missing,#wrapper #mkreplaced-toc li.missing{list-style-type: none!important}#wrapper #generated-toc-clone,#wrapper #mkreplaced-toc{list-style-type: upper-roman}#wrapper #generated-toc-clone>li>ul,#wrapper #mkreplaced-toc>li>ul {list-style-type: decimal}#wrapper #generated-toc-clone>li>ul>li>ul,#wrapper #mkreplaced-toc>li>ul>li>ul{list-style-type: decimal-leading-zero}#wrapper #generated-toc-clone>li>ul>li>ul>li>ul,#wrapper #mkreplaced-toc>li>ul>li>ul>li>ul{list-style-type: lower-greek}#wrapper #generated-toc-clone>li>ul>li>ul>li>ul>li>ul,#wrapper #mkreplaced-toc>li>ul>li>ul>li>ul>li>ul{list-style-type: disc}#wrapper #generated-toc-clone>li>ul>li>ul>li>ul>li>ul>li>ul,#wrapper #mkreplaced-toc>li>ul>li>ul>li>ul>li>ul>li>ul{list-style-type: square}#wrapper #generated-toc-clone,#wrapper #mkreplaced-toc{list-style-position:outside!important;margin-left:2rem;}
+    </style>
+
+    <style id="mkprintstyles">@media print{#wrapper #generated-toc-clone,#generated-toc{display:none!important}
+    html,body,#wrapper{font-size:10pt!important}
+    }
+    </style>
+        
+    <div id="wrapper">
+        <p>source:</p>
+<ul>
+<li><a href="https://facebook.github.io/react/docs/higher-order-components.html">https://facebook.github.io/react/docs/higher-order-components.html</a></li>
+<li><a href="https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e">https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e</a></li>
+</ul>
+<hr />
+<h1>Intro</h1>
+<p>Ya tenemos una aplicación estática modelada con componentes de React, muy modernos y mantenibles, pero carecemos de algo fundamental que cualquier aplicación moderna necesita: interacción y memoria.</p>
+<p>En esta lección veremos una forma de inyectar esa capacidad a nuestros componentes con Redux, permitiéndonos mantener estos componentes independientes y reutilizables.</p>
+<p>Para llegar hasta Redux, comenzaremos con qué son los HOC, veremos algunos casos de uso para entender el abanico infinito de posibilidades que brindan. Luego tendremos una introducción a Redux y sus principios básicos, y veremos cómo usa el concepto de HOCs para escuchar eventos de los componentes, distribuirles los datos que necesitan y orquestar el estado global de nuestra aplicación. Por último realizaremos un proceso completo de diseño e implementación de un componente más complejo, utilizando React y Redux.</p>
+<h1>Higher-order Components (HOCs)</h1>
+<p>Los Higher-order Components, o Componentes de grado superior o HOCs son una técnica avanzada en React para reusar la lógica de nuestra UI. Los HOCs no son parte de la API de React, sino que son un patrón de diseño surgido dentro de la comunidad, inspirado en la naturaleza composicional de React.</p>
+<p>En resumidas cuentas los HOCs son a los componentes, los que las Higher-order Functions son a las funciones: <strong>un higher-order component es una función que toma como parámetro un componente y retorna como resultado un nuevo componente.</strong></p>
+<pre class="hljs" class="language-js"><code>const EnhancedComponent = higherOrderComponent(WrappedComponent);
+</code></pre>
+<p>Mientras que un componente transforma props en UI, un HOC transforma componentes en componentes.</p>
+<p>En esta lectura veremos por qué son tan utiles los HOCs y qué formas pueden tomar.</p>
+<h2>Usando HOCs para funcionalidades transversales (Cross-Cutting Concerns)</h2>
+<blockquote>
+<p>En las primeras versiones de React, se recomendaba el uso de Mixins y quizás todavía encuentres información sobre ellos. Hoy por hoy el uso de Mixins está <strong>des-recomendado</strong>. <a href="/react/blog/2016/07/13/mixins-considered-harmful.html">Mas info</a></p>
+</blockquote>
+<p>Los componentes son la unidad básica de reutilización de código en React. Sin embargo, verás que hay situaciones en las que la naturaleza expresiva de React, no resuelve muy bien el problema.</p>
+<p>Por ejemplo, supongamos que tenemos un componente <code>CommentList</code> que se subscribre a una fuente externade datos y renderiza una lista de comentarios para un usuario específico:</p>
+<pre class="hljs" class="language-js"><code>const CommentList = ({ user }) =&gt; {
+  const comments = DataSource.getComments(user)
+
+  return (
+    &lt;div&gt;
+      {comments.map((comment) =&gt; (
+        &lt;Comment comment={comment.text} key={comment.id} /&gt;
+      ))}
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<p>Y luego, tenemos un componente que se subscribe a un blog, que también utiliza al usuario para buscar los posts correspondientes:</p>
+<pre class="hljs" class="language-js"><code>const BlogPostList = ({ user }) =&gt; {
+  const posts = DataSource.getPosts(user)
+
+  return (
+    &lt;div&gt;
+      {posts.map((post) =&gt; (
+        &lt;TextBlock text={post.text} key={post.id} /&gt;
+      ))}
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<p><code>CommentList</code> y <code>BlogPostList</code> no son idénticos: llaman a diferentes métodos de <code>DataSource</code> y renderizan distintos outputs, pero la mayoría de su implementación es la misma:</p>
+<ul>
+<li>recoger un <code>user</code></li>
+<li>llamar al metodo que corresponda de <code>DataSource</code> con <code>user</code></li>
+<li>renderizar una lista como corresponda</li>
+</ul>
+<p>Te podrás imaginar que en una aplicación grande, este patrón ser repite una y otra y otra vez. Entonces lo que queremos es una abtracción que nos permita definir esta lógica en un sólo lugar, y compartila entre varios componentes. Aquí es donde los HOCs muestran su real valor.</p>
+<p>Ya sabemos que <code>CommentList</code> y <code>BlogPostlist</code> se diferencian por:</p>
+<ul>
+<li><code>DataSource.getComments</code> vs <code>DataSource.getPosts</code></li>
+<li><code>&lt;TextBlock text={post} /&gt;</code> vs <code>&lt;Comment comment={comment} /&gt;</code></li>
+</ul>
+<p>Entonces reescribamos nuestros componentes para que sólo se ocupen de la lógica de renderizado y escribamos una nueva función <code>withData</code> que nos permita hacer lo siguiente:</p>
+<pre class="hljs" class="language-js"><code>const CommentList = ({ data }) =&gt; (
+  &lt;div&gt;
+    {data.map((comment) =&gt; (
+      &lt;Comment comment={comment.text} key={comment.id} /&gt;
+    ))}
+  &lt;/div&gt;
+)
+
+const BlogPostList = ({ data }) =&gt; (
+  &lt;div&gt;
+    {data.map((post) =&gt; (
+      &lt;TextBlock text={post.text} key={post.id} /&gt;
+    ))}
+  &lt;/div&gt;
+)
+
+const CommentListWithData = withData(
+  CommentList,
+  DataSource.getComments
+);
+
+const BlogPostListWithData = withData(
+  BlogPostList,
+  DataSource.getBlogPost
+);
+</code></pre>
+<p>El primer parámetro de <code>withData</code> es el componente interno y el segundo es la función a ejecutar para conseguir los datos.</p>
+<p>Entonces, ahora cuando <code>CommentListWithData</code> y <code>BlogPostListWithData</code> se rendericen, <code>CommentList</code> y <code>BlogPostList</code> recibirán una prop <code>data</code> con los datos actualizados.</p>
+<p>¿Cómo implementamos <code>withData</code>?</p>
+<pre class="hljs" class="language-js"><code>// tenemos un estado global que guarda el usuario actual
+const state = {
+  user: 'USER_ID'
+}
+
+// Y esta función que recibe un componente
+function withData(WrappedComponent, selectData) {
+  // ... y retorna otro
+  return props =&gt; {
+    const data = selectData(state.user)
+    return (
+      &lt;WrappedComponent data={data} {...props} /&gt;;
+    )
+  }
+}
+</code></pre>
+<p>Nota que un HOC no moodifica la interfaz del componente, ni tampoco usa herencia para copiar su comportamiento. En lugar de eso un HOC <em>compone</em> el componente original, <em>envolviéndolo (wrapping)</em> con un componente contenedor. Un HOC es una <strong><em>función pura sin efectos colaterales</em></strong>.</p>
+<p>Y listo! El componente interno recibe todo lo que necesita a través del contenedor, y así ni el contenedor se preocupa en cómo se usa la data, ni el componente interno se preocupa de cómo se consigue esta data. Completa separación de intereses (separation of concerns).</p>
+<p>Como <code>withData</code> es una función común y corriente, puedes dotarla de la interfaz que más te convenga. Por ejemplo, en lugar de que la prop siempre se llame data, puedes hacer que el nombre de la prop sea configurable. O podrías recibir el usuario en lugar de obtenerlo de un state global. Todo esto y más es posible, porque el HOC está en completo control de de la forma del contenedor y de cómo y con qué parámetros renderizar al componente interno.</p>
+<p>Como con los componentes regulares, el <em>“contrato”</em> entre <code>withData</code> y el componente interno se basa enteramente en las props. Esto hace fácil cambiar un HOC por otro, siempre y cuando provea las mismas props al componente interno. Esto puede ser muy útil por ejemplo, si cambiamos la forma en la que obtenemos o guardamos nuestro usuario, o parámetros futuros que se agreguen a la API de nuestro data source.</p>
+<p>A continuación veremos algunas buenas prácticas y puntos a tener en cuenta, te ahorrarán horas de debugging.</p>
+<h2>Convención: Traspasar todas las props recibidas al componente interno</h2>
+<p>Los HOCs agregar funcionalidades a los componentes y no deberían alterar drásticamente su comportamiento. Se espera que el componente devuelto por un HOC tenga una interfaz similar a la del componente interno.</p>
+<p>Los HOCs deberían traspasar todas las props que no tengan diréctamente que ver con su funcionalidad. La mayoría de HOCs suelen retornar un componente de la siguiente forma:</p>
+<pre class="hljs" class="language-js"><code>function(props) {
+  // Filtramos una prop extra que es específica de este HOC y no debería
+  // ser traspasada
+  const { extraProp, ...passThroughProps } = props;
+
+  // Injectamos las props necesarias. Usualmente una valor del state global
+  // o event listeners
+  const injectedProp = someStateOrInstanceMethod(extraProp);
+
+  // Pasamos las props al componente interno
+  return (
+    &lt;WrappedComponent
+      injectedProp={injectedProp}
+      {...passThroughProps}
+    /&gt;
+  );
+}
+</code></pre>
+<p>Esta convención ayuda a asegurar que los HOCs sean tan flexibles y reutilizables como sea posible.</p>
+<h2>Convención: Maximizando la capacidad de composición</h2>
+<p>No todos los HOCs son iguales, a veces reciben un único argumento, el componente interno:</p>
+<pre class="hljs" class="language-js"><code>const NavbarWithRouter = withRouter(Navbar);
+</code></pre>
+<p>Otras veces aceptan parámetros adicionles, como por ejemplo en Relay donde es necesario un parámetros de configuración:</p>
+<pre class="hljs" class="language-js"><code>const CommentWithRelay = Relay.createContainer(Comment, config);
+</code></pre>
+<p>Pero la signatura más común de un HOC suele ser la siguiente:</p>
+<pre class="hljs" class="language-js"><code>// React Redux's `connect`
+const ConnectedComment = connect(commentSelector, commentActions)(CommentList);
+</code></pre>
+<p><em>Qué?!</em> Si lo divides por etapas es más fácil de entender.</p>
+<pre class="hljs" class="language-js"><code>// connect es una función que retorna otra función
+const enhance = connect(commentListSelector, commentListActions);
+// La función devuelta es un HOC que retorna el componente ya connectado al
+// `store` de Redux a través de un contenedor
+const ConnectedComment = enhance(CommentList);
+</code></pre>
+<p>En otras palabras, <code>connect</code> es una higher-order function que devuelve un higher-order component!</p>
+<p>Esta forma puede parecer confusa o innecesaria, pero tiene una capacidad muy útil. Los HOCs con un sólo argumento como los devueltos por <code>connect</code> tienen la siguiente signatura <code>Component =&gt; Component</code>. Las funciones donde el tipo de su entrada es el mismo que el de su salida son muy fácil de componer.</p>
+<pre class="hljs" class="language-js"><code>// En lugar de encadenar las llamadas...
+const EnhancedComponent = connect(commentSelector)(withRouter(WrappedComponent))
+
+// ... usamos una función utilitaria de composición donde
+// compose(f, g, h) es lo mismo que (...args) =&gt; f(g(h(...args)))
+const enhance = compose(
+  // Ambos son HOCs con un único argumento
+  connect(commentSelector),
+  withRouter
+)
+const EnhancedComponent = enhance(WrappedComponent)
+</code></pre>
+<p>El utilitario <code>compose</code> es provisto por varias librerías incluyendo lodash (<a href="https://lodash.com/docs/#flowRight"><code>lodash.flowRight</code></a>), <a href="http://Redux.js.org/docs/api/compose.html">Redux</a>, y <a href="http://ramdajs.com/docs/#compose">Ramda</a>.</p>
+<h2>Convención: Extrae el “Display Name” para mejor debuggeo</h2>
+<p>Los componentes contenedores creados por los HOCs se muestran en <a href="https://github.com/facebook/react-devtools">React Developer Tools</a> como cualquier otro componente. Elige un <code>displayName</code> que comunique cuál es el resultado del HOC.</p>
+<p>La técnica más común es usar el <code>displayName</code> del componente interno. Entonces si tu HOC se llama <code>withData</code>, y el componente interno <code>CommentsList</code>, usa algo parecido a <code>WithData(CommentList)</code>:</p>
+<pre class="hljs" class="language-js"><code>function withData(WrappedComponent) {
+  const WithData = props =&gt; {/* ... */}
+  WithData.displayName = `WithData(${getDisplayName(WrappedComponent)})`;
+  return WithData;
+}
+
+function getDisplayName(WrappedComponent) {
+  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+}
+</code></pre>
+<h2>A tener en cuenta</h2>
+<p>Los HOCs vienen con algunos temas a tener en cuenta que no son obvios si eres nuevo en React.</p>
+<h3>No uses HOCs dentro del cuerpo de un componente</h3>
+<p>El algoritmo de reconciliaci[on de React, usa la identidad de los componentes para determinar si debe actualizar un sub árbol del DOM o debe botarlo y montar uno nuevo. Si el resultado del componente es identico (<code>===</code>) al componente del ciclo anterior de renderizado, React recursivamente actualiza el sub árbol comparando nodo a nodo. Si no son iguales, el árbol se descarta completamente.</p>
+<p>Normalmente en React, esto es algo en lo que no deberías pensar, pero si es importante cuando usas HOCs porque implica que no puedes aplicar un HOC a un componente dentro del cuerpo de otro componente:</p>
+<pre class="hljs" class="language-js"><code>render() {
+  // Una nueva versión de EnhancedComponent es creada EN CADA renderizado
+  // EnhancedComponent1 !== EnhancedComponent2
+  const EnhancedComponent = enhance(MyComponent);
+  // Esto ocasiona que todo el sub árbol
+  // se descarte y vuelva a crearse cada vez!
+  return &lt;EnhancedComponent /&gt;;
+}
+</code></pre>
+<p>En cambio, aplica los HOCs fuera de la definición de los componentes para que el componente contenedor sea creado una sola vez. Luego su idnetidad será consistente a través de todos los renders, que es lo que generalmente deseas.</p>
+<p>En casos raros cuando necsitas aplicar un HOC dinámicamente, necesitas hacerlo utilizando componentes OOP que veremos en la próxima lección.</p>
+<h3>Los métodos estáticos se deben copiar “a mano”</h3>
+<p>A veces es útil definir métodos estáticos en un componente de React.</p>
+<p>Cuando aplicas un HOC a un componente, el componente original es “envuelto” por un componente contenedor. Esto implica que el nuevo componente no tiene ninguno de los métodos estáticos del componente original.</p>
+<pre class="hljs" class="language-js"><code>// Definimos un método estático
+WrappedComponent.staticMethod = function() {/*...*/}
+// Aplicamos el el HOC
+const EnhancedComponent = enhance(WrappedComponent);
+
+// El nuevo componente no tienen `staticMethod`
+typeof EnhancedComponent.staticMethod === 'undefined' // true
+</code></pre>
+<p>En estas situaciones, puedes copiar el método en el componente contenedor, antes de retornarlo:</p>
+<pre class="hljs" class="language-js"><code>function enhance(WrappedComponent) {
+  class Enhance extends React.Component {/*...*/}
+  // Debemos copiar el método explícitamente
+  Enhance.staticMethod = WrappedComponent.staticMethod;
+  return Enhance;
+}
+</code></pre>
+<p>El principal inconveniente con este enfoque, es que necesitas saber exactamente cuál o cuáles son los métodos que necesitan ser copiados. Puedes usar por ejemplo <a href="https://github.com/mridgway/hoist-non-react-statics">hoist-non-react-statics</a> para copiar automáticamente los métodos estáticos más comunes que no están relacionados con React:</p>
+<pre class="hljs" class="language-js"><code>import hoistNonReactStatic from 'hoist-non-react-statics';
+function enhance(WrappedComponent) {
+  class Enhance extends React.Component {/*...*/}
+  hoistNonReactStatic(Enhance, WrappedComponent);
+  return Enhance;
+}
+</code></pre>
+<blockquote>
+<p>Si quieres saber exactamente qué hace <code>hoist-non-react-statics</code>, cheque <a href="https://github.com/mridgway/hoist-non-react-statics/blob/master/index.js">su código fuente</a></p>
+</blockquote>
+<p>Otra posibilidad es exportar el método desde el componente.</p>
+<pre class="hljs" class="language-js"><code>// En lugar de...
+MyComponent.someFunction = someFunction;
+export default MyComponent;
+
+// ...lo exportamos independientemente...
+export { someFunction };
+
+// ...y luego lo usamos desde el HOC
+import MyComponent, { someFunction } from './MyComponent.js';
+</code></pre>
+<h1>Resumen</h1>
+<p>En esta lectura hemos podido apreciar la gran versatilidad que tienen los HOCs: Esta posibilidad de componer diferentes funcionalidades a través de “capas”, como las de una cebolla.</p>
+<p>En la próxima lectura nos enfocaremos en un escenario particular que hace un uso intensivo de los HOCs: Redux</p>
+
+    </div>
+
+  </template>
+    <script>
+        Polymer({
+            is: "unit-01-hoc",
+            ready: function () {
+                hljs.initHighlightingOnLoad();
+            }
+        });
+    </script>
+</dom-module>
