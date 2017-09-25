@@ -45,23 +45,25 @@ sabemos exactamente cuáles o cómo son.</p>
 <p>Veamos un ejemplo.</p>
 <p>Tenemos el siguiente componente <code>ConBorde</code></p>
 <pre class="hljs" class="language-js"><code>// Componente que agrega un borde del color deseado alrededor de los `children`
-const ConBorde = ({ color, children }) =&gt; (
-  &lt;div style={{ border: `solid 3px ${color}`}}&gt;
+const ConBorde = ({ color, children }) => (
+  <div style={{ border: `solid 3px ${color}`}}>
     {children}
-  &lt;/div&gt;
+  </div>
 )
 </code></pre>
 <p>Entonces el siguiente elemento <code>jsx</code></p>
-<pre class="hljs" class="language-js"><code>  &lt;ConBorde color=&quot;blue&quot;&gt;
-    &lt;h1&gt;Bienvenido&lt;/h1&gt;
-    &lt;p&gt;Gracias por la visita&lt;/p&gt;
-  &lt;/ConBorde&gt;
+<pre class="hljs" class="language-js"><code>  
+    <ConBorde color="blue">
+    <h1>Bienvenido</h1>
+    <p>Gracias por la visita</p>
+  </ConBorde>
 </code></pre>
 <p>produce el siguiente <code>DOM</code></p>
-<pre class="hljs" class="language-js"><code>&lt;div style=&quot;border: solid 3px blue&quot;&gt;
-  &lt;h1&gt;Bienvenido&lt;/h1&gt;
-  &lt;p&gt;Gracias por la visita&lt;/p&gt;
-&lt;/div&gt;
+<pre class="hljs" class="language-js"><code>
+    <div style="border: solid 3px blue">
+    <h1>Bienvenido</h1>
+     <p>Gracias por la visita</p>
+    </div>
 </code></pre>
 <h3>¿Qué está sucediendo?</h3>
 <p>Cualquier cosa dentro del tag <code>jsx</code> <code>&lt;ConBorde&gt;</code> se pasa como parámetro al<br />
