@@ -1,4 +1,4 @@
-# Getting Started
+# Primeros Pasos
 
 Veamos como podemos comenzar a usar react inmediatamente dentro de nuestro html
 existente.
@@ -308,3 +308,5 @@ Recuerda utilizar los recursos recomendados:
   </script>
 </body>
 ```
+
+
