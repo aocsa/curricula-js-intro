@@ -78,8 +78,6 @@ return (
 )
 </code></pre>
 <p>Todas las siguientes son expresiones válidas: <code>2 + 2</code>, <code>user.email</code>, <code>formatDate(new Date())</code></p>
-<h2>Renderizado condicional</h2>
-<p>¡Ahora vamos a usarlo!</p>
 <h2>Ejercicio: Migrar a <code>JSX</code></h2>
 <p>Nuestro primer paso será configurar nuestra página, para que comience a entender<br />
 <code>JSX</code>. Hay varias formas de hacer esto, pero nosotros lo que haremos es incluir<br />
@@ -126,6 +124,68 @@ reemplazando todas ellas por código <code>JSX</code>.</p>
 <pre class="hljs" class="language-js"><code>const children = props.articles.map(function(a) {
   return &lt;Article titulo={a.titulo} descripcion={a.descripcion} /&gt;
 })
+</code></pre>
+<h2>Ejemplo JSX con create-react-app</h2>
+<p>Como he mencionado antes, create-react-app ya ha puesto en marcha una aplicación de ejemplo. Todos los archivos vienen con implementaciones predeterminadas. Vamos a sumergirnos en el código fuente.<br />
+El único archivo que tocarás al principio será el <code>src/App.js</code>.</p>
+<pre class="hljs" class="language-js"><code>import React, { Component } from 'react'; import logo from './logo.svg';
+import './App.css';
+class App extends Component { 
+    render() {
+        return (
+        &lt;div className=&quot;App&quot;&gt;
+                &lt;div className=&quot;App-header&quot;&gt;
+                  &lt;img src={logo} className=&quot;App-logo&quot; alt=&quot;logo&quot; /&gt;
+                  &lt;h2&gt;Welcome to React&lt;/h2&gt;
+                &lt;/div&gt;
+                &lt;p className=&quot;App-intro&quot;&gt;
+                  To get started, edit &lt;code&gt;src/App.js&lt;/code&gt; and save to reload.
+                &lt;/p&gt;
+        &lt;/div&gt; );
+    } 
+}
+export default App;
+</code></pre>
+<p>No se deje confundir por las declaraciones de <code>import/export</code> y la declaración de clase. Estas características ya son JavaScript ES6. Los revisaremos en un capítulo posterior.</p>
+<p>En el archivo tiene un componente de clase ES6 con el nombre App. Es una declaración de componentes. Básicamente, después de haber declarado un componente, puede utilizarlo como elemento en todas partes de su aplicación. Se producirá una instancia de su componente o, en otras palabras: el componente se instanciará.</p>
+<p>El elemento que devuelve se especifica en el método <code>render ()</code>. Los elementos son de lo que están hechos los componentes. Es útil entender las diferencias entre componente, instancia y elemento.</p>
+<p>Muy pronto verás donde se usa el componente App. De lo contrario, no vería la salida renderizada en el navegador, ¿verdad? El componente App es sólo la declaración, pero no el uso. Instanciarías el componente en algún lugar de tu JSX con <code>&lt;App /&gt;</code>.</p>
+<p>El contenido en el bloque de render se parece bastante a HTML, pero es JSX. JSX le permite mezclar HTML y JavaScript. Es poderoso pero confuso cuando se está acostumbrado a HTML simple. Por eso, un buen punto de partida es utilizar HTML básico en su JSX. A continuación puede empezar a incrustar expresiones JavaScript entre medio.</p>
+<pre class="hljs" class="language-js"><code>import React, { Component } from 'react';
+import './App.css';
+class App extends Component {
+    render() {
+        var helloWorld = 'Welcome to the Road to learn React';
+        return (
+           &lt;div className=&quot;App&quot;&gt;
+                 &lt;h2&gt;{helloWorld}&lt;/h2&gt;
+            &lt;/div&gt; );
+    } 
+}
+export default App;
+</code></pre>
+<p>Además, es posible que haya notado el atributo <code>className</code>. Refleja el atributo de clase CSS. Debido a razones técnicas, JSX tuvo que reemplazar un puñado de atributos HTML internos. Puede encontrar todos los atributos HTML compatibles en la documentación <a href="https://facebook.github.io/react/docs/dom-elements.html">https://facebook.github.io/react/docs/dom-elements.html</a>. En tu camino para aprender React te encontrarás con más atributos JSX.</p>
+<h2>ReactDOM</h2>
+<p>Antes de continuar con el componente App, es posible que desee ver dónde se utiliza. Se encuentra en su punto de entrada al mundo React: el archivo <code>src/index.js</code>.</p>
+<pre class="hljs" class="language-js"><code>import React from 'react'; 
+import ReactDOM from 'react-dom';
+import App from './App';
+import './index.css';
+
+ReactDOM.render(
+  &lt;App /&gt;,
+  document.getElementById('root')
+);
+</code></pre>
+<p>Básicamente ReactDOM. render () utiliza un nodo DOM en su HTML para reemplazarlo con su JSX. Así es como se puede integrar fácilmente React en cualquier aplicación. No está prohibido utilizar ReactDOM. render () varias veces a través de su aplicación. Puede utilizarlo en múltiples lugares para iniciar una sintaxis JSX simple, un componente React, varios componentes React o una aplicación completa.</p>
+<p>ReactDOM. render () espera dos argumentos.</p>
+<p>El primer argumento es JSX que se renderiza. El segundo argumento especifica el lugar donde la aplicación React se engancha a su HTML. Espera un elemento con un <code>id=' root'</code>. Puede abrir su archivo <code>public/index.html</code> para encontrar el atributo <code>id</code>.</p>
+<p>En la implementación ReactDOM. render () ya toma su componente App.</p>
+<pre class="hljs" class="language-js"><code>// Otro ejemplo con ReactDOM
+ReactDOM.render(
+  &lt;h1&gt;Hello React World&lt;/h1&gt;,
+  document.getElementById('root')
+);
 </code></pre>
 
     </div>
