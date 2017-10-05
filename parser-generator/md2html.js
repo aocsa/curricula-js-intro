@@ -63,15 +63,7 @@ function codeToHtml(string) {
 }
 var markDownString = "";
 var format = require("string-template");
-
-async function myReadfile(filename) {
-   try {
-      const file = await fs.readFile(filename, "utf8");
-   } catch (err) {
-      console.error(err);
-   }
-   return file;
-}
+ 
 const path = require("path");
 
 const mkdirSync = function(dirPath) {
